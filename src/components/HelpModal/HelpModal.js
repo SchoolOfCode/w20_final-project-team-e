@@ -19,8 +19,22 @@ export default function HelpModal() {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
-        <div clasName="modalTitle"></div>
-        <div clasName="modalBody"></div>
+        <button> X </button>
+        <div clasName="modalTitle1"></div>
+        <h1>About our Eco Journey Planner</h1>
+        <div clasName="modalBody1">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        <div clasName="modalTitle2"></div>
+        <h1>Creating an account</h1>
+        <div clasName="modalBody2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        <div clasName="modalTitle3"></div>
+        <h1>Connect with </h1>
+        <div clasName="modalBody3">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
       </div>
     </div>
   );

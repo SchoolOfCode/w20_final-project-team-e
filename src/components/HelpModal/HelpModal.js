@@ -15,7 +15,7 @@ NEED
 
 import React from "react";
 
-export default function HelpModal() {
+export default function HelpModal({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">

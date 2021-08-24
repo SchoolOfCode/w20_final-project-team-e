@@ -25,7 +25,7 @@ function App() {
       >
         Help?
       </button>
-      {openModal && <HelpModal />}
+      {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
   );
 }

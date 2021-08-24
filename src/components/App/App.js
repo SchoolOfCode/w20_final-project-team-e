@@ -9,6 +9,7 @@ import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
 function App() {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="app">
       {/* to be fixed at the top of the page? */}
@@ -16,7 +17,14 @@ function App() {
       <SearchSection />
       <LoadingSection />
       <ResultsSection />
-      <button className="openModalBtn">Help?</button>
+      <button
+        className="openModalBtn"
+        onClick={() => {
+          setOpenModal(true);
+        }}
+      >
+        Help?
+      </button>
       <HelpModal />
     </div>
   );

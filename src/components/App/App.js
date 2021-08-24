@@ -15,7 +15,7 @@ function App() {
       <SearchSection />
       <LoadingSection />
       <ResultsSection />
-      <button></button>
+      <button className="openModalBtn">Help?</button>
       <HelpModal />
     </div>
   );

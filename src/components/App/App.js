@@ -15,7 +15,7 @@ function App() {
       <SearchSection />
       <LoadingSection />
       <ResultsSection />
-      {/* button with text to appear as overlay onclick? */}
+      <button></button>
       <HelpModal />
     </div>
   );

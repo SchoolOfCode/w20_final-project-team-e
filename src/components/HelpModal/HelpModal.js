@@ -18,7 +18,10 @@ import React from "react";
 export default function HelpModal() {
   return (
     <div className="modalBackground">
-      <div className="modalContainer"></div>
+      <div className="modalContainer">
+        <div clasName="modalTitle"></div>
+        <div clasName="modalBody"></div>
+      </div>
     </div>
   );
 }

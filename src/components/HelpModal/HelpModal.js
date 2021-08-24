@@ -5,9 +5,9 @@ PSUEDO CODE
 1. If help button is clicked display a hidden information page & blur homepage background 
 2. If help button or close button is clicked hide infomation page & remove blur
 
-NEED
+STATE NEEDED
 
-- help button
+- help button 
 - close button 
 
 */

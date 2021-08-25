@@ -4,7 +4,7 @@ import ResultsCard from "../ResultsCard/ResultsCard";
 
 export default function ResultsSection() {
   return (
-    <div>
+    <div id="results-section">
       <h1>Results Section Component</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, autem

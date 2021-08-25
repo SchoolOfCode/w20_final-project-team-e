@@ -26,6 +26,9 @@ export default function App() {
     e.preventDefault();
     console.log(formData);
     window.location = "#loading-section";
+    setTimeout(() => {
+      window.location = "#results-section";
+    }, 3000);
   };
   return (
     <div className="app">

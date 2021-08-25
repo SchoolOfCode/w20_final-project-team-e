@@ -25,6 +25,7 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    window.location = "#loading-section";
   };
   return (
     <div className="app">

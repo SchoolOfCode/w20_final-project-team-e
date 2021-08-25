@@ -4,7 +4,7 @@ import LoadingImage from "../LoadingImage/LoadingImage";
 
 export default function LoadingSection() {
   return (
-    <div>
+    <div id="loading-section">
       <h1>Loading Section Component</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, autem

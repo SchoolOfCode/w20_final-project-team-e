@@ -3,7 +3,7 @@ import React from "react";
 import SearchCard from "../SearchCard/SearchCard";
 import HeroSection from "../HeroSection/HeroSection";
 
-export default function SearchSection() {
+export default function SearchSection(props) {
   return (
     <div>
       <h1>Search Section Component</h1>
@@ -16,7 +16,11 @@ export default function SearchSection() {
         sunt reprehenderit, excepturi voluptas et amet perspiciatis. Aliquid,
         earum.
       </p>
-      <SearchCard />
+      <SearchCard
+        state={props.formData}
+        handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}
+      />
       <HeroSection />
     </div>
   );

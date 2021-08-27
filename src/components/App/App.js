@@ -18,25 +18,7 @@ export default function App() {
   const [formData, updateFormData] = useState(initialFormData);
 
   //state for results card
-  const initialResultsData = {
-    distance: "",
-    carCarbon: "",
-    carKettles: "",
-    carTrees: "",
-    trainCarbon: "",
-    trainKettles: "",
-    trainTrees: "",
-    busCarbon: "",
-    busKettles: "",
-    busTrees: "",
-    taxiCarbon: "",
-    taxiKettles: "",
-    taxiTrees: "",
-    flightCarbon: "",
-    flightKettles: "",
-    flightTrees: "",
-  };
-  const [resultsData, updateResultsData] = useState(initialResultsData);
+  const [resultsData, updateResultsData] = useState("");
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
@@ -119,7 +101,7 @@ export default function App() {
 
     updateResultsData({
       ...resultsData,
-      distance: distance,
+      distance: distance.toFixed(2),
       carCarbon: carData.carbonEquivalent.toFixed(2),
       carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
       carTrees: Math.ceil(carData.carbonEquivalent / 24),
@@ -160,12 +142,12 @@ export default function App() {
       {/* to be fixed at the top of the page? */}
       <Menu />
       <SearchSection
-        state={formData}
+        formData={formData}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <LoadingSection />
-      <ResultsSection />
+      <LoadingSection formData={formData} />
+      <ResultsSection formData={formData} resultsData={resultsData} />
       {/* button with text to appear as overlay onclick? */}
       <HelpModal />
     </div>

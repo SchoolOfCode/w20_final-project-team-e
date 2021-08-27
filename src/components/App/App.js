@@ -101,12 +101,11 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    getFootprint();
     window.location = "#loading-section";
     setTimeout(() => {
       window.location = "#results-section";
     }, 3000);
-    getFootprint();
   };
 
   return (

@@ -10,10 +10,10 @@ export default function HeroSection() {
         <div className="item">
           <img className="hero-image" src={heroImage} alt="Travelling illustration" />
         </div>
-        <div className="item">
-          <h2>EMISSION IMPOSSIBLE</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis urna cursus eget nunc.
+        <div className="item bottom-margin">
+          <h1>EMISSION IMPOSSIBLE</h1>
+          <p className="hero-text">
+            An eco journey planner, calculating the mileage that will make emissions, impossible.
           </p>
         </div>
       </section>

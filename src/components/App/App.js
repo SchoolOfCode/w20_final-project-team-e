@@ -22,6 +22,13 @@ export default function App() {
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
+  const headers = {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
+      "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
+    },
+  };
   async function getFootprint() {
     let distanceResponse = await fetch(
       `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
@@ -32,70 +39,35 @@ export default function App() {
     //Car
     let carResponse = await fetch(
       `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${distance}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-        },
-      }
+      headers
     );
     let carData = await carResponse.json();
 
     //Train
     let trainResponse = await fetch(
       `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=NationalTrain&distance=${distance}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-        },
-      }
+      headers
     );
     let trainData = await trainResponse.json();
 
     //Bus
     let busResponse = await fetch(
       `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=ClassicBus&distance=${distance}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-        },
-      }
+      headers
     );
     let busData = await busResponse.json();
 
     //Taxi
     let taxiResponse = await fetch(
       `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-        },
-      }
+      headers
     );
     let taxiData = await taxiResponse.json();
 
     //Flight
     let flightResponse = await fetch(
       `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight?type=ShortEconomyClassFlight&distance=${distance}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-        },
-      }
+      headers
     );
     let flightData = await flightResponse.json();
 

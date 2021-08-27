@@ -10,11 +10,33 @@ import HelpModal from "../HelpModal/HelpModal";
 
 //Set state for the form data
 export default function App() {
+  //State - to/from
   const initialFormData = {
     from: "",
     to: "",
   };
   const [formData, updateFormData] = useState(initialFormData);
+
+  //state for results card
+  const initialResultsData = {
+    distance: "",
+    carCarbon: "",
+    carKettles: "",
+    carTrees: "",
+    trainCarbon: "",
+    trainKettles: "",
+    trainTrees: "",
+    busCarbon: "",
+    busKettles: "",
+    busTrees: "",
+    taxiCarbon: "",
+    taxiKettles: "",
+    taxiTrees: "",
+    flightCarbon: "",
+    flightKettles: "",
+    flightTrees: "",
+  };
+  const [resultsData, updateResultsData] = useState(initialResultsData);
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
@@ -23,9 +45,6 @@ export default function App() {
       `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
     );
     let distanceData = await distanceResponse.json();
-    console.log(
-      `Your Journey is: ${distanceData.rows[0].elements[0].distance.text}`
-    );
     let distance = distanceData.rows[0].elements[0].distance.value / 1000;
 
     //Car
@@ -41,13 +60,6 @@ export default function App() {
       }
     );
     let carData = await carResponse.json();
-    console.log(
-      `Carbon Emissions by Car: ${
-        carData.carbonEquivalent
-      } kg. This is the equivalent of ${Math.ceil(
-        carData.carbonEquivalent / 24
-      )} trees`
-    );
 
     //Train
     let trainResponse = await fetch(
@@ -62,13 +74,6 @@ export default function App() {
       }
     );
     let trainData = await trainResponse.json();
-    console.log(
-      `Carbon Emissions by Train: ${
-        trainData.carbonEquivalent
-      } kg. This is the equivalent of ${Math.ceil(
-        trainData.carbonEquivalent / 24
-      )} trees`
-    );
 
     //Bus
     let busResponse = await fetch(
@@ -83,13 +88,6 @@ export default function App() {
       }
     );
     let busData = await busResponse.json();
-    console.log(
-      `Carbon Emissions by Bus: ${
-        busData.carbonEquivalent
-      } kg. This is the equivalent of ${Math.ceil(
-        busData.carbonEquivalent / 24
-      )} trees`
-    );
 
     //Taxi
     let taxiResponse = await fetch(
@@ -104,13 +102,6 @@ export default function App() {
       }
     );
     let taxiData = await taxiResponse.json();
-    console.log(
-      `Carbon Emissions by Taxi: ${
-        taxiData.carbonEquivalent
-      } kg. This is the equivalent of ${Math.ceil(
-        taxiData.carbonEquivalent / 24
-      )} trees`
-    );
 
     //Flight
     let flightResponse = await fetch(
@@ -125,13 +116,26 @@ export default function App() {
       }
     );
     let flightData = await flightResponse.json();
-    console.log(
-      `Carbon Emissions by Air: ${
-        flightData.carbonEquivalent
-      } kg. This is the equivalent of ${Math.ceil(
-        flightData.carbonEquivalent / 24
-      )} trees`
-    );
+
+    updateResultsData({
+      ...resultsData,
+      distance: distance,
+      carCarbon: carData.carbonEquivalent.toFixed(2),
+      carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
+      carTrees: Math.ceil(carData.carbonEquivalent / 24),
+      trainCarbon: trainData.carbonEquivalent.toFixed(2),
+      trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
+      trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
+      busCarbon: busData.carbonEquivalent.toFixed(2),
+      busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
+      busTrees: Math.ceil(busData.carbonEquivalent / 24),
+      taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
+      taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
+      taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
+      flightCarbon: flightData.carbonEquivalent.toFixed(2),
+      flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
+      flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
+    });
   }
 
   const handleChange = (e) => {

@@ -1,0 +1,42 @@
+input[type="text"]::placeholder {
+  text-align: center;
+}
+.card {
+  background-color: #074445;
+}
+.card-title {
+  color: white;
+  font-size: 1.7rem;
+  padding-bottom: 10px;
+}
+.card-body {
+  width: 1000px;
+  margin: 0 auto 15px auto;
+}
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin: 0 10px 0 10px;
+}
+.form-control {
+  border-radius: 25px;
+  border: none;
+}
+.btn-primary {
+  background-color: #ff7c5b;
+  border: none;
+  border-radius: 25px;
+  width: 200px;
+  font-weight: bold;
+}
+.btn-primary:hover {
+  background-color: #e85e3b;
+}

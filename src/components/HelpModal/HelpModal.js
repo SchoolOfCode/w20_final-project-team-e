@@ -1,3 +1,4 @@
+import React from "react";
 {
   /* 
 PSUEDO CODE
@@ -13,8 +14,6 @@ STATE NEEDED
 */
 }
 
-import React from "react";
-
 export default function HelpModal({ closeModal }) {
   return (
     <div className="modalBackground">
@@ -26,19 +25,19 @@ export default function HelpModal({ closeModal }) {
         >
           X
         </button>
-        <div clasName="modalTitle1"></div>
+        <div className="modalTitle1"></div>
         <h1>About our Eco Journey Planner</h1>
-        <div clasName="modalBody1">
+        <div className="modalBody1">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>
-        <div clasName="modalTitle2"></div>
+        <div className="modalTitle2"></div>
         <h1>Creating an account</h1>
-        <div clasName="modalBody2">
+        <div className="modalBody2">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>
-        <div clasName="modalTitle3"></div>
+        <div className="modalTitle3"></div>
         <h1>Connect with </h1>
-        <div clasName="modalBody3">
+        <div className="modalBody3">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>
       </div>

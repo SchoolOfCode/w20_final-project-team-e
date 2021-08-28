@@ -10,15 +10,15 @@ export default function ResultsCard(props) {
         <div className="results-table">
           <div className="results-mileage">
             {/* This is where the mileage results are passed*/}
-            {props.resultsData}
+            <p>The journey is {props.mileageData} Km.</p>
           </div>
           <div className="results-kettles">
             {/* This is where the kettles results are passed*/}
-            {props.resultsData}
+            <p>This is the equivalent of {props.kettleData} kettles boiled.</p>
           </div>
           <div className="results-trees">
             {/* This is where the trees results are passed*/}
-            {props.resultsData}
+            <p>You would need to plant {props.treeData} trees to offset this amount of carbon.</p>
           </div>
         </div>
       </section>

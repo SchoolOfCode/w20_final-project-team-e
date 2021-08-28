@@ -16,7 +16,7 @@ input[type="text"]::placeholder {
 }
 .row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }

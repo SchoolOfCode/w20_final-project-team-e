@@ -9,7 +9,6 @@ p {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto 0 auto;
-  padding: 0 20px 0 20px;
 }
 .container {
   display: flex;
@@ -17,6 +16,7 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-top: 20px;
 }
 .item {
   display: flex;
@@ -24,13 +24,13 @@ p {
   flex-basis: 100%;
   flex: 1;
   justify-content: center;
-  padding: 40px;
-}
-.bottom-margin {
-  margin-bottom: 100px;
 }
 .hero-image {
   width: 100%;
+  margin-bottom: 10px;
+}
+.hero-text {
+  margin-bottom: 100px;
 }
 
 /* Responsive CSS */

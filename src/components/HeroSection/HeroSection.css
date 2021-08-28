@@ -1,18 +1,15 @@
 h1 {
   font-size: 3.5rem;
 }
-
 p {
   font-size: 1.3rem;
 }
-
 .main-div {
   width: 85%;
   max-width: 1500px;
   margin: 0 auto 0 auto;
   padding: 0 20px 0 20px;
 }
-
 .container {
   display: flex;
   flex-direction: row;
@@ -20,7 +17,6 @@ p {
   justify-content: center;
   width: 100%;
 }
-
 .item {
   display: flex;
   flex-direction: column;
@@ -28,17 +24,21 @@ p {
   flex: 1;
   padding: 40px;
 }
-
 .bottom-margin {
   margin-bottom: 100px;
 }
-
 .hero-image {
   width: 500px;
 }
 
 /* Responsive CSS */
 @media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
   .main-div {
     width: 85%;
     max-width: 1500px;
@@ -46,15 +46,6 @@ p {
     padding: 0 10px 0 10px;
     background-color: cyan;
   }
-
-  h1 {
-    font-size: 2.8rem;
-  }
-
-  p {
-    font-size: 1.3rem;
-  }
-
   .hero-image {
     width: 80vw;
   }

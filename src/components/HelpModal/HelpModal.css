@@ -1,0 +1,15 @@
+.openModalBtn {
+  position: sticky;
+  bottom: 100px;
+  float: right;
+  margin: 200px;
+  align-self: flex-end;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff7c5b;
+  color: white;
+  cursor: pointer;
+}

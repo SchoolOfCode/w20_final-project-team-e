@@ -1,10 +1,11 @@
 import React from "react";
+import "./HelpModal.css";
 
 export default function HelpModal({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
-        <div className="ModalCloseBtn">
+        <div className="modalCloseBtn">
           <button
             onClick={() => {
               closeModal(false);

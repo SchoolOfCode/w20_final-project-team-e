@@ -30,7 +30,7 @@ export default function App() {
       "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
     },
   };
-  
+
   async function getFootprint() {
     let distanceResponse = await fetch(
       `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
@@ -111,7 +111,7 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  
+
   return (
     <div className="app">
       {/* to be fixed at the top of the page? */}
@@ -131,7 +131,7 @@ export default function App() {
           setOpenModal(true);
         }}
       >
-        Help?
+        ?
       </button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>

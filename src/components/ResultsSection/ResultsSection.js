@@ -5,6 +5,7 @@ import busImg from "../ResultsCard/bus-icon.png";
 import carImg from "../ResultsCard/car-icon.png";
 import planeImg from "../ResultsCard/plane-icon.png";
 import taxiImg from "../ResultsCard/taxi-icon.png";
+import trainImg from "../ResultsCard/train-icon.png";
 
 export default function ResultsSection(props) {
   return (
@@ -45,7 +46,7 @@ export default function ResultsSection(props) {
         kettleData={props.resultsData.trainKettles}
         treeData={props.resultsData.trainTrees}
         formData={props.formData}
-        //vehicleImg={trainImg}
+        vehicleImg={trainImg}
       />
 
       <h4>Plane Data:</h4>

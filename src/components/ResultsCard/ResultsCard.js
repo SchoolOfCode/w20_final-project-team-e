@@ -9,15 +9,12 @@ export default function ResultsCard(props) {
       </div>
       <div className="item results-table">
         <div className=" item results-mileage">
-          {/* This is where the mileage results are passed*/}
           <p>{props.mileageData}</p>
         </div>
         <div className="item results-kettles">
-          {/* This is where the kettles results are passed*/}
           <p>{props.kettleData}</p>
         </div>
         <div className="item results-trees">
-          {/* This is where the trees results are passed*/}
           <p>{props.treeData}</p>
         </div>
       </div>

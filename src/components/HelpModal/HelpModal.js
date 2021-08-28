@@ -1,29 +1,7 @@
 import React from "react";
-{
-  /* 
-PSUEDO CODE
-
-1. If help button is clicked display a hidden information page & blur homepage background 
-2. If help button or close button is clicked hide infomation page & remove blur
-
-STATE NEEDED
-
-- help button 
-- close button 
-
-*/
-}
 
 export default function HelpModal({ closeModal }) {
   return (
-    <div>
-      <h1>Help Modal Component</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi
-        exercitationem, autem asperiores harum reiciendis explicabo architecto
-        error tempora? Iure accusantium blanditiis culpa magni vero consectetur
-        praesentium sequi nobis sed.
-      </p>
     <div className="modalBackground">
       <div className="modalContainer">
         <button

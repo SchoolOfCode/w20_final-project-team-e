@@ -8,14 +8,16 @@ export default function ResultsCard(props) {
         <img src={props.vehicleImg} alt="vehicle icon" />
       </div>
       <div className="item results-table">
-        <div className=" item results-mileage">
-          <p>{props.mileageData}</p>
-        </div>
-        <div className="item results-kettles">
-          <p>{props.kettleData}</p>
-        </div>
-        <div className="item results-trees">
-          <p>{props.treeData}</p>
+        <div className="row">
+          <div className=" item results-mileage">
+            <p>{props.mileageData}</p>
+          </div>
+          <div className="item results-kettles">
+            <p>{props.kettleData}</p>
+          </div>
+          <div className="item results-trees">
+            <p>{props.treeData}</p>
+          </div>
         </div>
       </div>
     </section>

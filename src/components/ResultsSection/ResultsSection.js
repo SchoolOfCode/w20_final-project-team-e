@@ -13,7 +13,7 @@ export default function ResultsSection(props) {
       <h1>Results Section Component</h1>
       <p>Information about your journey:</p>
 
-      <h4>Car Data:</h4>
+      {/* Car Data: */}
       <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.carKettles}
@@ -22,7 +22,7 @@ export default function ResultsSection(props) {
         vehicleImg={carImg}
       />
 
-      <h4>Taxi Data:</h4>
+      {/* Taxi Data: */}
       <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.taxiKettles}
@@ -31,7 +31,7 @@ export default function ResultsSection(props) {
         vehicleImg={taxiImg}
       />
 
-      <h4>Bus Data:</h4>
+      {/* Bus Data: */}
       <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.busKettles}
@@ -40,7 +40,7 @@ export default function ResultsSection(props) {
         vehicleImg={busImg}
       />
 
-      <h4>Train Data:</h4>
+      {/* Train Data: */}
       <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.trainKettles}
@@ -49,7 +49,7 @@ export default function ResultsSection(props) {
         vehicleImg={trainImg}
       />
 
-      <h4>Plane Data:</h4>
+      {/* Plane Data: */}
       <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.flightKettles}

@@ -3,6 +3,7 @@ input[type="text"]::placeholder {
 }
 .card {
   background-color: #074445;
+  border-radius: 0 50px 0 50px;
 }
 .card-title {
   color: white;

@@ -4,13 +4,15 @@ export default function HelpModal({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
-        <button
-          onClick={() => {
-            closeModal(false);
-          }}
-        >
-          X
-        </button>
+        <div className="ModalCloseBtn">
+          <button
+            onClick={() => {
+              closeModal(false);
+            }}
+          >
+            X
+          </button>
+        </div>
         <div className="modalTitle1"></div>
         <h1>About our Eco Journey Planner</h1>
         <div className="modalBody1">

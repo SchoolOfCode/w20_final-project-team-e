@@ -1,41 +1,37 @@
 import React from "react";
 
 export default function ResultsCard(props) {
-    
   return (
-      <section>
-        <div className="transport-icon">
-          {/* <img /> */}
+    <section>
+      <div className="transport-icon">{/* <img /> */}</div>
+      <div className="results-table">
+        <div className="results-mileage">
+          {/* This is where the mileage results are passed*/}
+          <p>{props.mileageData}</p>
         </div>
-        <div className="results-table">
-          <div className="results-mileage">
-            {/* This is where the mileage results are passed*/}
-            <p>The journey is {props.mileageData} Km.</p>
-          </div>
-          <div className="results-kettles">
-            {/* This is where the kettles results are passed*/}
-            <p>This is the equivalent of {props.kettleData} kettles boiled.</p>
-          </div>
-          <div className="results-trees">
-            {/* This is where the trees results are passed*/}
-            <p>You would need to plant {props.treeData} trees to offset this amount of carbon.</p>
-          </div>
+        <div className="results-kettles">
+          {/* This is where the kettles results are passed*/}
+          <p>{props.kettleData}</p>
         </div>
-      </section>
-    )
+        <div className="results-trees">
+          {/* This is where the trees results are passed*/}
+          <p>{props.treeData}</p>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 // PSUEDO CODE
 
 //1. define plain table with html
-    // Make a grid of 6(rows) by 4(columns)
-    // Create a border around row 2 to row 6
-    // Remove separators from columns 2 and 3
-    // Change colour to green and increase line weight
-//2. Get the Data we want to display 
+// Make a grid of 6(rows) by 4(columns)
+// Create a border around row 2 to row 6
+// Remove separators from columns 2 and 3
+// Change colour to green and increase line weight
+//2. Get the Data we want to display
 //3. Define colums for the table
-//4. include desired css 
-
+//4. include desired css
 
 // export default function ResultsCard(props) {
 //   return (

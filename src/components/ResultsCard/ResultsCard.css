@@ -1,0 +1,30 @@
+img {
+  width: 100px;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 30%;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin: 0 20px 0 20px;
+}
+
+.results-table {
+  background-color: cadetblue;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import ResultsCard from "../ResultsCard/ResultsCard";
-import bicycleImg from "../ResultsCard/bicycle-icon.png";
+//import bicycleImg from "../ResultsCard/bicycle-icon.png";
 import busImg from "../ResultsCard/bus-icon.png";
 import carImg from "../ResultsCard/car-icon.png";
 import planeImg from "../ResultsCard/plane-icon.png";
@@ -18,6 +18,7 @@ export default function ResultsSection(props) {
         kettleData={props.resultsData.carKettles}
         treeData={props.resultsData.carTrees}
         formData={props.formData}
+        vehicleImg={carImg}
       />
 
       <h4>Taxi Data:</h4>
@@ -26,6 +27,7 @@ export default function ResultsSection(props) {
         kettleData={props.resultsData.taxiKettles}
         treeData={props.resultsData.taxiTrees}
         formData={props.formData}
+        vehicleImg={taxiImg}
       />
 
       <h4>Bus Data:</h4>
@@ -34,6 +36,7 @@ export default function ResultsSection(props) {
         kettleData={props.resultsData.busKettles}
         treeData={props.resultsData.busTrees}
         formData={props.formData}
+        vehicleImg={busImg}
       />
 
       <h4>Train Data:</h4>
@@ -42,6 +45,7 @@ export default function ResultsSection(props) {
         kettleData={props.resultsData.trainKettles}
         treeData={props.resultsData.trainTrees}
         formData={props.formData}
+        //vehicleImg={trainImg}
       />
 
       <h4>Plane Data:</h4>
@@ -50,6 +54,7 @@ export default function ResultsSection(props) {
         kettleData={props.resultsData.flightKettles}
         treeData={props.resultsData.flightTrees}
         formData={props.formData}
+        vehicleImg={planeImg}
       />
     </div>
   );

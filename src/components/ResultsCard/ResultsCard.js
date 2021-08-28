@@ -5,7 +5,7 @@ export default function ResultsCard(props) {
   return (
     <section className="results-container">
       <div className="item transport-icon">
-        <img src={props.vehicleImg} />
+        <img src={props.vehicleImg} alt="vehicle icon" />
       </div>
       <div className="item results-table">
         <div className=" item results-mileage">

@@ -7,6 +7,8 @@ img {
   flex-direction: row;
   flex-wrap: nowrap;
   width: 30%;
+  font-size: 2rem;
+  font-weight: bolder;
 }
 
 .item {

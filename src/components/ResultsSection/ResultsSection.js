@@ -33,7 +33,7 @@ export default function ResultsSection(props) {
 
       <h4>Bus Data:</h4>
       <ResultsCard
-        mileageData={props.resultsData.busKettles}
+        mileageData={props.resultsData.distance}
         kettleData={props.resultsData.busKettles}
         treeData={props.resultsData.busTrees}
         formData={props.formData}

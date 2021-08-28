@@ -1,19 +1,20 @@
 import React from "react";
+import "../ResultsCard/ResultsCard.css";
 
 export default function ResultsCard(props) {
   return (
-    <section>
-      <div className="transport-icon">{/* <img /> */}</div>
-      <div className="results-table">
-        <div className="results-mileage">
+    <section className="results-container">
+      <div className="item transport-icon">{/* <img /> */}</div>
+      <div className="item results-table">
+        <div className=" item results-mileage">
           {/* This is where the mileage results are passed*/}
           <p>{props.mileageData}</p>
         </div>
-        <div className="results-kettles">
+        <div className="item results-kettles">
           {/* This is where the kettles results are passed*/}
           <p>{props.kettleData}</p>
         </div>
-        <div className="results-trees">
+        <div className="item results-trees">
           {/* This is where the trees results are passed*/}
           <p>{props.treeData}</p>
         </div>
@@ -25,7 +26,7 @@ export default function ResultsCard(props) {
 // PSUEDO CODE
 
 //1. define plain table with html
-// Make a grid of 6(rows) by 4(columns)
+// Make a grid of 6(rows) by 2(columns)
 // Create a border around row 2 to row 6
 // Remove separators from columns 2 and 3
 // Change colour to green and increase line weight

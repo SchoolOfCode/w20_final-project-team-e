@@ -10,7 +10,7 @@ import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
 //Set state for the form data
-function App() {
+export default function App() {
   //State - to/from
   const initialFormData = {
     from: "",

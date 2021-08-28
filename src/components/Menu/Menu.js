@@ -2,8 +2,12 @@ import React from "react";
 
 export default function Menu() {
   return (
-    <div>
-      <h1>Menu Component</h1>
-    </div>
+    <nav class="navbar sticky-top navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#search-section">
+          EMISSION IMPOSSIBLE
+        </a>
+      </div>
+    </nav>
   );
 }

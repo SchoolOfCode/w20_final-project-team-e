@@ -4,7 +4,7 @@ import SearchCard from "../SearchCard/SearchCard";
 
 export default function SearchSection(props) {
   return (
-    <div>
+    <div id="search-section">
       <h1>Search Section Component</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, autem

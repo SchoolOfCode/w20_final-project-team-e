@@ -125,9 +125,6 @@ export default function App() {
       <LoadingSection formData={formData} />
       <ResultsSection formData={formData} resultsData={resultsData} />
       {/* button with text to appear as overlay onclick? */}
-      <HelpModal />
-      <SearchSection />
-      <LoadingSection />
       <button
         className="openModalBtn"
         onClick={() => {

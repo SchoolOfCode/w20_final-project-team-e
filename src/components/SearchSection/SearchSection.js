@@ -20,7 +20,6 @@ export default function SearchSection(props) {
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}
       />
-      <SearchCard />
     </div>
   );
 }

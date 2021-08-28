@@ -30,7 +30,7 @@ export default function SearchCard(props) {
             ></input>
           </div>
           {/*         
-onlcick of this button, run loading page for a few seconds, then load results page */}
+onclick of this button, run loading page for a few seconds, then load results page */}
           <button
             type="submit"
             className="btn btn-primary"
@@ -42,4 +42,4 @@ onlcick of this button, run loading page for a few seconds, then load results pa
       </div>
     </div>
   );
-}
+};

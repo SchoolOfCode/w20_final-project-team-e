@@ -1,7 +1,6 @@
 import React from "react";
 
 import SearchCard from "../SearchCard/SearchCard";
-import HeroSection from "../HeroSection/HeroSection";
 
 export default function SearchSection(props) {
   return (
@@ -21,7 +20,7 @@ export default function SearchSection(props) {
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}
       />
-      <HeroSection />
+      <SearchCard />
     </div>
   );
 }

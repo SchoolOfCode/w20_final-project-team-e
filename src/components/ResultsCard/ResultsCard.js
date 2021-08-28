@@ -4,7 +4,9 @@ import "../ResultsCard/ResultsCard.css";
 export default function ResultsCard(props) {
   return (
     <section className="results-container">
-      <div className="item transport-icon">{/* add stock image*/}</div>
+      <div className="item transport-icon">
+        <img src={vehicleImg} />
+      </div>
       <div className="item results-table">
         <div className=" item results-mileage">
           {/* This is where the mileage results are passed*/}

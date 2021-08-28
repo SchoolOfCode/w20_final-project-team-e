@@ -1,13 +1,10 @@
 import React from "react";
 import "../ResultsCard/ResultsCard.css";
-import placeholderImg from "../ResultsCard/placeholder-image.png";
 
 export default function ResultsCard(props) {
   return (
     <section className="results-container">
-      <div className="item transport-icon">
-        <img src={placeholderImg} />
-      </div>
+      <div className="item transport-icon">{/* add stock image*/}</div>
       <div className="item results-table">
         <div className=" item results-mileage">
           {/* This is where the mileage results are passed*/}

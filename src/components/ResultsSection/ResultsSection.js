@@ -1,5 +1,10 @@
 import React from "react";
 import ResultsCard from "../ResultsCard/ResultsCard";
+import bicycleImg from "../ResultsCard/bicycle-icon.png";
+import busImg from "../ResultsCard/bus-icon.png";
+import carImg from "../ResultsCard/car-icon.png";
+import planeImg from "../ResultsCard/plane-icon.png";
+import taxiImg from "../ResultsCard/taxi-icon.png";
 
 export default function ResultsSection(props) {
   return (
@@ -8,7 +13,7 @@ export default function ResultsSection(props) {
       <p>Information about your journey:</p>
 
       <h4>Car Data:</h4>
-      <ResultsCard 
+      <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.carKettles}
         treeData={props.resultsData.carTrees}
@@ -16,7 +21,7 @@ export default function ResultsSection(props) {
       />
 
       <h4>Taxi Data:</h4>
-      <ResultsCard 
+      <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.taxiKettles}
         treeData={props.resultsData.taxiTrees}
@@ -24,7 +29,7 @@ export default function ResultsSection(props) {
       />
 
       <h4>Bus Data:</h4>
-      <ResultsCard 
+      <ResultsCard
         mileageData={props.resultsData.busKettles}
         kettleData={props.resultsData.busKettles}
         treeData={props.resultsData.busTrees}
@@ -32,7 +37,7 @@ export default function ResultsSection(props) {
       />
 
       <h4>Train Data:</h4>
-      <ResultsCard 
+      <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.trainKettles}
         treeData={props.resultsData.trainTrees}
@@ -40,13 +45,12 @@ export default function ResultsSection(props) {
       />
 
       <h4>Plane Data:</h4>
-      <ResultsCard 
+      <ResultsCard
         mileageData={props.resultsData.distance}
         kettleData={props.resultsData.flightKettles}
         treeData={props.resultsData.flightTrees}
         formData={props.formData}
       />
-
     </div>
   );
 }

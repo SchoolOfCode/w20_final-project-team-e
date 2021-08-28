@@ -1,7 +1,6 @@
 import { useState } from "react";
 import React from "react";
 import "./App.css";
-import { useState } from "react";
 
 import SearchSection from "../SearchSection/SearchSection";
 import HeroSection from "../HeroSection/HeroSection";
@@ -11,7 +10,7 @@ import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
 //Set state for the form data
-export default function App() {
+function App() {
   //State - to/from
   const initialFormData = {
     from: "",
@@ -111,7 +110,6 @@ export default function App() {
     }, 3000);
   };
 
-function App() {
   const [openModal, setOpenModal] = useState(false);
   
   return (
@@ -142,5 +140,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

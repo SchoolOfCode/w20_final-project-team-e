@@ -10,6 +10,18 @@
   background-color: #ff7c5b;
   color: white;
   cursor: pointer;
+  font-size: xx-large;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200, 0.5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .modalContainer {
@@ -32,16 +44,6 @@
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
-} */
-
-/* .modalBackground {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(200, 200, 200);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 } */
 
 .modalCloseBtn {

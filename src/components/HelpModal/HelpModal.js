@@ -15,18 +15,21 @@ export default function HelpModal({ closeModal }) {
             X
           </button>
         </div>
-        <div className="modalTitle1"></div>
-        <h1>About our Eco Journey Planner</h1>
+        <div className="modalTitle1">
+          <h1>About our Eco Journey Planner</h1>
+        </div>
         <div className="modalBody1">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>
-        <div className="modalTitle2"></div>
-        <h1>Creating an account</h1>
+        <div className="modalTitle2">
+          <h1>Creating an account</h1>
+        </div>
         <div className="modalBody2">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>
-        <div className="modalTitle3"></div>
-        <h1>Connect with </h1>
+        <div className="modalTitle3">
+          <h1>Connect with </h1>
+        </div>
         <div className="modalBody3">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         </div>

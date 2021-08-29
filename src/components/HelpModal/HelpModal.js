@@ -5,8 +5,9 @@ export default function HelpModal({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
-        <div className="modalCloseBtn">
+        <div>
           <button
+            className="modalCloseBtn"
             onClick={() => {
               closeModal(false);
             }}

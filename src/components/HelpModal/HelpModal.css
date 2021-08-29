@@ -12,16 +12,29 @@
   cursor: pointer;
 }
 
-.modalContainer .body {
+.modalContainer {
+  position: absolute;
+  top: 0;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 150px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* .modalContainer .body {
   flex: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
-}
+} */
 
-.modalBackground {
+/* .modalBackground {
   width: 100vw;
   height: 100vh;
   background-color: rgba(200, 200, 200);
@@ -29,24 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.modalContainer {
-  width: 500px;
-  height: 500px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-}
-
-.modalContainer .modalTitle1 {
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-}
+} */
 
 .modalCloseBtn {
   display: flex;

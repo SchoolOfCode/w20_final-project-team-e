@@ -20,8 +20,8 @@
   position: fixed;
   top: 0;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
 }
 
 .modalContainer {
@@ -48,9 +48,13 @@
 
 .modalCloseBtn {
   display: flex;
-  justify-content: flex-end;
+  float: right;
   background-color: transparent;
   border: none;
   font-size: 50px;
   cursor: pointer;
 }
+
+/* need to insert mdia query to handle modal button
+ need to insert scroll
+ need to move button up z index */

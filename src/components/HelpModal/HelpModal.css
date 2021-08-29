@@ -1,0 +1,61 @@
+.openModalBtn {
+  position: sticky;
+  bottom: 100px;
+  float: right;
+  margin: 200px;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff7c5b;
+  color: white;
+  cursor: pointer;
+  font-size: xx-large;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200, 0.5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer {
+  position: absolute;
+  top: 0;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 150px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* .modalContainer .body {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+} */
+
+.modalCloseBtn {
+  display: flex;
+  float: right;
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+/* need to insert mdia query to handle modal button
+ need to insert scroll
+ need to move button up z index 
+ need to  arrange notes and images in columns*/

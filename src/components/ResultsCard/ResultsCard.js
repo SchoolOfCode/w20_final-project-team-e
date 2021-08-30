@@ -1,24 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 // import "../ResultsCard/ResultsCard.css";
+// import GiCommercialAirplane from "react-icons/gi";
 
 export default function ResultsCard(props) {
   return (
     <StyledResultsCard>
-      <div className="item transport-icon">
-        <img src={props.vehicleImg} alt="vehicle icon" />
-      </div>
-      <div className="item results-table">
-        <div className="row">
-          <div className=" item results-mileage">
-            <p>{props.mileageData}</p>
-          </div>
-          <div className="item results-kettles">
-            <p>{props.kettleData}</p>
-          </div>
-          <div className="item results-trees">
-            <p>{props.treeData}</p>
-          </div>
+      {/* <div className="transport-icon"> */}
+      <img src={props.vehicleImg} alt="vehicle icon" />
+      {/* </div> */}
+      <div className="results-table">
+        <div className=" item results-mileage">
+          <p>{props.mileageData}</p>
+        </div>
+        <div className="item results-kettles">
+          <p>{props.kettleData}</p>
+        </div>
+        <div className="item results-trees">
+          <p>{props.treeData}</p>
         </div>
       </div>
     </StyledResultsCard>
@@ -27,37 +26,45 @@ export default function ResultsCard(props) {
 
 const StyledResultsCard = styled.section`
   display: flex;
+  background-color: pink;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: center;
-  width: 30%;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
   font-size: 2rem;
   font-weight: bolder;
 
   img {
-    // transform: scale(0.5);
+    transform: scale(1);
     width: 100px;
-    height: 100px;
   }
-  .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
+
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-basis: 100%;
     margin: 0 20px 0 20px;
+    width: 150px;
+
+    //border-radius: 15px 50px;
   }
+
+  .transport-icon {
+    width: 350px;
+  }
+
   .results-table {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
     padding: 50px;
-    background-color: white;
+    // background-color: white;
     border-style: solid solid none solid;
     border-color: #64a7a8;
     border-width: 3px;
-    border-radius: 15px 50px;
+    border-radius: 0 0 0 10px;
   }
 `;
 

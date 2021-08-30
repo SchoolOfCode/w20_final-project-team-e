@@ -35,7 +35,8 @@ const StyledResultsCard = styled.section`
   font-weight: bolder;
 
   img {
-    width: 100px;
+    width: 50px;
+    hieght: 50px;
   }
   .row {
     display: flex;
@@ -45,12 +46,17 @@ const StyledResultsCard = styled.section`
   .item {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex-basis: 100%;
-    flex: 1;
     margin: 0 20px 0 20px;
   }
   .results-table {
-    background-color: cadetblue;
+    padding: 50px;
+    background-color: white;
+    border-style: solid solid none solid;
+    border-color: #64a7a8;
+    border-width: 3px;
+    // border-radius: 15px 50px;
   }
 `;
 

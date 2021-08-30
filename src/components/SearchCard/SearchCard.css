@@ -9,12 +9,14 @@ input[type="text"]::placeholder {
   color: white;
   font-size: 1.7rem;
   padding-bottom: 10px;
+  visibility: hidden;
 }
 .card-body {
   width: 1000px;
-  margin: 15px auto 15px auto;
+  margin: -37px auto 15px auto;
+  /* there is a minus margin present to hide the hidden H5 element */
 }
-.row {
+.flex-container {
   display: flex;
   width: 100%;
   margin: 0;
@@ -38,20 +40,62 @@ input[type="text"]::placeholder {
 .form-control {
   border-radius: 25px;
   border: none;
+  height: 45px;
 }
 .btn-primary {
   background-color: #ff7c5b;
   border: none;
   border-radius: 25px;
   font-weight: bold;
+  height: 45px;
 }
 .btn-primary:hover {
   background-color: #e85e3b;
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1080px) {
+  .card-body {
+    width: 100%;
+    margin: -37px auto 15px auto;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .card {
+    padding: 15px 10px 15px 10px;
+  }
+  .card-title {
+    text-align: left;
+    visibility: visible;
+  }
   .card-body {
     width: 100%;
     margin: 15px auto 15px auto;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .search-input {
+    display: flex;
+    flex-direction: row;
+    flex: 2 0 0%;
+    margin: 10px 0 10px 0;
+    width: 100%;
+  }
+  .btn-submit {
+    display: flex;
+    flex-direction: row;
+    flex: 2 0 0%;
+    margin: 10px 0 10px 0;
+    width: 100%;
+  }
+  .form-control {
+    height: 45px;
+  }
+  .btn-primary {
+    /* margin: 0 auto 0 auto; */
+    width: 50%;
+    height: 45px;
   }
 }

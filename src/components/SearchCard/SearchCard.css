@@ -12,11 +12,10 @@ input[type="text"]::placeholder {
 }
 .card-body {
   width: 1000px;
-  margin: 0 auto 15px auto;
+  margin: 15px auto 15px auto;
 }
 .row {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   margin: 0;
 }
@@ -26,6 +25,7 @@ input[type="text"]::placeholder {
   flex-basis: 100%;
   flex: 2 0 0%;
   margin: 0 10px 0 10px;
+  width: 100%;
 }
 .btn-submit {
   display: flex;
@@ -33,6 +33,7 @@ input[type="text"]::placeholder {
   flex-basis: 100%;
   flex: 1 0 0%;
   margin: 0 10px 0 10px;
+  width: 100%;
 }
 .form-control {
   border-radius: 25px;
@@ -42,9 +43,15 @@ input[type="text"]::placeholder {
   background-color: #ff7c5b;
   border: none;
   border-radius: 25px;
-  width: 200px;
   font-weight: bold;
 }
 .btn-primary:hover {
   background-color: #e85e3b;
+}
+
+@media only screen and (max-width: 1020px) {
+  .card-body {
+    width: 100%;
+    margin: 15px auto 15px auto;
+  }
 }

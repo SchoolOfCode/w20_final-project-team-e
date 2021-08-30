@@ -5,7 +5,7 @@ export default function SearchCard(props) {
   return (
     <div className="card text-center">
       <div className="card-body">
-        <h5 className="card-title">Calculate Your Journey</h5>
+        {/* <h5 className="card-title">Calculate Your Journey</h5> */}
         <form className="row">
           <div className="search-input">
             <input

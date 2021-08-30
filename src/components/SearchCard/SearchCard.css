@@ -64,8 +64,10 @@ input[type="text"]::placeholder {
     padding: 15px 10px 15px 10px;
   }
   .card-title {
+    font-size: 1.8em;
     text-align: left;
     visibility: visible;
+    margin-bottom: 20px;
   }
   .card-body {
     width: 100%;

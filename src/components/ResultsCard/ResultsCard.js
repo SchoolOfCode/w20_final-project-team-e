@@ -1,9 +1,10 @@
 import React from "react";
-import "../ResultsCard/ResultsCard.css";
+import styled from "styled-components";
+// import "../ResultsCard/ResultsCard.css";
 
 export default function ResultsCard(props) {
   return (
-    <section className="results-container">
+    <StyledResultsCard>
       <div className="item transport-icon">
         <img src={props.vehicleImg} alt="vehicle icon" />
       </div>
@@ -20,9 +21,38 @@ export default function ResultsCard(props) {
           </div>
         </div>
       </div>
-    </section>
+    </StyledResultsCard>
   );
 }
+
+const StyledResultsCard = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 30%;
+  font-size: 2rem;
+  font-weight: bolder;
+
+  img {
+    width: 100px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 0 20px 0 20px;
+  }
+  .results-table {
+    background-color: cadetblue;
+  }
+`;
 
 // PSUEDO CODE
 

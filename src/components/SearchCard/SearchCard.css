@@ -59,6 +59,7 @@ input[type="text"]::placeholder {
     margin: -37px auto 15px auto;
   }
 }
+
 @media only screen and (max-width: 700px) {
   .card {
     padding: 15px 10px 15px 10px;

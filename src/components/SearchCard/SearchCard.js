@@ -6,8 +6,8 @@ export default function SearchCard(props) {
     <div className="card text-center">
       <div className="card-body">
         <h5 className="card-title">Calculate Your Journey</h5>
-        <form className="row">
-          <div className="column">
+        <form className="flex-container">
+          <div className="search-input">
             <input
               type="text"
               className="form-control"
@@ -18,7 +18,7 @@ export default function SearchCard(props) {
               onChange={props.handleChange}
             ></input>
           </div>
-          <div className="column">
+          <div className="search-input">
             <input
               type="text"
               className="form-control"
@@ -30,7 +30,7 @@ export default function SearchCard(props) {
           </div>
           {/*         
 onlcick of this button, run loading page for a few seconds, then load results page */}
-          <div className="column">
+          <div className="btn-submit">
             <button
               type="submit"
               className="btn btn-primary"

@@ -25,13 +25,13 @@ export default function ResultsCard(props) {
 
 const StyledResultsCard = styled.section`
   display: flex;
-  background-color: pink;
+  background-color: purple;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 500px;
-  font-size: 2rem;
+  // font-size: 2rem;
   font-weight: bolder;
 
   img {
@@ -44,26 +44,26 @@ const StyledResultsCard = styled.section`
     flex-direction: column;
     align-items: center;
     flex-basis: 100%;
-    margin: 0 20px 0 20px;
-    width: 150px;
-
-    //border-radius: 15px 50px;
+    width: 200px;
   }
 
   // .transport-icon {
   //   width: 350px;
+
   // }
 
   .results-table {
     display: flex;
     flex-direction: row;
-    width: 400px;
-    padding: 50px;
-    // background-color: white;
+    width: 500px;
+    padding: 100px;
     border-style: solid solid none solid;
     border-color: #64a7a8;
     border-width: 3px;
+    // background-color: white;
     // border-radius: 0 0 0 10px;
+    // margin: 0 20px 0 20px;
+    // border-radius: 15px 50px;
   }
 `;
 

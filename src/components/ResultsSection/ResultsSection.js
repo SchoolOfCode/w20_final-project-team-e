@@ -15,9 +15,9 @@ export default function ResultsSection(props) {
       <div className="results-headings">
         <div className="empty"></div>
         <div className="results-title">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
+          <p>1 mileage</p>
+          <p>2 kettles</p>
+          <p>3 trees</p>
         </div>
       </div>
 

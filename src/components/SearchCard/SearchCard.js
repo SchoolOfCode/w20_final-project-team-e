@@ -3,7 +3,7 @@ import "./SearchCard.css";
 
 export default function SearchCard(props) {
   return (
-    <div className="card text-center">
+    <div className="card text-center" id="homescreen">
       <div className="card-body">
         <h5 className="card-title">Calculate Your Journey</h5>
         <form className="flex-container">

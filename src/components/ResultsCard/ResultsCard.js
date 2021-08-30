@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 // import "../ResultsCard/ResultsCard.css";
-// import GiCommercialAirplane from "react-icons/gi";
 
 export default function ResultsCard(props) {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import ResultsCard from "../ResultsCard/ResultsCard";
 //import bicycleImg from "../ResultsCard/bicycle-icon.png";
+import kettleSVG from "/Users/catherinebutler/Documents/school-of-code/w20_final-project-team-e/src/images/kettle-icon.svg";
 import busImg from "../ResultsCard/bus-icon.png";
 import carImg from "../ResultsCard/car-icon.png";
 import planeImg from "../ResultsCard/plane-icon.png";
@@ -16,12 +17,15 @@ export default function ResultsSection(props) {
         {/* <div className="empty"></div> */}
         <div className="mileage-title">
           <p>1 mileage</p>
+          <img src={kettleSVG} alt="kettle icon" />
         </div>
         <div className="kettles-title">
           <p>2 kettles</p>
+          <img src={kettleSVG} alt="kettle icon" />
         </div>
         <div className="trees-title">
           <p>3 trees</p>
+          <img src={kettleSVG} alt="kettle icon" />
         </div>
       </div>
 

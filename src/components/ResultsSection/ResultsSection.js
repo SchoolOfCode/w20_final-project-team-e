@@ -13,10 +13,14 @@ export default function ResultsSection(props) {
     <StyledResultsSection>
       {/* <p>Information about your journey:</p> */}
       <div className="results-headings">
-        <div className="empty"></div>
-        <div className="results-title">
+        {/* <div className="empty"></div> */}
+        <div className="mileage-title">
           <p>1 mileage</p>
+        </div>
+        <div className="kettles-title">
           <p>2 kettles</p>
+        </div>
+        <div className="trees-title">
           <p>3 trees</p>
         </div>
       </div>
@@ -60,7 +64,7 @@ export default function ResultsSection(props) {
 
         {/* Plane Data: */}
         <ResultsCard
-          id="plane-card"
+          // id="plane-card"
           mileageData={props.resultsData.distance}
           kettleData={props.resultsData.flightKettles}
           treeData={props.resultsData.flightTrees}
@@ -107,25 +111,25 @@ const StyledResultsSection = styled.section`
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-end;
     background-color: red;
 
-    .empty {
-      width: 100px;
-      background-color: blue;
-    }
+    // .empty {
+    //   width: 0px;
+    //   background-color: blue;
+    // }
 
-    p {
+    .mileage-title {
       width: 150px;
-      color: white;
+      background-color: violet;
+    }
+    .kettles-title {
+      width: 150px;
+      background-color: yellow;
+    }
+    .trees-title {
+      width: 150px;
+      background-color: cyan;
     }
   }
-
-  // .results-items {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   flex-direction: column;
-  //   background-color: blue;
-  // }
 `;

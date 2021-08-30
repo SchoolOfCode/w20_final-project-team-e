@@ -6,9 +6,9 @@ import styled from "styled-components";
 export default function ResultsCard(props) {
   return (
     <StyledResultsCard>
-      {/* <div className="transport-icon"> */}
-      <img src={props.vehicleImg} alt="vehicle icon" />
-      {/* </div> */}
+      <div className="transport-icon">
+        <img src={props.vehicleImg} alt="vehicle icon" />
+      </div>
       <div className="results-table">
         <div className=" item results-mileage">
           <p>{props.mileageData}</p>
@@ -51,9 +51,9 @@ const StyledResultsCard = styled.section`
     //border-radius: 15px 50px;
   }
 
-  .transport-icon {
-    width: 350px;
-  }
+  // .transport-icon {
+  //   width: 350px;
+  // }
 
   .results-table {
     display: flex;
@@ -64,7 +64,7 @@ const StyledResultsCard = styled.section`
     border-style: solid solid none solid;
     border-color: #64a7a8;
     border-width: 3px;
-    border-radius: 0 0 0 10px;
+    // border-radius: 0 0 0 10px;
   }
 `;
 

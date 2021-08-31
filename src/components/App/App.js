@@ -133,7 +133,7 @@ export default function App() {
           setOpenModal(true);
         }}
       >
-        Help?
+        ?
       </button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>

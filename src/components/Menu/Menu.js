@@ -1,11 +1,17 @@
 import React from "react";
+import "./Menu.css";
+import Logo from "../../images/nav_logo_mobile.png";
 
 export default function Menu() {
   return (
-    <nav class="navbar sticky-top navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#search-section">
-          EMISSION IMPOSSIBLE
+    <nav className="navbar sticky-top">
+      <div className="container-fluid">
+        <a href="#homescreen">
+          <img 
+            className="nav-logo"
+            src={Logo}
+            alt="Emission Impossible logo"
+          />
         </a>
       </div>
     </nav>

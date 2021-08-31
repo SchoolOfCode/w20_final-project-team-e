@@ -17,56 +17,62 @@ export default function ResultsSection(props) {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Distance {kettleSVG}</th>
-              <th scope="col">Kettles{kettleSVG}</th>
-              <th scope="col">Trees{kettleSVG}</th>
+              <th scope="col">
+                Distance <img src={kettleSVG} alt="kettle" width="100px"></img>
+              </th>
+              <th scope="col">
+                Kettles<img src={kettleSVG} alt="kettle" width="100px"></img>
+              </th>
+              <th scope="col">
+                Trees<img src={kettleSVG} alt="kettle" width="100px"></img>
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               {/* Car Data: */}
-              <th scope="row">1</th>
-              {/* <td>{carIcon}</td> */}
+              <th scope="row">
+                <img src={carIcon} alt="car" width="100px"></img>
+              </th>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.carKettles}</td>
               <td>{props.resultsData.carTrees}</td>
             </tr>
             <tr>
               {/* Taxi Data: */}
-              <th scope="row">2</th>
-              <td>{taxiIcon}</td>
+              <th scope="row">
+                <img src={taxiIcon} alt="taxi" width="100px"></img>
+              </th>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.taxiKettles}</td>
               <td>{props.resultsData.taxiTrees}</td>
             </tr>
             <tr>
               {/* Bus Data: */}
-              <th scope="row">3</th>
-              <td>{busIcon}</td>
+              <th scope="row">
+                <img src={busIcon} alt="bus" width="100px"></img>
+              </th>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.busKettles}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
             <tr>
               {/* Train Data: */}
-              <th scope="row">4</th>
-              <td>{trainIcon}</td>
+              <th scope="row">
+                <img src={trainIcon} alt="train" width="100px"></img>
+              </th>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.trainKettles}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
             <tr>
               {/* Plane Data: */}
-              <th scope="row">5</th>
-              <td>{planeIcon}</td>
+              <th scope="row">
+                <img src={planeIcon} alt="plane" width="100px"></img>
+              </th>
               <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.planeKettles}</td>
-              <td>{props.resultsData.planeTrees}</td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td colspan="1">Larry the Bird</td>
-              <td>@twitter</td>
+              <td>{props.resultsData.flightKettles}</td>
+              <td>{props.resultsData.flightTrees}</td>
             </tr>
           </tbody>
         </table>

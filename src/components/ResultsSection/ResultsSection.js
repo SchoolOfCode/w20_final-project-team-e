@@ -1,11 +1,12 @@
 import React from "react";
+import "./ResultsSection.css";
 import ResultsCard from "../ResultsCard/ResultsCard";
 //import bicycleImg from "../ResultsCard/bicycle-icon.png";
-import busImg from "../ResultsCard/bus-icon.png";
-import carImg from "../ResultsCard/car-icon.png";
-import planeImg from "../ResultsCard/plane-icon.png";
-import taxiImg from "../ResultsCard/taxi-icon.png";
-import trainImg from "../ResultsCard/train-icon.png";
+import busImg from "../../images/bus-icon.png";
+import carImg from "../../images/car-icon.png";
+import planeImg from "../../images/plane-icon.png";
+import taxiImg from "../../images/taxi-icon.png";
+import trainImg from "../../images/train-icon.png";
 
 export default function ResultsSection(props) {
   return (

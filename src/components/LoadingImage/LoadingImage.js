@@ -1,9 +1,11 @@
 import React from "react";
+import "./LoadingImage.css"
+import loadingAnimation from "../../images/loading-animation.gif"
 
 export default function LoadingImage() {
   return (
     <div>
-      <h2>Loading Image Component</h2>
+      <img className="loading-animation" src={loadingAnimation} alt="Car moving through space" />
     </div>
   );
-}
+};

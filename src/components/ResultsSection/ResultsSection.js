@@ -1,4 +1,5 @@
 import React from "react";
+import "../ResultsSection/ResultsSection.css";
 // import ResultsCard from "../ResultsCard/ResultsCard";
 import kettleSVG from "../../images/kettle-icon.svg";
 import carIcon from "../ResultsCard/car-icon.png";
@@ -13,7 +14,7 @@ export default function ResultsSection(props) {
   return (
     <section>
       <div>
-        <table class="table">
+        <table class="table" className="results-table">
           <thead>
             <tr>
               <th scope="col">#</th>

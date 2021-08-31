@@ -10,9 +10,9 @@ export default function HeroSection() {
         <div className="item">
           <img className="hero-image" src={heroImage} alt="Travelling illustration" />
         </div>
-        <div className="item bottom-margin">
+        <div className="item hero-text">
           <h1>EMISSION IMPOSSIBLE</h1>
-          <p className="hero-text">
+          <p className="hero-p">
             An eco journey planner, calculating the mileage that will make emissions, impossible.
           </p>
         </div>

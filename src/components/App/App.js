@@ -6,6 +6,7 @@ import SearchSection from "../SearchSection/SearchSection";
 import HeroSection from "../HeroSection/HeroSection";
 import LoadingSection from "../LoadingSection/LoadingSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
+// import ResultsCard from "../ResultsCard/ResultsCard";
 import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
@@ -124,6 +125,7 @@ export default function App() {
       />
       <LoadingSection formData={formData} />
       <ResultsSection formData={formData} resultsData={resultsData} />
+      {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
       {/* button with text to appear as overlay onclick? */}
       <button
         className="openModalBtn"

@@ -1,14 +1,14 @@
 h1 {
   font-size: 3.5rem;
+  font-weight: bolder;
 }
 p {
   font-size: 1.3rem;
 }
 .main-div {
-  width: 85%;
+  width: 100%;
   max-width: 1500px;
   margin: 0 auto 0 auto;
-  padding: 0 20px 0 20px;
 }
 .container {
   display: flex;
@@ -16,19 +16,21 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-top: 20px;
 }
 .item {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  padding: 40px;
-}
-.bottom-margin {
-  margin-bottom: 100px;
+  justify-content: center;
 }
 .hero-image {
-  width: 500px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.hero-text {
+  margin-bottom: 100px;
 }
 
 /* Responsive CSS */

@@ -1,28 +1,71 @@
-import React from "react";
-import "../ResultsCard/ResultsCard.css";
+// import React from "react";
+// import styled from "styled-components";
+// import "../ResultsCard/ResultsCard.css";
 
-export default function ResultsCard(props) {
-  return (
-    <section className="results-container">
-      <div className="item transport-icon">
-        <img src={props.vehicleImg} alt="vehicle icon" />
-      </div>
-      <div className="item results-table">
-        <div className="row">
-          <div className=" item results-mileage">
-            <p>{props.mileageData}</p>
-          </div>
-          <div className="item results-kettles">
-            <p>{props.kettleData}</p>
-          </div>
-          <div className="item results-trees">
-            <p>{props.treeData}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// export default function ResultsCard(props) {
+//   return (
+//     <section>
+//       <div className="transport-icon">
+//         <img src={props.vehicleImg} alt="vehicle icon" />
+//       </div>
+//       <div className="results-table">
+//         <div className=" item results-mileage">
+//           <p>{props.mileageData}</p>
+//         </div>
+//         <div className="item results-kettles">
+//           <p>{props.kettleData}</p>
+//         </div>
+//         <div className="item results-trees">
+//           <p>{props.treeData}</p>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// const StyledResultsCard = styled.section`
+//   display: flex;
+//   background-color: purple;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   max-width: 500px;
+//   // font-size: 2rem;
+//   font-weight: bolder;
+
+//   img {
+//     transform: scale(1);
+//     width: 100px;
+//   }
+
+//   .item {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     flex-basis: 100%;
+//     width: 200px;
+//   }
+
+//   // .transport-icon {
+//   //   width: 350px;
+
+//   // }
+
+//   .results-table {
+//     display: flex;
+//     flex-direction: row;
+//     width: 500px;
+//     padding: 100px;
+//     border-style: solid solid none solid;
+//     border-color: #64a7a8;
+//     border-width: 3px;
+//     // background-color: white;
+//     // border-radius: 0 0 0 10px;
+//     // margin: 0 20px 0 20px;
+//     // border-radius: 15px 50px;
+//   }
+// `;
 
 // PSUEDO CODE
 

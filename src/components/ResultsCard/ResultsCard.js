@@ -1,11 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 // import "../ResultsCard/ResultsCard.css";
+import carIcon from "../ResultsCard/car-icon.png";
 
 export default function ResultsCard(props) {
   return (
-    <StyledResultsCard>
-      <div className="transport-icon">
+    <section>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Distance</th>
+            <th scope="col">Kettles</th>
+            <th scope="col">Trees</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{carIcon}</td>
+            <td>{props.resultsData.distance}</td>
+            <td>{props.resultsData.carKettles}</td>
+            <td>{props.resultsData.carTrees}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      {/* <div className="transport-icon">
         <img src={props.vehicleImg} alt="vehicle icon" />
       </div>
       <div className="results-table">
@@ -18,8 +49,8 @@ export default function ResultsCard(props) {
         <div className="item results-trees">
           <p>{props.treeData}</p>
         </div>
-      </div>
-    </StyledResultsCard>
+      </div> */}
+    </section>
   );
 }
 

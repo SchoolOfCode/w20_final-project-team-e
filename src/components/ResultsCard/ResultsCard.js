@@ -1,102 +1,71 @@
-import React from "react";
-import styled from "styled-components";
+// import React from "react";
+// import styled from "styled-components";
 // import "../ResultsCard/ResultsCard.css";
-import carIcon from "../ResultsCard/car-icon.png";
 
-export default function ResultsCard(props) {
-  return (
-    <section>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Distance</th>
-            <th scope="col">Kettles</th>
-            <th scope="col">Trees</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>{carIcon}</td>
-            <td>{props.resultsData.distance}</td>
-            <td>{props.resultsData.carKettles}</td>
-            <td>{props.resultsData.carTrees}</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-      {/* <div className="transport-icon">
-        <img src={props.vehicleImg} alt="vehicle icon" />
-      </div>
-      <div className="results-table">
-        <div className=" item results-mileage">
-          <p>{props.mileageData}</p>
-        </div>
-        <div className="item results-kettles">
-          <p>{props.kettleData}</p>
-        </div>
-        <div className="item results-trees">
-          <p>{props.treeData}</p>
-        </div>
-      </div> */}
-    </section>
-  );
-}
+// export default function ResultsCard(props) {
+//   return (
+//     <section>
+//       <div className="transport-icon">
+//         <img src={props.vehicleImg} alt="vehicle icon" />
+//       </div>
+//       <div className="results-table">
+//         <div className=" item results-mileage">
+//           <p>{props.mileageData}</p>
+//         </div>
+//         <div className="item results-kettles">
+//           <p>{props.kettleData}</p>
+//         </div>
+//         <div className="item results-trees">
+//           <p>{props.treeData}</p>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
-const StyledResultsCard = styled.section`
-  display: flex;
-  background-color: purple;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 500px;
-  // font-size: 2rem;
-  font-weight: bolder;
+// const StyledResultsCard = styled.section`
+//   display: flex;
+//   background-color: purple;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   max-width: 500px;
+//   // font-size: 2rem;
+//   font-weight: bolder;
 
-  img {
-    transform: scale(1);
-    width: 100px;
-  }
+//   img {
+//     transform: scale(1);
+//     width: 100px;
+//   }
 
-  .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-basis: 100%;
-    width: 200px;
-  }
+//   .item {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     flex-basis: 100%;
+//     width: 200px;
+//   }
 
-  // .transport-icon {
-  //   width: 350px;
+//   // .transport-icon {
+//   //   width: 350px;
 
-  // }
+//   // }
 
-  .results-table {
-    display: flex;
-    flex-direction: row;
-    width: 500px;
-    padding: 100px;
-    border-style: solid solid none solid;
-    border-color: #64a7a8;
-    border-width: 3px;
-    // background-color: white;
-    // border-radius: 0 0 0 10px;
-    // margin: 0 20px 0 20px;
-    // border-radius: 15px 50px;
-  }
-`;
+//   .results-table {
+//     display: flex;
+//     flex-direction: row;
+//     width: 500px;
+//     padding: 100px;
+//     border-style: solid solid none solid;
+//     border-color: #64a7a8;
+//     border-width: 3px;
+//     // background-color: white;
+//     // border-radius: 0 0 0 10px;
+//     // margin: 0 20px 0 20px;
+//     // border-radius: 15px 50px;
+//   }
+// `;
 
 // PSUEDO CODE
 

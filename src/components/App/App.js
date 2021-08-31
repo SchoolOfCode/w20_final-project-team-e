@@ -6,6 +6,7 @@ import SearchSection from "../SearchSection/SearchSection";
 import HeroSection from "../HeroSection/HeroSection";
 import LoadingSection from "../LoadingSection/LoadingSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
+// import ResultsCard from "../ResultsCard/ResultsCard";
 import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
@@ -30,7 +31,7 @@ export default function App() {
       "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
     },
   };
-  
+
   async function getFootprint() {
     let distanceResponse = await fetch(
       `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
@@ -111,7 +112,7 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  
+
   return (
     <div className="app">
       {/* to be fixed at the top of the page? */}
@@ -124,6 +125,7 @@ export default function App() {
       />
       <LoadingSection formData={formData} />
       <ResultsSection formData={formData} resultsData={resultsData} />
+      {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
       {/* button with text to appear as overlay onclick? */}
       <button
         className="openModalBtn"

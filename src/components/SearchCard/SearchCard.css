@@ -14,7 +14,7 @@ input[type="text"]::placeholder {
 .card-body {
   width: 1000px;
   margin: -37px auto 15px auto;
-  /* there is a minus margin present to hide the hidden H5 element */
+  /* there is a minus margin present to hide the hidden H5 element on desktop displays */
 }
 .flex-container {
   display: flex;

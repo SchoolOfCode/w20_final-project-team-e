@@ -33,66 +33,72 @@ export default function App() {
   };
 
   async function getFootprint() {
-    let distanceResponse = await fetch(
-      `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
-    );
-    let distanceData = await distanceResponse.json();
-    let distance = distanceData.rows[0].elements[0].distance.value / 1000;
+    try {
+      let distanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
+      );
+      let distanceData = await distanceResponse.json();
+      let distance = distanceData.rows[0].elements[0].distance.value / 1000;
 
-    //Car
-    let carResponse = await fetch(
-      `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${distance}`,
-      headers
-    );
-    let carData = await carResponse.json();
+      //Car
+      let carResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${distance}`,
+        headers
+      );
+      let carData = await carResponse.json();
 
-    //Train
-    let trainResponse = await fetch(
-      `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=NationalTrain&distance=${distance}`,
-      headers
-    );
-    let trainData = await trainResponse.json();
+      //Train
+      let trainResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=NationalTrain&distance=${distance}`,
+        headers
+      );
+      let trainData = await trainResponse.json();
 
-    //Bus
-    let busResponse = await fetch(
-      `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=ClassicBus&distance=${distance}`,
-      headers
-    );
-    let busData = await busResponse.json();
+      //Bus
+      let busResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=ClassicBus&distance=${distance}`,
+        headers
+      );
+      let busData = await busResponse.json();
 
-    //Taxi
-    let taxiResponse = await fetch(
-      `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
-      headers
-    );
-    let taxiData = await taxiResponse.json();
+      //Taxi
+      let taxiResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
+        headers
+      );
+      let taxiData = await taxiResponse.json();
 
-    //Flight
-    let flightResponse = await fetch(
-      `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight?type=ShortEconomyClassFlight&distance=${distance}`,
-      headers
-    );
-    let flightData = await flightResponse.json();
+      //Flight
+      let flightResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight?type=ShortEconomyClassFlight&distance=${distance}`,
+        headers
+      );
+      let flightData = await flightResponse.json();
 
-    updateResultsData({
-      ...resultsData,
-      distance: distance.toFixed(2),
-      carCarbon: carData.carbonEquivalent.toFixed(2),
-      carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
-      carTrees: Math.ceil(carData.carbonEquivalent / 24),
-      trainCarbon: trainData.carbonEquivalent.toFixed(2),
-      trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
-      trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
-      busCarbon: busData.carbonEquivalent.toFixed(2),
-      busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
-      busTrees: Math.ceil(busData.carbonEquivalent / 24),
-      taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
-      taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
-      taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
-      flightCarbon: flightData.carbonEquivalent.toFixed(2),
-      flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
-      flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-    });
+      updateResultsData({
+        ...resultsData,
+        distance: distance.toFixed(2),
+        carCarbon: carData.carbonEquivalent.toFixed(2),
+        carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
+        carTrees: Math.ceil(carData.carbonEquivalent / 24),
+        trainCarbon: trainData.carbonEquivalent.toFixed(2),
+        trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
+        trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
+        busCarbon: busData.carbonEquivalent.toFixed(2),
+        busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
+        busTrees: Math.ceil(busData.carbonEquivalent / 24),
+        taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
+        taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
+        taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
+        flightCarbon: flightData.carbonEquivalent.toFixed(2),
+        flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
+        flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
+      });
+    } catch (err) {
+      alert(
+        "Oh no! We couldn't match your search to any locations, please try again!"
+      );
+    }
   }
 
   const handleChange = (e) => {

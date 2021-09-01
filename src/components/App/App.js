@@ -12,6 +12,12 @@ import HelpModal from "../HelpModal/HelpModal";
 
 //Set state for the form data
 export default function App() {
+  const bodyScrollLock = require("body-scroll-lock");
+  const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+  const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+  const targetElement = document.querySelector("body");
+  const targetElement2 = document.querySelector("html");
+
   //State - to/from
   const initialFormData = {
     from: "",
@@ -115,9 +121,17 @@ export default function App() {
     setTimeout(() => {
       window.location = "#results-section";
     }, 3000);
+    //now show results card
   };
 
   const [openModal, setOpenModal] = useState(false);
+  if (openModal === true) {
+    disableBodyScroll(targetElement);
+    disableBodyScroll(targetElement2);
+  } else {
+    enableBodyScroll(targetElement);
+    enableBodyScroll(targetElement2);
+  }
 
   return (
     <div className="app">
@@ -134,9 +148,9 @@ export default function App() {
       {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
       {/* button with text to appear as overlay onclick? */}
       <button
-        className="openModalBtn"
+        className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
-          setOpenModal(true);
+          setOpenModal(!openModal);
         }}
       >
         ?

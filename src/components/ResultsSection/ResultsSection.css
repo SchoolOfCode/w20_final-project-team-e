@@ -12,19 +12,32 @@
 }
 
 .results-table {
-  width: 100%;
+  width: 75%;
 }
 
+/* Styling first table row*/
 .row-header {
   background-color: mediumturquoise;
+}
+
+/* Styling title and icon headers*/
+th {
+  background-color: moccasin;
 }
 
 td {
   /* background-color: mediumvioletred; */
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 4px solid black;
+  border-top: 4px solid black;
 }
 
-th {
-  background-color: moccasin;
+td:nth-last-child(1) {
+  background-color: palevioletred;
+  border-right: 4px solid black;
+}
+
+td:nth-child(2) {
+  background-color: red;
+  border-left: 4px solid black;
 }

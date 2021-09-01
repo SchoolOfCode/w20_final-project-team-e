@@ -1,14 +1,11 @@
 import React from "react";
 import "../ResultsSection/ResultsSection.css";
-// import ResultsCard from "../ResultsCard/ResultsCard";
 import kettleSVG from "../../images/kettle-icon.svg";
 import carIcon from "../ResultsCard/car-icon.png";
 import busIcon from "../ResultsCard/bus-icon.png";
 import planeIcon from "../ResultsCard/plane-icon.png";
 import taxiIcon from "../ResultsCard/taxi-icon.png";
 import trainIcon from "../ResultsCard/train-icon.png";
-// import styled from "styled-components";
-//import bicycleImg from "../ResultsCard/bicycle-icon.png";
 
 export default function ResultsSection(props) {
   return (

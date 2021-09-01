@@ -1,28 +1,27 @@
 import React from "react";
 import "../ResultsSection/ResultsSection.css";
-import kettleSVG from "../../images/kettle-icon.svg";
-import carIcon from "../ResultsCard/car-icon.png";
-import busIcon from "../ResultsCard/bus-icon.png";
-import planeIcon from "../ResultsCard/plane-icon.png";
-import taxiIcon from "../ResultsCard/taxi-icon.png";
-import trainIcon from "../ResultsCard/train-icon.png";
+import kettleIcon from "../../images/kettle-icon.svg";
+import treeIcon from "../../images/tree-icon.svg";
+import carIcon from "../../images/car-icon.svg";
+import busIcon from "../../images/bus-icon.svg";
+import planeIcon from "../../images/plane-icon.svg";
+import taxiIcon from "../../images/taxi-icon.svg";
+import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {
   return (
-    <section>
+    <section className="results-container">
       <div>
         <table class="table" className="results-table">
           <thead>
             <tr className="row-header">
-              <th scope="col">#</th>
+              <th scope="col"></th>
+              <th scope="col">Distance</th>
               <th scope="col">
-                Distance <img src={kettleSVG} alt="kettle" width="100px"></img>
+                Kettles<img src={kettleIcon} alt="kettle" width="100px"></img>
               </th>
               <th scope="col">
-                Kettles<img src={kettleSVG} alt="kettle" width="100px"></img>
-              </th>
-              <th scope="col">
-                Trees<img src={kettleSVG} alt="kettle" width="100px"></img>
+                Trees<img src={treeIcon} alt="tree" width="100px"></img>
               </th>
             </tr>
           </thead>

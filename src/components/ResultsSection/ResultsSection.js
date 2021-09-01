@@ -13,7 +13,7 @@ export default function ResultsSection(props) {
       <div>
         <table class="table" className="results-table">
           <thead>
-            <tr>
+            <tr className="row-header">
               <th scope="col">#</th>
               <th scope="col">
                 Distance <img src={kettleSVG} alt="kettle" width="100px"></img>

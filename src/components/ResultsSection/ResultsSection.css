@@ -52,19 +52,19 @@ th {
 
 td {
   background-color: white;
-  border-bottom: 2px solid #64a7a8;
-  border-top: 2px solid #64a7a8;
+  border-bottom: 3px solid #64a7a8;
+  border-top: 3px solid #64a7a8;
   padding: 25px;
   min-width: 150px;
   border-collapse: collapse;
 }
 
 td:nth-last-child(1) {
-  border-right: 2px solid #64a7a8;
+  border-right: 3px solid #64a7a8;
 }
 
 td:nth-child(2) {
-  border-left: 2px solid #64a7a8;
+  border-left: 3px solid #64a7a8;
 }
 
 /*

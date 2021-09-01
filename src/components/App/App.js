@@ -12,6 +12,11 @@ import HelpModal from "../HelpModal/HelpModal";
 
 //Set state for the form data
 export default function App() {
+  const bodyScrollLock = require("body-scroll-lock");
+  const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+  const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+  const targetElement = document.querySelector("body");
+
   //State - to/from
   const initialFormData = {
     from: "",
@@ -109,9 +114,15 @@ export default function App() {
     setTimeout(() => {
       window.location = "#results-section";
     }, 3000);
+    //now show results card
   };
 
   const [openModal, setOpenModal] = useState(false);
+  if (openModal === true) {
+    disableBodyScroll(targetElement);
+  } else {
+    enableBodyScroll(targetElement);
+  }
 
   return (
     <div className="app">
@@ -130,7 +141,7 @@ export default function App() {
       <button
         className="openModalBtn"
         onClick={() => {
-          setOpenModal(true);
+          setOpenModal(!openModal);
         }}
       >
         ?

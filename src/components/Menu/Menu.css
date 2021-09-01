@@ -3,6 +3,8 @@
   height: 100px;
   box-shadow: 0 5px 0 0px #fafafa;
   padding: 0;
+  position: sticky;
+  z-index: 1;
 }
 .nav-logo {
   transform: scale(0.7);

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import Sticky from "react-sticky-el";
 import "./App.css";
 
 import SearchSection from "../SearchSection/SearchSection";
@@ -116,7 +117,9 @@ export default function App() {
   return (
     <div className="app">
       {/* to be fixed at the top of the page? */}
-      <Menu />
+      <Sticky>
+        <Menu />
+      </Sticky>
       <HeroSection />
       <SearchSection
         formData={formData}

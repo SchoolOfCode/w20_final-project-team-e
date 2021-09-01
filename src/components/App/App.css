@@ -23,6 +23,22 @@
   z-index: 3;
 }
 
+.closeModalBtn {
+  position: sticky;
+  bottom: 35px;
+  float: right;
+  margin: 30px;
+  width: 2.5em;
+  height: 2.5em;
+  border: none;
+  border-radius: 50%;
+  background-color: #e85e3b;
+  color: white;
+  cursor: pointer;
+  font-size: xx-large;
+  z-index: 3;
+}
+
 @media only screen and (max-width: 800px) {
   .App {
     overflow-x: hidden;

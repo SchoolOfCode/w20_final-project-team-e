@@ -1,3 +1,88 @@
-#results-section {
-  background-color: #e6ecec;
+/* @media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+} */
+
+.results-container {
+  /* background-color: darkcyan; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
+.results-disclaimer {
+  background-color: plum;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 2em;
+}
+
+p {
+  padding: 1.5em;
+  font-size: 25px;
+}
+
+.results-table {
+  width: 50%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-collapse: collapse;
+  padding: 2em;
+  padding: 25px;
+}
+
+/* Styling title and icon headers*/
+th {
+  padding: 25px;
+  min-width: 150px;
+}
+
+td {
+  background-color: white;
+  border-bottom: 2px solid #64a7a8;
+  border-top: 2px solid #64a7a8;
+  padding: 25px;
+  min-width: 150px;
+}
+
+td:nth-last-child(1) {
+  border-right: 2px solid #64a7a8;
+}
+
+td:nth-child(2) {
+  border-left: 2px solid #64a7a8;
+}
+
+/*
+table tbody tr:first-child td:nth-child(2) {
+  background-color: cyan;
+}
+
+table tbody tr:first-child td:nth-child(4) {
+  background-color: cyan;
+}
+
+table tbody tr:last-child td:nth-child(2) {
+  background-color: cyan;
+}
+
+table tbody tr:last-child td:nth-child(4) {
+  background-color: cyan;
+  border-bottom-right-radius: 25px;
+}
+*/

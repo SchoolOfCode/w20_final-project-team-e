@@ -1,30 +1,37 @@
 import React from "react";
-// import ResultsCard from "../ResultsCard/ResultsCard";
-import kettleSVG from "../../images/kettle-icon.svg";
-import carIcon from "../ResultsCard/car-icon.png";
-import busIcon from "../ResultsCard/bus-icon.png";
-import planeIcon from "../ResultsCard/plane-icon.png";
-import taxiIcon from "../ResultsCard/taxi-icon.png";
-import trainIcon from "../ResultsCard/train-icon.png";
-// import styled from "styled-components";
-//import bicycleImg from "../ResultsCard/bicycle-icon.png";
+import "../ResultsSection/ResultsSection.css";
+import kettleIcon from "../../images/kettle-icon.svg";
+import treeIcon from "../../images/tree-icon.svg";
+import carIcon from "../../images/car-icon.svg";
+import busIcon from "../../images/bus-icon.svg";
+import planeIcon from "../../images/plane-icon.svg";
+import taxiIcon from "../../images/taxi-icon.svg";
+import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {
   return (
-    <section>
+    <section className="results-container">
+      <div className="results-disclaimer">
+        <h1>How did we calculate this?</h1>
+        <p>
+          Pixies. No seriously. We calculate the carbon burned from your
+          mileage, based on the equivalent to boil a kettle then we work out
+          what carbon would need to be returned to the planet, say by planting
+          trees. We have chosen the most common factors to help you make
+          informed decisions about the best eco friednly option for you.
+        </p>
+      </div>
       <div>
-        <table class="table">
+        <table class="table" className="results-table">
           <thead>
-            <tr>
-              <th scope="col">#</th>
+            <tr className="row-header">
+              <th scope="col"></th>
+              <th scope="col">Distance</th>
               <th scope="col">
-                Distance <img src={kettleSVG} alt="kettle" width="100px"></img>
+                Kettles<img src={kettleIcon} alt="kettle" width="100px"></img>
               </th>
               <th scope="col">
-                Kettles<img src={kettleSVG} alt="kettle" width="100px"></img>
-              </th>
-              <th scope="col">
-                Trees<img src={kettleSVG} alt="kettle" width="100px"></img>
+                Trees<img src={treeIcon} alt="tree" width="100px"></img>
               </th>
             </tr>
           </thead>
@@ -76,58 +83,6 @@ export default function ResultsSection(props) {
             </tr>
           </tbody>
         </table>
-        {/* <ResultsCard
-          mileageData={props.resultsData.distance}
-          kettleData={props.resultsData.carKettles}
-          treeData={props.resultsData.carTrees}
-          formData={props.formData}
-          vehicleImg={carImg}
-        /> */}
-
-        {/* Taxi Data: */}
-        {/* <ResultsCard
-          mileageData={props.resultsData.distance}
-          kettleData={props.resultsData.taxiKettles}
-          treeData={props.resultsData.taxiTrees}
-          formData={props.formData}
-          vehicleImg={taxiImg}
-        /> */}
-
-        {/* Bus Data: */}
-        {/* <ResultsCard
-          mileageData={props.resultsData.distance}
-          kettleData={props.resultsData.busKettles}
-          treeData={props.resultsData.busTrees}
-          formData={props.formData}
-          vehicleImg={busImg}
-        /> */}
-
-        {/* Train Data: */}
-        {/* <ResultsCard
-          mileageData={props.resultsData.distance}
-          kettleData={props.resultsData.trainKettles}
-          treeData={props.resultsData.trainTrees}
-          formData={props.formData}
-          vehicleImg={trainImg}
-        /> */}
-
-        {/* Plane Data: */}
-        {/* <ResultsCard
-          // id="plane-card"
-          mileageData={props.resultsData.distance}
-          kettleData={props.resultsData.flightKettles}
-          treeData={props.resultsData.flightTrees}
-          formData={props.formData}
-          vehicleImg={planeImg}
-        /> */}
-        <h1>How did we calculate this?</h1>
-        <p>
-          Pixies. No seriously. We calculate the carbon burned from your
-          mileage, based on the equivalent to boil a kettle then we work out
-          what carbon would need to be returned to the planet, say by planting
-          trees. We have chosen the most common factors to help you make
-          informed decisions about the best eco friednly option for you.
-        </p>
       </div>
     </section>
   );

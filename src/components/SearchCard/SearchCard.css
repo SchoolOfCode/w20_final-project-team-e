@@ -1,26 +1,31 @@
 input[type="text"]::placeholder {
   text-align: center;
 }
+
 .card {
   background-color: #074445;
   border-radius: 0 50px 0 50px;
 }
+
 .card-title {
   color: white;
   font-size: 1.7rem;
   padding-bottom: 10px;
   visibility: hidden;
 }
+
 .card-body {
   width: 1000px;
   margin: -37px auto 15px auto;
   /* there is a minus margin present to hide the hidden H5 element on desktop displays */
 }
+
 .flex-container {
   display: flex;
   width: 100%;
   margin: 0;
 }
+
 .search-input {
   display: flex;
   flex-direction: column;
@@ -29,6 +34,7 @@ input[type="text"]::placeholder {
   margin: 0 10px 0 10px;
   width: 100%;
 }
+
 .btn-submit {
   display: flex;
   flex-direction: column;
@@ -37,11 +43,13 @@ input[type="text"]::placeholder {
   margin: 0 10px 0 10px;
   width: 100%;
 }
+
 .form-control {
   border-radius: 25px;
   border: none;
   height: 45px;
 }
+
 .btn-primary {
   background-color: #ff7c5b;
   border: none;
@@ -49,6 +57,7 @@ input[type="text"]::placeholder {
   font-weight: bold;
   height: 45px;
 }
+
 .btn-primary:hover {
   background-color: #e85e3b;
 }
@@ -58,6 +67,7 @@ input[type="text"]::placeholder {
   top: 0;
   left: 0;
 }
+
 @media only screen and (max-width: 1080px) {
   .card-body {
     width: 100%;
@@ -69,21 +79,25 @@ input[type="text"]::placeholder {
   .card {
     padding: 15px 10px 15px 10px;
   }
+
   .card-title {
     font-size: 1.8em;
     text-align: left;
     visibility: visible;
     margin-bottom: 20px;
   }
+
   .card-body {
     width: 100%;
     margin: 15px auto 15px auto;
   }
+
   .flex-container {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
+
   .search-input {
     display: flex;
     flex-direction: row;
@@ -91,6 +105,7 @@ input[type="text"]::placeholder {
     margin: 10px 0 10px 0;
     width: 100%;
   }
+
   .btn-submit {
     display: flex;
     flex-direction: row;
@@ -98,9 +113,11 @@ input[type="text"]::placeholder {
     margin: 10px 0 10px 0;
     width: 100%;
   }
+
   .form-control {
     height: 45px;
   }
+
   .btn-primary {
     /* margin: 0 auto 0 auto; */
     width: 50%;

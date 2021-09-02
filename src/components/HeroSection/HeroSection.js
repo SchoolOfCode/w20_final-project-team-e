@@ -6,15 +6,17 @@ export default function HeroSection() {
   
   return (
     <div className="main-div">
-      <section className="container">
-        <div className="item">
+      <section className="hero-flex-container">
+        <div className="hero-item">
           <img className="hero-image" src={heroImage} alt="Travelling illustration" />
         </div>
-        <div className="item hero-text">
-          <h1>EMISSION IMPOSSIBLE</h1>
-          <p className="hero-p">
-            An eco journey planner, calculating the mileage that will make emissions, impossible.
-          </p>
+        <div className="hero-item">
+          <div className="hero-text-section">
+            <h1>EMISSION IMPOSSIBLE</h1>
+            <p className="hero-p">
+              An eco journey planner, calculating the mileage that will make emissions, impossible.
+            </p>
+          </div>
         </div>
       </section>
     </div>

@@ -12,7 +12,7 @@ export default function ResultsSection(props) {
   return (
     <section className="results-container">
       <div className="results-disclaimer">
-        <h1>How did we calculate this?</h1>
+        <h2>How did we calculate this?</h2>
         <p>
           Pixies. No seriously. We calculate the carbon burned from your
           mileage, based on the equivalent to boil a kettle then we work out

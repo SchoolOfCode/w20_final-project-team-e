@@ -7,6 +7,24 @@
   z-index: 1;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
 .nav-logo {
   transform: scale(0.7);
+}
+
+@media only screen and (max-width: 700px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .nav-logo-link {
+    margin-top: -5px;
+  }
+
+  .nav-logo {
+    transform: scale(0.55);
+  }
 }

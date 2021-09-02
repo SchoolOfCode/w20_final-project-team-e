@@ -1,14 +1,15 @@
 import React from "react";
 import "./LoadingSection.css";
-import LoadingImage from "../LoadingImage/LoadingImage";
 import progressIcon from "../../images/loading-icon.gif";
 import completedIcon from "../../images/tick-icon.png";
+import carAnimation from "../../images/loading-animation.gif"
 
 export default function LoadingSection() {
+  
   return (
     <div id="loading-section">
       <div className="loading-component-main">
-        <h2>Take a big breath</h2>
+        <h2 className="loading-component-title">Take a big breath!</h2>
         <div className="loading-component-item">
         <p><img className="loading-component-icon" src={completedIcon} alt="Calculation complete icon"/>We're calculating the distance of that journey.</p>
         </div>
@@ -19,7 +20,9 @@ export default function LoadingSection() {
           <p><img className="loading-component-icon" src={progressIcon} alt="Calculation in progress icon"/>We're checking how many trees would need to be planted to offset those carbon emissions.</p>
         </div>
       </div>
-      <LoadingImage />
+      <div className="car-animation-flex-container">
+        <img className="car-animation" src={carAnimation} alt="Car moving through space" />
+      </div>
     </div>
   );
 }

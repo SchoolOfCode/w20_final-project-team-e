@@ -1,18 +1,9 @@
-h1 {
-  font-size: 3.5rem;
-  font-weight: bolder;
-}
-p {
-  font-size: 1.3rem;
-}
 .main-div {
   width: 100%;
-  max-width: 1500px;
   margin: 0 auto 0 auto;
 }
 .container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
@@ -24,30 +15,32 @@ p {
   flex-basis: 100%;
   flex: 1;
   justify-content: center;
+  align-items: center;
 }
 .hero-image {
   width: 100%;
   margin-bottom: 10px;
 }
 .hero-text {
-  margin-bottom: 100px;
+  padding: 0 8% 0 8%;
 }
 
-/* Responsive CSS */
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-  p {
-    font-size: 1.3rem;
-  }
+@media only screen and (max-width: 700px) {
   .main-div {
     width: 85%;
     max-width: 1500px;
     margin: 0 auto 0 auto;
     padding: 0 10px 0 10px;
   }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .hero-image {
     width: 80vw;
+  }
+  .hero-text {
+    padding: 0 5% 0 5%;
   }
 }

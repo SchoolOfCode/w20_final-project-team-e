@@ -10,11 +10,13 @@ export default function HeroSection() {
         <div className="item">
           <img className="hero-image" src={heroImage} alt="Travelling illustration" />
         </div>
-        <div className="item hero-text">
-          <h1>EMISSION IMPOSSIBLE</h1>
-          <p className="hero-p">
-            An eco journey planner, calculating the mileage that will make emissions, impossible.
-          </p>
+        <div className="item">
+          <div className="hero-text">
+            <h1>EMISSION IMPOSSIBLE</h1>
+            <p className="hero-p">
+              An eco journey planner, calculating the mileage that will make emissions, impossible.
+            </p>
+          </div>
         </div>
       </section>
     </div>

@@ -6,7 +6,7 @@ export default function Menu() {
   return (
     <nav className="navbar sticky-top">
       <div className="container-fluid">
-        <a href="#homescreen">
+        <a className="nav-logo-link" href="#homescreen">
           <img 
             className="nav-logo"
             src={Logo}

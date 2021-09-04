@@ -2,9 +2,14 @@ import React from "react";
 import "./HelpModal.css";
 import helpModalImage from "../../images/help_modal_illustration.png";
 
-export default function HelpModal({ closeModal }) {
+export default function HelpModal(props) {
   return (
-    <div className="modalBackground">
+    <div
+      className="modalBackground"
+      onClick={() => {
+        props.closeModal(false);
+      }}
+    >
       <div className="modalContainer">
         <div className="modalText">
           <h2>About our Eco Journey Planner</h2>

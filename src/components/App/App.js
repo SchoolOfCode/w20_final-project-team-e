@@ -152,8 +152,7 @@ export default function App() {
       {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
       {/* button with text to appear as overlay onclick? */}
       <button
-        className={"modalBtn"}
-        // className={openModal ? "closeModalBtn" : "openModalBtn"}
+        className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
           setOpenModal(!openModal);
         }}

@@ -21,6 +21,7 @@ p {
 }
 
 .openModalBtn {
+  position: sticky;
   bottom: 35px;
   float: right;
   margin: 30px;
@@ -61,24 +62,6 @@ p {
   outline: 0;
   border: 0;
   background-color: none;
-}
-
-.modalBtn {
-  position: sticky;
-  position: -webkit-sticky;
-  bottom: 35px;
-  top: 35px;
-  float: right;
-  margin: 30px;
-  width: 2.5em;
-  height: 2.5em;
-  border: none;
-  border-radius: 50%;
-  background-color: #ff7c5b;
-  color: white;
-  cursor: pointer;
-  font-size: xx-large;
-  z-index: 3;
 }
 
 @media only screen and (max-width: 700px) {

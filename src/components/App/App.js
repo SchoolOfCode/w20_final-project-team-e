@@ -25,6 +25,10 @@ export default function App() {
     to: "",
   };
   const [formData, updateFormData] = useState(initialFormData);
+  //const [showResults, changeShowResults] = useState(false)
+
+  //if to/from is an empty string - results card is hidden
+  //if to/from is not an empty string - results card is visible
 
   //state for results card
   const [resultsData, updateResultsData] = useState("");

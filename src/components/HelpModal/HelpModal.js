@@ -6,17 +6,6 @@ export default function HelpModal({ closeModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
-        {/* <div>
-          <button
-            className="modalCloseBtn"
-            onClick={() => {
-              closeModal(false);
-              enableBodyScroll(targetElement);
-            }}
-          >
-            x
-          </button>
-        </div> */}
         <div className="modalText">
           <h2>About our Eco Journey Planner</h2>
           <p>

@@ -36,6 +36,11 @@ p {
   font-size: xx-large;
   z-index: 3;
 }
+.openModalBtn:focus {
+  outline: 0;
+  border: 0;
+  background-color: none;
+}
 
 .closeModalBtn {
   position: sticky;
@@ -51,6 +56,12 @@ p {
   cursor: pointer;
   font-size: xx-large;
   z-index: 3;
+}
+
+.closeModalBtn:focus {
+  outline: 0;
+  border: 0;
+  background-color: none;
 }
 
 @media only screen and (max-width: 700px) {

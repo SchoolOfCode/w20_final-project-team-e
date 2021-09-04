@@ -149,11 +149,9 @@ export default function App() {
         handleSubmit={handleSubmit}
       />
       <LoadingSection formData={formData} />
-      <ResultsSection
-        formData={formData}
-        resultsData={resultsData}
-        displayResults={false}
-      />
+      {displayResults ? (
+        <ResultsSection formData={formData} resultsData={resultsData} />
+      ) : null}
       {/* button with text to appear as overlay onclick? */}
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}

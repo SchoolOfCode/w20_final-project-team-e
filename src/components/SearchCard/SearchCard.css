@@ -75,21 +75,22 @@ input[type="text"]::placeholder {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .card {
     padding: 15px 10px 15px 10px;
   }
 
   .card-title {
-    font-size: 1.8em;
+    font-size: 1.5em;
     text-align: left;
     visibility: visible;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .card-body {
     width: 100%;
-    margin: 15px auto 15px auto;
+    margin: 10px auto 10px auto;
+    padding: 0 10px;
   }
 
   .flex-container {

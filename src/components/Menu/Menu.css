@@ -1,6 +1,6 @@
 .navbar {
   background-color: white;
-  height: 100px;
+  height: 12vh;
   box-shadow: 0 5px 0 0px #fafafa;
   padding: 0;
   position: sticky;
@@ -13,14 +13,19 @@
 
 @media only screen and (max-width: 700px) {
   .navbar {
-    height: 80px;
+    height: 5vh;
   }
 
   .nav-logo-link {
-    margin-top: -5px;
+    margin-top: -10px;
+    height: 10vh;
   }
 
   .nav-logo {
-    transform: scale(0.55);
+    transform: scale(0.5);
+  }
+
+  .container-fluid {
+    height: 5vh;
   }
 }

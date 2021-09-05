@@ -55,7 +55,7 @@ p {
   color: white;
   cursor: pointer;
   font-size: xx-large;
-  z-index: 3;
+  z-index: 4;
 }
 
 .closeModalBtn:focus {

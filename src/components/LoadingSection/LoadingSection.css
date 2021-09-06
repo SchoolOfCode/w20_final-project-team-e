@@ -22,13 +22,14 @@
   border-radius: 20px;
   position: absolute;
   width: 60vw;
-  height: 75vh;
+  height: auto;
   padding: 50px 100px 50px 100px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .loading-component-item {
+  margin-bottom: 10px;
   z-index: 1;
 }
 
@@ -38,7 +39,7 @@
 
 .loading-component-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin: 20px 0 50px 0;
 }
 
 .loading-component-icon {
@@ -58,14 +59,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 18vw;
+  width: 22vw;
   z-index: 0;
 }
 
 @media only screen and (max-width: 700px) {
   .loading-component-container {
     width: 75vw;
-    height: 85vh;
+    height: 75vh;
     padding: 25px;
     overflow-y: scroll;
   }
@@ -77,8 +78,16 @@
     width: 100%;
   }
 
+  .loading-component-item {
+    margin-bottom: 10px;
+  }
+
+  .loading-component-title {
+    margin: 20px 0 40px 0;
+  }
+
   .loading-component-item p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .loading-animation {
@@ -87,5 +96,9 @@
     justify-content: center;
     width: 350px;
     height: 350px;
+  }
+
+  .car-animation {
+    visibility: hidden;
   }
 }

@@ -1,20 +1,45 @@
 #loading-section {
   width: 100%;
+  background-color: rosybrown;
 }
 
-.loading-component-main {
-  width: 1000px;
-  padding: 50px;
-  margin: 0 auto 0 auto;
+.loading-component-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200, 0.5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-component-container {
+  align-content: center;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  position: absolute;
+  width: 80vw;
+  height: auto;
+  padding: 50px 100px 50px 100px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .loading-component-item {
-  z-index: 0;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.loading-component-item p {
+  font-size: 1.8rem;
 }
 
 .loading-component-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 20px 0 50px 0;
 }
 
 .loading-component-icon {
@@ -23,27 +48,36 @@
   margin-right: 25px;
 }
 
+.input-location {
+  font-weight: bold;
+  color: #ff7c5b;
+}
+
 .car-animation-flex-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin-top: -170px;
 }
 
 .car-animation {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40vw;
-  z-index: -1;
+  width: 22vw;
+  z-index: 0;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 700px) {
-  .loading-component-main {
-    width: 100%;
-    padding: 10% 8% 5% 8%;
-    margin: 1vh 0 1vh 0;
+  .loading-component-container {
+    width: 75vw;
+    height: auto;
+    padding: 25px;
+    overflow-y: scroll;
   }
 
   .flex-container {
@@ -51,6 +85,18 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+  }
+
+  .loading-component-item {
+    margin-bottom: 10px;
+  }
+
+  .loading-component-title {
+    margin: 20px 0 40px 0;
+  }
+
+  .loading-component-item p {
+    font-size: 1.2rem;
   }
 
   .loading-animation {
@@ -61,7 +107,8 @@
     height: 350px;
   }
 
-  .car-animation-flex-container {
+  .car-animation {
     visibility: hidden;
+    margin-top: -100px;
   }
 }

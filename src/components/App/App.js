@@ -18,6 +18,7 @@ export default function App() {
   const enableBodyScroll = bodyScrollLock.enableBodyScroll;
   const targetElement = document.querySelector("html");
 
+
   //State - to/from
   const initialFormData = {
     from: "",
@@ -84,7 +85,6 @@ export default function App() {
         headers
       );
       let flightData = await flightResponse.json();
-
       updateResultsData({
         ...resultsData,
         distance: distance.toFixed(2),
@@ -103,7 +103,9 @@ export default function App() {
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-      });
+        isInputValid: true, // --- This is to check that the inputs are valid locations
+      },
+      );
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -111,6 +113,20 @@ export default function App() {
     }
   }
 
+  // Loading component to display for 4.5 seconds when the search button is pressed.
+  const [showLoadingComponent, setLoadingComponent] = useState(false);
+
+  const handleLoadingComponent = () => {
+    if(resultsData.isInputValid === true){
+      setLoadingComponent(true);
+    }
+    
+    setTimeout(() => {
+      setLoadingComponent(false)
+    }, 6000);
+  }
+
+  // Search button logic
   const handleChange = (e) => {
     updateFormData({
       ...formData,
@@ -122,9 +138,10 @@ export default function App() {
     e.preventDefault();
     getFootprint();
     window.location = "#loading-section";
+    handleLoadingComponent();
     setTimeout(() => {
       window.location = "#results-section";
-    }, 3000);
+    }, 4500);
     //now show results card
   };
 
@@ -147,7 +164,7 @@ export default function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <LoadingSection formData={formData} />
+      {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
       <ResultsSection formData={formData} resultsData={resultsData} />
       {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
       {/* button with text to appear as overlay onclick? */}

@@ -134,6 +134,8 @@ export default function App() {
     });
   };
 
+  const [displayResults, setDisplayResults] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     getFootprint();
@@ -142,7 +144,7 @@ export default function App() {
     setTimeout(() => {
       window.location = "#results-section";
     }, 4500);
-    //now show results card
+    setDisplayResults(true);
   };
 
   const [openModal, setOpenModal] = useState(false);
@@ -165,8 +167,9 @@ export default function App() {
         handleSubmit={handleSubmit}
       />
       {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
-      <ResultsSection formData={formData} resultsData={resultsData} />
-      {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
+      {displayResults ? (
+        <ResultsSection formData={formData} resultsData={resultsData} />
+      ) : null}
       {/* button with text to appear as overlay onclick? */}
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}

@@ -26,19 +26,22 @@ export default function LoadingSection(props) {
     progressIcon,
   ]
 
-  // Hook used to change data on the loading component after a set amount of time.
+  // Hook used to change data on the loading component after it renders in the App.
   useEffect(() => {
     console.log("This is the start of the timer");
     setTimeout(() => {
       console.log("1.5 seconds");
+      iconStatus[0] = completedIcon;
     }, 1500);
   
     setTimeout(() => {
       console.log("3 seconds");
+      iconStatus[1] = completedIcon;
     }, 3000);
   
     setTimeout(() => {
       console.log("4.5 seconds");
+      iconStatus[2] = completedIcon;
     }, 4500);
   }, []); // Empty array makes the useEffect hook run only once.
 

@@ -18,7 +18,7 @@ export default function ResultsSection(props) {
           mileage, based on the equivalent to boil a kettle then we work out
           what carbon would need to be returned to the planet, say by planting
           trees. We have chosen the most common factors to help you make
-          informed decisions about the best eco friednly option for you.
+          informed decisions about the best eco friendly option for you.
         </p>
       </div>
       <div className="results-table">

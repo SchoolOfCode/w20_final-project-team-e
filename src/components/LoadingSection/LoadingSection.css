@@ -1,20 +1,44 @@
 #loading-section {
   width: 100%;
+  background-color: rosybrown;
 }
 
-.loading-component-main {
-  width: 1000px;
-  padding: 50px;
-  margin: 0 auto 0 auto;
+.loading-component-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200, 0.5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-component-container {
+  align-content: center;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  position: absolute;
+  width: 60vw;
+  height: 75vh;
+  padding: 50px 100px 50px 100px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .loading-component-item {
-  z-index: 0;
+  z-index: 1;
+}
+
+.loading-component-item p {
+  font-size: 1.8rem;
 }
 
 .loading-component-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .loading-component-icon {
@@ -28,22 +52,22 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin-top: -170px;
 }
 
 .car-animation {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40vw;
-  z-index: -1;
+  width: 18vw;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 700px) {
-  .loading-component-main {
-    width: 100%;
-    padding: 10% 8% 5% 8%;
-    margin: 1vh 0 1vh 0;
+  .loading-component-container {
+    width: 75vw;
+    height: 85vh;
+    padding: 25px;
+    overflow-y: scroll;
   }
 
   .flex-container {
@@ -53,15 +77,15 @@
     width: 100%;
   }
 
+  .loading-component-item p {
+    font-size: 1.3rem;
+  }
+
   .loading-animation {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 350px;
     height: 350px;
-  }
-
-  .car-animation-flex-container {
-    visibility: hidden;
   }
 }

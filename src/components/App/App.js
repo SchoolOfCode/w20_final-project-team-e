@@ -119,6 +119,8 @@ export default function App() {
     e.preventDefault();
     getFootprint();
     window.location = "#loading-section";
+    // Function to open loading section after search is entered
+    // -----------> Place code here, Jamie.
     setTimeout(() => {
       window.location = "#results-section";
     }, 3000);

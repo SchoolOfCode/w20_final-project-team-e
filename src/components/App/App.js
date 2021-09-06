@@ -108,6 +108,17 @@ export default function App() {
     }
   }
 
+  // Loading component to display for 4.5 seconds when the search button is pressed.
+  const [showLoadingComponent, setLoadingComponent] = useState(false);
+
+  const renderLoadingComponent = () => {
+    setLoadingComponent(true);
+    
+    setTimeout(() => {
+      setLoadingComponent(false)
+    }, 4500);
+  }
+
   const handleChange = (e) => {
     updateFormData({
       ...formData,
@@ -119,11 +130,10 @@ export default function App() {
     e.preventDefault();
     getFootprint();
     window.location = "#loading-section";
-    // Function to open loading section after search is entered
-    // -----------> Place code here, Jamie.
+    renderLoadingComponent();
     setTimeout(() => {
       window.location = "#results-section";
-    }, 3000);
+    }, 4500);
     //now show results card
   };
 
@@ -148,7 +158,7 @@ export default function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <LoadingSection formData={formData} />
+      {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
       <ResultsSection formData={formData} resultsData={resultsData} />
       {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
       {/* button with text to appear as overlay onclick? */}

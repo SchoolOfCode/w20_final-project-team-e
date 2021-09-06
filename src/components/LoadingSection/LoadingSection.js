@@ -21,15 +21,15 @@ export default function LoadingSection(props) {
 
   // Hook used to change data on the loading component after a set amount of time.
   useEffect(() => {
-    console.log("useEffect has sucessfully ran")
+    console.log("useEffect on the loading component has sucessfully run");
   })
 
-  const displayComments = () => {
-    console.log("This is doing something!");
-  }
+  // const displayComments = () => {
+  //   console.log("This is doing something!");
+  // }
 
   return (
-    <div onLoad={displayComments} id="loading-section">
+    <div id="loading-section">
       <div className="loading-component-background">
         <div className="loading-component-container">
           <h2 className="loading-component-title">Take a big breath!</h2>

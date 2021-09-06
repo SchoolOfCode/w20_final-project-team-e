@@ -16,8 +16,7 @@ export default function App() {
   const bodyScrollLock = require("body-scroll-lock");
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;
   const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-  const targetElement = document.querySelector("body");
-  const targetElement2 = document.querySelector("html");
+  const targetElement = document.querySelector("html");
 
 
   //State - to/from
@@ -26,6 +25,10 @@ export default function App() {
     to: "",
   };
   const [formData, updateFormData] = useState(initialFormData);
+  //const [showResults, changeShowResults] = useState(false)
+
+  //if to/from is an empty string - results card is hidden
+  //if to/from is not an empty string - results card is visible
 
   //state for results card
   const [resultsData, updateResultsData] = useState("");
@@ -145,14 +148,12 @@ export default function App() {
   const [openModal, setOpenModal] = useState(false);
   if (openModal === true) {
     disableBodyScroll(targetElement);
-    disableBodyScroll(targetElement2);
   } else {
     enableBodyScroll(targetElement);
-    enableBodyScroll(targetElement2);
   }
 
   return (
-    <div className="app">
+    <div className="App">
       {/* to be fixed at the top of the page? */}
       <Sticky>
         <Menu />
@@ -175,6 +176,7 @@ export default function App() {
       >
         ?
       </button>
+
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
   );

@@ -16,7 +16,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100rem;
+  /* border radius not working atm*/
+  border-radius: 25px;
 }
 
 .results-disclaimer {
@@ -24,9 +26,11 @@
   display: flex;
   width: 50%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: bottom;
   text-align: center;
-  padding: 2em;
+  padding: 5%;
+  margin-top: 10%;
+  background-color: #64a7a8;
 }
 
 .results-table {

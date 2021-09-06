@@ -20,7 +20,6 @@ p {
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -41,9 +40,15 @@ p {
   font-size: xx-large;
   z-index: 3;
 }
+.openModalBtn:focus {
+  outline: 0;
+  border: 0;
+  background-color: none;
+}
 
 .closeModalBtn {
   position: sticky;
+  bottom: 35px;
   bottom: 35px;
   float: right;
   margin: 30px;
@@ -55,7 +60,13 @@ p {
   color: white;
   cursor: pointer;
   font-size: xx-large;
-  z-index: 3;
+  z-index: 4;
+}
+
+.closeModalBtn:focus {
+  outline: 0;
+  border: 0;
+  background-color: none;
 }
 
 @media only screen and (max-width: 700px) {
@@ -69,10 +80,6 @@ p {
 
   p {
     font-size: 1.3rem;
-  }
-
-  .App {
-    overflow-x: hidden;
   }
 
   .App-logo {

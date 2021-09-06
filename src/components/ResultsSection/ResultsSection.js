@@ -11,16 +11,6 @@ import trainIcon from "../../images/train-icon.svg";
 export default function ResultsSection(props) {
   return (
     <section className="results-container">
-      <div className="results-disclaimer">
-        <h2>How did we calculate this?</h2>
-        <p>
-          Pixies. No seriously. We calculate the carbon burned from your
-          mileage, based on the equivalent to boil a kettle then we work out
-          what carbon would need to be returned to the planet, say by planting
-          trees. We have chosen the most common factors to help you make
-          informed decisions about the best eco friendly option for you.
-        </p>
-      </div>
       <div className="results-table">
         <table>
           <thead>
@@ -85,6 +75,14 @@ export default function ResultsSection(props) {
             </tr>
           </tbody>
         </table>
+      </div>
+      <div className="results-disclaimer">
+        <h2>How did we calculate this?</h2>
+        <p>
+          Pixies. No seriously. We calulate your carbon based on stats for the
+          most common transport choices, to help you make informed decisions
+          about the best eco friednly option for you.
+        </p>
       </div>
     </section>
   );

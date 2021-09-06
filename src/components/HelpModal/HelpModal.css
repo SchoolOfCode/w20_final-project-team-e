@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
 }
 
 .modalContainer {
@@ -22,41 +22,29 @@
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow-y: auto;
-
-  /* align-content: center;
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  position: absolute;
-  width: 75vw;
-  height: 85vh;
-  padding: 25px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  overflow-y: scroll; */
 }
 
 .modalText {
-  align-self: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  flex: 1 1 40em;
   width: 100%;
-  overflow-y: auto;
+  height: 100%;
 }
 
 .modalText h2 {
-  font-size: 1.6em;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 .modalText p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .modalImage {
-  position: relative;
   display: flex;
-  flex: 1 2 20em;
+  max-width: 40%;
+  max-height: 100%;
+  align-self: flex-end;
 }
 
 /* need to insert mdia query to handle modal button
@@ -73,44 +61,56 @@ need to  arrange notes and images in columns*/
   text-align: center;
 } */
 
-@media only screen and (max-width: 800px) {
-  .modalBackground {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(200, 200, 200, 0.5);
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-  }
-
+@media only screen and (max-width: 1200px) {
   .modalContainer {
-    align-content: center;
-    display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    position: absolute;
-    width: 75vw;
+    justify-content: flex-start;
     height: 85vh;
     padding: 25px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow-y: scroll;
   }
 
   .modalText {
-    display: flex;
     flex-wrap: nowrap;
-    flex-direction: column;
     flex: 1 1 40em;
-    overflow-y: visible;
   }
 
   .modalText h2 {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .modalImage {
+    max-width: 80%;
+    max-height: auto;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .modalText h2 {
+    font-size: 1.6em;
+  }
+  .modalImage {
+    width: 20em;
+    height: auto;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .modalContainer {
+    flex-direction: column;
+    width: 85vw;
+    height: 95vh;
+    padding: 18px;
+  }
+
+  .modalText {
+    flex-direction: column;
+  }
+
+  .modalText h2 {
+    font-size: 1.2em;
   }
 
   .modalText p {
@@ -118,8 +118,6 @@ need to  arrange notes and images in columns*/
   }
 
   .modalImage {
-    position: relative;
-    display: flex;
-    flex: 1 2 20em;
+    width: 10rem;
   }
 }

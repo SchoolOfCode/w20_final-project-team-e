@@ -46,7 +46,7 @@
 /* Styling title and icon headers*/
 th {
   padding: 25px;
-  min-width: 150px;
+  min-width: 100px;
 }
 
 td {

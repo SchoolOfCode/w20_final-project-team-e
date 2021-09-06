@@ -120,7 +120,7 @@ export default function App() {
     
     setTimeout(() => {
       setLoadingComponent(false)
-    }, 4500);
+    }, 6000);
   }
 
   // Search button logic

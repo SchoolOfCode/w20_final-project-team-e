@@ -18,7 +18,6 @@ export default function App() {
   const enableBodyScroll = bodyScrollLock.enableBodyScroll;
   const targetElement = document.querySelector("html");
 
-
   //State - to/from
   const initialFormData = {
     from: "",
@@ -103,9 +102,8 @@ export default function App() {
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-        isInputValid: true, // --- This is to check that the inputs are valid locations
-      },
-      );
+        // isInputValid: true, // --- This is to check that the inputs are valid locations
+      });
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -117,14 +115,14 @@ export default function App() {
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
   const handleLoadingComponent = () => {
-    if(resultsData.isInputValid === true){
-      setLoadingComponent(true);
-    }
-    
+    // if (resultsData.isInputValid === true) {
+    setLoadingComponent(true);
+    //}
+
     setTimeout(() => {
-      setLoadingComponent(false)
+      setLoadingComponent(false);
     }, 6000);
-  }
+  };
 
   // Search button logic
   const handleChange = (e) => {
@@ -137,13 +135,12 @@ export default function App() {
   const [displayResults, setDisplayResults] = useState(false);
 
   const handleSubmit = (e) => {
+    handleLoadingComponent();
     e.preventDefault();
     getFootprint();
-    window.location = "#loading-section";
-    handleLoadingComponent();
-    setTimeout(() => {
-      window.location = "#results-section";
-    }, 4500);
+    // setTimeout(() => {
+    //   window.location = "#results-section";
+    // }, 4500);
     setDisplayResults(true);
   };
 

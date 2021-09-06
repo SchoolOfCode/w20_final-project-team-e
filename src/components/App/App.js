@@ -100,7 +100,7 @@ export default function App() {
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-        isInputValid: true,
+        isInputValid: true, // --- This is to check that the inputs are valid locations
       },
       );
     } catch (err) {
@@ -113,7 +113,7 @@ export default function App() {
   // Loading component to display for 4.5 seconds when the search button is pressed.
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
-  const renderLoadingComponent = () => {
+  const handleLoadingComponent = () => {
     if(resultsData.isInputValid === true){
       setLoadingComponent(true);
     }
@@ -135,7 +135,7 @@ export default function App() {
     e.preventDefault();
     getFootprint();
     window.location = "#loading-section";
-    renderLoadingComponent();
+    handleLoadingComponent();
     setTimeout(() => {
       window.location = "#results-section";
     }, 4500);

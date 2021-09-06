@@ -19,6 +19,7 @@ export default function App() {
   const targetElement = document.querySelector("body");
   const targetElement2 = document.querySelector("html");
 
+
   //State - to/from
   const initialFormData = {
     from: "",
@@ -81,7 +82,6 @@ export default function App() {
         headers
       );
       let flightData = await flightResponse.json();
-
       updateResultsData({
         ...resultsData,
         distance: distance.toFixed(2),
@@ -100,7 +100,9 @@ export default function App() {
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-      });
+        isInputValid: true,
+      },
+      );
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -112,13 +114,16 @@ export default function App() {
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
   const renderLoadingComponent = () => {
-    setLoadingComponent(true);
+    if(resultsData.isInputValid === true){
+      setLoadingComponent(true);
+    }
     
     setTimeout(() => {
       setLoadingComponent(false)
     }, 4500);
   }
 
+  // Search button logic
   const handleChange = (e) => {
     updateFormData({
       ...formData,

@@ -77,21 +77,21 @@ input[type="text"]::placeholder {
 }
 
 @media only screen and (max-width: 700px) {
-  /* .card {
-    padding: 15px 10px 15px 10px; 
-  } */
+  .card {
+    padding: 15px 10px 15px 10px;
+  }
 
-  /* .card-title {
-    visibility: hidden;
-    height: 0;
-    padding: 0;
-    margin: 0;
-  } */
+  .card-title {
+    font-size: 1.5em;
+    text-align: left;
+    visibility: visible;
+    margin-bottom: 10px;
+  }
 
   .card-body {
     width: 100%;
-    margin: 5px;
-    /* margin: 15px auto 15px auto; */
+    margin: 10px auto 10px auto;
+    padding: 0 10px;
   }
 
   .flex-container {

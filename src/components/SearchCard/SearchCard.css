@@ -7,23 +7,24 @@ input[type="text"]::placeholder {
   border-radius: 0 50px 0 50px;
 }
 
-.card-title {
+/* .card-title {
   color: white;
   font-size: 1.7rem;
   padding-bottom: 10px;
   visibility: hidden;
-}
+} */
 
 .card-body {
   width: 1000px;
-  margin: -37px auto 15px auto;
+  align-self: center;
+  /* margin: -37px auto 15px auto; */
   /* there is a minus margin present to hide the hidden H5 element on desktop displays */
 }
 
 .flex-container {
   display: flex;
   width: 100%;
-  margin: 0;
+  margin: 20px;
 }
 
 .search-input {
@@ -76,26 +77,28 @@ input[type="text"]::placeholder {
 }
 
 @media only screen and (max-width: 700px) {
-  .card {
-    padding: 15px 10px 15px 10px;
-  }
+  /* .card {
+    padding: 15px 10px 15px 10px; 
+  } */
 
-  .card-title {
-    font-size: 1.8em;
-    text-align: left;
-    visibility: visible;
-    margin-bottom: 20px;
-  }
+  /* .card-title {
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  } */
 
   .card-body {
     width: 100%;
-    margin: 15px auto 15px auto;
+    margin: 5px;
+    /* margin: 15px auto 15px auto; */
   }
 
   .flex-container {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 0;
   }
 
   .search-input {

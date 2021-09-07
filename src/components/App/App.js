@@ -108,6 +108,7 @@ export default function App() {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
       );
+      setLoadingComponent(false);
     }
   }
 

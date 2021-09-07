@@ -26,6 +26,7 @@
 }
 
 .hero-text-section {
+  text-align: left;
   padding: 5% 3% 5% 3%;
   margin: 1vh 5vw 1vh 10vw;
 }

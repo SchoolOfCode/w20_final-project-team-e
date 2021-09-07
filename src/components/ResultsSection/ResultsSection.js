@@ -1,7 +1,7 @@
 import React from "react";
 import "../ResultsSection/ResultsSection.css";
-import kettleIcon from "../../images/kettle-icon.svg";
-import treeIcon from "../../images/tree-icon.svg";
+// import kettleIcon from "../../images/kettle-icon.svg";
+// import treeIcon from "../../images/tree-icon.svg";
 import carIcon from "../../images/car-icon.svg";
 import busIcon from "../../images/bus-icon.svg";
 import planeIcon from "../../images/plane-icon.svg";

@@ -46,7 +46,7 @@
 /* Styling title and icon headers*/
 th {
   padding: 25px;
-  min-width: 50px;
+  width: 25%;
   word-wrap: break-word;
 }
 
@@ -56,7 +56,6 @@ td {
   border-top: 3px solid #64a7a8;
   padding: 25px;
   border-collapse: collapse;
-  min-width: 50px;
 }
 
 td:nth-last-child(1) {
@@ -67,6 +66,10 @@ td:nth-child(2) {
   border-left: 3px solid #64a7a8;
 }
 
+.remove-border {
+  border-top: none;
+  border-bottom: none;
+}
 /*
 table tbody tr:first-child td:nth-child(2) {
   background-color: cyan;

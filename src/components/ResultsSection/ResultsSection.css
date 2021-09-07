@@ -10,15 +10,53 @@
   }
 } */
 
-/* If screen size is more than 600px wide, set the font-size of <div> to 80px */
-@media screen and (min-width: 600px) {
-  .results-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-  }
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.results-disclaimer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  padding: 5%;
+  margin-top: 10%;
+  border-radius: 0px 20px 0px 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+  background-color: #64a7a8;
+}
+
+.results-table {
+  width: 50%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  /* margin-left: -100px; */
+  min-width: 100px;
+  border-radius: 0px 20px 0px 20px;
+}
+
+/* Styling title and icon headers*/
+th {
+  padding: 25px;
+  width: 25%;
+  word-wrap: break-word;
+}
+
+td {
+  background-color: white;
+  border-bottom: 3px solid #64a7a8;
+  border-top: 3px solid #64a7a8;
+  padding: 25px;
+  border-collapse: collapse;
+}
 
   .results-disclaimer {
     display: flex;
@@ -43,12 +81,15 @@
     min-width: 100px;
   }
 
-  /* Styling title and icon headers*/
-  th {
-    padding: 25px;
-    min-width: 50px;
-    word-wrap: break-word;
-  }
+.remove-border {
+  border-top: none;
+  border-bottom: none;
+}
+
+/*
+table tbody tr:first-child td:nth-child(2) {
+  background-color: cyan;
+}
 
   td {
     background-color: white;

@@ -16,59 +16,53 @@ export default function ResultsSection(props) {
           <thead>
             <tr className="row-header">
               <th scope="col"></th>
-              <th scope="col">Distance</th>
-              <th scope="col">
-                Kettles Boiled
-                <img src={kettleIcon} alt="kettle" width="100px"></img>
-              </th>
-              <th scope="col">
-                Trees to replace
-                <img src={treeIcon} alt="tree" width="100px"></img>
-              </th>
+              <th scope="col">Distance (km)</th>
+              <th scope="col">Kettles Boiled</th>
+              <th scope="col">Trees to Replace</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               {/* Car Data: */}
-              <th scope="row">
+              <td scope="row" className="remove-border">
                 <img src={carIcon} alt="car" width="100px"></img>
-              </th>
+              </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.carKettles}</td>
               <td>{props.resultsData.carTrees}</td>
             </tr>
             <tr>
               {/* Taxi Data: */}
-              <th scope="row">
+              <td scope="row" className="remove-border">
                 <img src={taxiIcon} alt="taxi" width="100px"></img>
-              </th>
+              </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.taxiKettles}</td>
               <td>{props.resultsData.taxiTrees}</td>
             </tr>
             <tr>
               {/* Bus Data: */}
-              <th scope="row">
+              <td scope="row" className="remove-border">
                 <img src={busIcon} alt="bus" width="100px"></img>
-              </th>
+              </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.busKettles}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
             <tr>
               {/* Train Data: */}
-              <th scope="row">
+              <td scope="row" className="remove-border">
                 <img src={trainIcon} alt="train" width="100px"></img>
-              </th>
+              </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.trainKettles}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
             <tr>
               {/* Plane Data: */}
-              <th scope="row">
+              <td scope="row" className="remove-border">
                 <img src={planeIcon} alt="plane" width="100px"></img>
-              </th>
+              </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.flightKettles}</td>
               <td>{props.resultsData.flightTrees}</td>

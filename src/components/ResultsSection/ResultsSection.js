@@ -25,7 +25,7 @@ export default function ResultsSection(props) {
             <tr>
               {/* Car Data: */}
               <td scope="row" className="remove-border">
-                <img src={carIcon} alt="car" width="100px"></img>
+                <img src={carIcon} alt="car" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.carKettles}</td>
@@ -34,7 +34,7 @@ export default function ResultsSection(props) {
             <tr>
               {/* Taxi Data: */}
               <td scope="row" className="remove-border">
-                <img src={taxiIcon} alt="taxi" width="100px"></img>
+                <img src={taxiIcon} alt="taxi" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.taxiKettles}</td>
@@ -43,7 +43,7 @@ export default function ResultsSection(props) {
             <tr>
               {/* Bus Data: */}
               <td scope="row" className="remove-border">
-                <img src={busIcon} alt="bus" width="100px"></img>
+                <img src={busIcon} alt="bus" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.busKettles}</td>
@@ -52,7 +52,7 @@ export default function ResultsSection(props) {
             <tr>
               {/* Train Data: */}
               <td scope="row" className="remove-border">
-                <img src={trainIcon} alt="train" width="100px"></img>
+                <img src={trainIcon} alt="train" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.trainKettles}</td>
@@ -61,7 +61,7 @@ export default function ResultsSection(props) {
             <tr>
               {/* Plane Data: */}
               <td scope="row" className="remove-border">
-                <img src={planeIcon} alt="plane" width="100px"></img>
+                <img src={planeIcon} alt="plane" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{props.resultsData.flightKettles}</td>

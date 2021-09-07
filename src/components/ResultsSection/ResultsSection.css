@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .results-disclaimer {
@@ -54,9 +55,10 @@ td {
   padding: 15px;
 }
 
-img {
-  /* width: 100%; */
-  min-width: 30px;
+/* this needs to be put into a reponsive media query*/
+.icons {
+  width: 100%;
+  max-width: 100px;
   height: auto;
 }
 

@@ -21,7 +21,8 @@
   flex-direction: column;
   border-radius: 20px;
   position: absolute;
-  width: 80vw;
+  width: 75vw;
+  max-width: 1200px;
   height: auto;
   padding: 50px 100px 50px 100px;
   background-color: white;
@@ -31,10 +32,6 @@
 .loading-component-item {
   margin-bottom: 10px;
   z-index: 1;
-}
-
-.loading-component-item p {
-  font-size: 1.8rem;
 }
 
 .loading-component-title {

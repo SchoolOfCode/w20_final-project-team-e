@@ -122,7 +122,7 @@ export default function App() {
 
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 6000);
+    }, 500000);
   };
 
   // Search button logic

@@ -1,21 +1,25 @@
+/* Change to REM units */
+body {
+  color: #2f2e41;
+}
+
 h1 {
-  font-size: 5rem;
+  font-size: 3.8rem;
   font-weight: bolder;
 }
 
 h2 {
-  font-size: 2.5vw;
+  font-size: 2.8rem;
   font-weight: bolder;
 }
 
 p {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,9 +40,15 @@ p {
   font-size: xx-large;
   z-index: 3;
 }
+.openModalBtn:focus {
+  outline: 0;
+  border: 0;
+  background-color: none;
+}
 
 .closeModalBtn {
   position: sticky;
+  bottom: 35px;
   bottom: 35px;
   float: right;
   margin: 30px;
@@ -50,12 +60,18 @@ p {
   color: white;
   cursor: pointer;
   font-size: xx-large;
-  z-index: 3;
+  z-index: 4;
+}
+
+.closeModalBtn:focus {
+  outline: 0;
+  border: 0;
+  background-color: none;
 }
 
 @media only screen and (max-width: 700px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   h2 {
@@ -64,10 +80,6 @@ p {
 
   p {
     font-size: 1.3rem;
-  }
-
-  .App {
-    overflow-x: hidden;
   }
 
   .App-logo {

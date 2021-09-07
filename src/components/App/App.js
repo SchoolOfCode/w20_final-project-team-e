@@ -16,8 +16,7 @@ export default function App() {
   const bodyScrollLock = require("body-scroll-lock");
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;
   const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-  const targetElement = document.querySelector("body");
-  const targetElement2 = document.querySelector("html");
+  const targetElement = document.querySelector("html");
 
   //State - to/from
   const initialFormData = {
@@ -85,7 +84,6 @@ export default function App() {
         headers
       );
       let flightData = await flightResponse.json();
-
       updateResultsData({
         ...resultsData,
         distance: distance.toFixed(2),
@@ -104,14 +102,30 @@ export default function App() {
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
+        // isInputValid: true, // --- This is to check that the inputs are valid locations
       });
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
       );
+      setLoadingComponent(false);
     }
   }
 
+  // Loading component to display for 4.5 seconds when the search button is pressed.
+  const [showLoadingComponent, setLoadingComponent] = useState(false);
+
+  const handleLoadingComponent = () => {
+    // if (resultsData.isInputValid === true) {
+    setLoadingComponent(true);
+    //}
+
+    setTimeout(() => {
+      setLoadingComponent(false);
+    }, 4000);
+  };
+
+  // Search button logic
   const handleChange = (e) => {
     updateFormData({
       ...formData,
@@ -119,27 +133,27 @@ export default function App() {
     });
   };
 
+  const [displayResults, setDisplayResults] = useState(false);
+
   const handleSubmit = (e) => {
+    handleLoadingComponent();
     e.preventDefault();
     getFootprint();
-    window.location = "#loading-section";
-    setTimeout(() => {
-      window.location = "#results-section";
-    }, 3000);
-    //now show results card
+    // setTimeout(() => {
+    //   window.location = "#results-section";
+    // }, 4500);
+    setDisplayResults(true);
   };
 
   const [openModal, setOpenModal] = useState(false);
   if (openModal === true) {
     disableBodyScroll(targetElement);
-    disableBodyScroll(targetElement2);
   } else {
     enableBodyScroll(targetElement);
-    enableBodyScroll(targetElement2);
   }
 
   return (
-    <div className="app">
+    <div className="App">
       {/* to be fixed at the top of the page? */}
       <Sticky>
         <Menu />
@@ -150,9 +164,10 @@ export default function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      <LoadingSection formData={formData} />
-      <ResultsSection formData={formData} resultsData={resultsData} />
-      {/* <ResultsCard formData={formData} resultsData={resultsData} /> */}
+      {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
+      {displayResults ? (
+        <ResultsSection formData={formData} resultsData={resultsData} />
+      ) : null}
       {/* button with text to appear as overlay onclick? */}
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}
@@ -162,6 +177,7 @@ export default function App() {
       >
         ?
       </button>
+
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
   );

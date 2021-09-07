@@ -7,7 +7,7 @@ export default function SearchCard(props) {
     <Sticky>
       <div className="card text-center" id="homescreen">
         <div className="card-body">
-          <h2 className="card-title">Calculate Your Journey</h2>
+          {/* <h2 className="card-title">Calculate Your Journey</h2> */}
           <form className="flex-container">
             <div className="search-input">
               <input

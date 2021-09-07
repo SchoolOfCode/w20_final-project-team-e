@@ -51,7 +51,7 @@ export default function LoadingSection(props) {
         <div className="loading-component-container">
           <h2 className="loading-component-title">Take a big breath!</h2>
           <div className="loading-component-item">
-          <p><img className="loading-component-icon" src={iconStatus[0]} alt="Calculation complete icon"/>We're calculating the distance and emissions for your journey from <span className="input-location">{fromLocation}</span> to <span className="input-location">{toLocation}</span>.</p>
+          <p>We're calculating the distance and emissions for your journey from <span className="input-location">{fromLocation}</span> to <span className="input-location">{toLocation}</span>.</p>
           </div>
           {/* <div className="loading-component-item">
             <p><img className="loading-component-icon" src={iconStatus[1]} alt="Calculation complete icon"/>{loadingInfo.comment.carbon}</p>

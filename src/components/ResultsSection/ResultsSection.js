@@ -16,15 +16,9 @@ export default function ResultsSection(props) {
           <thead>
             <tr className="row-header">
               <th scope="col"></th>
-              <th scope="col">Distance</th>
-              <th scope="col">
-                Kettles Boiled
-                <img src={kettleIcon} alt="kettle" width="100px"></img>
-              </th>
-              <th scope="col">
-                Trees to replace
-                <img src={treeIcon} alt="tree" width="100px"></img>
-              </th>
+              <th scope="col">Distance (km)</th>
+              <th scope="col">Kettles Boiled</th>
+              <th scope="col">Trees to Replace</th>
             </tr>
           </thead>
           <tbody>

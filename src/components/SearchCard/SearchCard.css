@@ -77,9 +77,9 @@ input[type="text"]::placeholder {
 }
 
 @media only screen and (max-width: 700px) {
-  .card {
-    /* padding: 15px 10px 15px 10px; */
-  }
+  /* .card {
+    padding: 15px 10px 15px 10px; 
+  } */
 
   /* .card-title {
     visibility: hidden;
@@ -90,7 +90,7 @@ input[type="text"]::placeholder {
 
   .card-body {
     width: 100%;
-    margin: 0;
+    margin: 5px;
     /* margin: 15px auto 15px auto; */
   }
 

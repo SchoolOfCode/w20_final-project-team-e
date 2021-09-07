@@ -22,7 +22,7 @@
   border-radius: 20px;
   position: absolute;
   width: 75vw;
-  max-width: 1200px;
+  max-width: 1000px;
   height: auto;
   padding: 50px 100px 50px 100px;
   background-color: white;
@@ -61,7 +61,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 22vw;
+  width: 25vw;
+  max-width: 300px;
   z-index: 0;
 }
 

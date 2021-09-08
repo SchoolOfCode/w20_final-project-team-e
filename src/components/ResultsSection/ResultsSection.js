@@ -82,7 +82,7 @@ export default function ResultsSection(props) {
         <p>
           Pixies. No seriously. We calulate your carbon based on stats for the
           most common transport choices, to help you make informed decisions
-          about the best eco friednly option for you.
+          about the best eco friendly option for you.
         </p>
       </div>
     </section>

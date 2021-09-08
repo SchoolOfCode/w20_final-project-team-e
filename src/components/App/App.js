@@ -84,6 +84,7 @@ export default function App() {
         headers
       );
       let flightData = await flightResponse.json();
+      
       updateResultsData({
         ...resultsData,
         distance: distance.toFixed(2),
@@ -129,9 +130,10 @@ export default function App() {
     });
   };
 
+  
+  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
   const [displayResults, setDisplayResults] = useState(false);
 
-  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
   const displayResultsComponent = () => {
     if (displayResults === true) {
       setDisplayResults(false);

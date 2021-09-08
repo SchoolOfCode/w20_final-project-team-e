@@ -20,7 +20,7 @@ export default function ResultsSection(props) {
       return transport;
     }
     if(transport >= 1000){
-      transport = transport.toFixed / 1000;
+      transport = transport / 1000;
       transport = transport.toFixed(1);
       return transport + "K";
     }
@@ -39,9 +39,8 @@ export default function ResultsSection(props) {
             </tr>
           </thead>
           <tbody>
-
+            {/* Car Data: */}
             <tr>
-              {/* Car Data: */}
               <td className="remove-border">
                 <img src={carIcon} alt="car" className="icons"></img>
               </td>
@@ -49,9 +48,8 @@ export default function ResultsSection(props) {
               <td>{convertNumber(kettlesBoiledCar)}</td>
               <td>{props.resultsData.carTrees}</td>
             </tr>
-
+            {/* Bus Data: */}
             <tr>
-              {/* Bus Data: */}
               <td className="remove-border">
                 <img src={busIcon} alt="bus" className="icons"></img>
               </td>
@@ -59,9 +57,8 @@ export default function ResultsSection(props) {
               <td>{convertNumber(kettlesBoiledBus)}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
-
+            {/* Train Data: */}
             <tr>
-              {/* Train Data: */}
               <td className="remove-border">
                 <img src={trainIcon} alt="train" className="icons"></img>
               </td>
@@ -69,9 +66,8 @@ export default function ResultsSection(props) {
               <td>{convertNumber(kettlesBoiledTrain)}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
-
+            {/* Plane Data: */}
             <tr>
-              {/* Plane Data: */}
               <td className="remove-border">
                 <img src={planeIcon} alt="plane" className="icons"></img>
               </td>
@@ -79,7 +75,6 @@ export default function ResultsSection(props) {
               <td>{convertNumber(kettlesBoiledPlane)}</td>
               <td>{props.resultsData.flightTrees}</td>
             </tr>
-
           </tbody>
         </table>
       </div>

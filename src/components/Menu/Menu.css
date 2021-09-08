@@ -14,11 +14,11 @@
 
 @media only screen and (max-width: 700px) {
   .navbar {
-    height: 5vh;
+    height: 9vh;
   }
 
   .nav-logo-link {
-    margin-top: -10px;
+    margin-top: -12px;
     height: 10vh;
   }
 
@@ -27,6 +27,6 @@
   }
 
   .container-fluid {
-    height: 5vh;
+    height: 10vh;
   }
 }

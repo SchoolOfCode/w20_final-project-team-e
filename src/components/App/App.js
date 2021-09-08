@@ -102,7 +102,6 @@ export default function App() {
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-        // isInputValid: true, // --- This is to check that the inputs are valid locations
       });
     } catch (err) {
       alert(
@@ -116,10 +115,7 @@ export default function App() {
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
   const handleLoadingComponent = () => {
-    // if (resultsData.isInputValid === true) {
     setLoadingComponent(true);
-    //}
-
     setTimeout(() => {
       setLoadingComponent(false);
     }, 4000);
@@ -134,15 +130,22 @@ export default function App() {
   };
 
   const [displayResults, setDisplayResults] = useState(false);
+  
+  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
+  const displayResultsComponent = () => {
+    if(displayResults === true){
+      setDisplayResults(false);
+    }
+    setTimeout(() => {
+      setDisplayResults(true);
+    }, 4000);
+  }
 
   const handleSubmit = (e) => {
     handleLoadingComponent();
     e.preventDefault();
     getFootprint();
-    // setTimeout(() => {
-    //   window.location = "#results-section";
-    // }, 4500);
-    setDisplayResults(true);
+    displayResultsComponent();
   };
 
   const [openModal, setOpenModal] = useState(false);
@@ -168,16 +171,12 @@ export default function App() {
       {displayResults ? (
         <ResultsSection formData={formData} resultsData={resultsData} />
       ) : null}
-      {/* button with text to appear as overlay onclick? */}
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
           setOpenModal(!openModal);
         }}
-      >
-        ?
-      </button>
-
+      >?</button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
   );

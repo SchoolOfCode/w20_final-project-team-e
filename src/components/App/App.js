@@ -130,16 +130,21 @@ export default function App() {
   };
 
   const [displayResults, setDisplayResults] = useState(false);
-  
+
   // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
   const displayResultsComponent = () => {
-    if(displayResults === true){
+    if (displayResults === true) {
       setDisplayResults(false);
     }
+
     setTimeout(() => {
       setDisplayResults(true);
+      document
+        .getElementById("results-table")
+        .scrollIntoView({ block: "center" });
+      document.getElementById("homescreen").scrollIntoView();
     }, 4000);
-  }
+  };
 
   const handleSubmit = (e) => {
     handleLoadingComponent();
@@ -176,7 +181,9 @@ export default function App() {
         onClick={() => {
           setOpenModal(!openModal);
         }}
-      >?</button>
+      >
+        ?
+      </button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
   );

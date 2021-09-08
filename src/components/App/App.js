@@ -154,7 +154,7 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  if (openModal === true) {
+  if (openModal === true || showLoadingComponent === true) {
     disableBodyScroll(targetElement);
   } else {
     enableBodyScroll(targetElement);

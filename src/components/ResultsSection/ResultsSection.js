@@ -8,7 +8,6 @@ import planeIcon from "../../images/plane-icon.svg";
 import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {
-  
   // let kettlesBoiledBicycle = props.resultsData.bicycleKettles;
   let kettlesBoiledCar = props.resultsData.carKettles;
   let kettlesBoiledBus = props.resultsData.busKettles;
@@ -16,19 +15,19 @@ export default function ResultsSection(props) {
   let kettlesBoiledPlane = props.resultsData.flightKettles;
 
   const convertNumber = (transport) => {
-    if(transport < 1000){
+    if (transport < 1000) {
       return transport;
     }
-    if(transport >= 1000){
+    if (transport >= 1000) {
       transport = transport / 1000;
       transport = transport.toFixed(1);
       return transport + "K";
     }
-  }
-    
+  };
+
   return (
     <section className="results-container">
-      <div className="results-table">
+      <div className="results-table" id="results-table">
         <table>
           <thead>
             <tr className="row-header">

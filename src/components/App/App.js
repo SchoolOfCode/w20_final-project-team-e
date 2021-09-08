@@ -71,12 +71,12 @@ export default function App() {
       );
       let busData = await busResponse.json();
 
-      //Taxi
-      let taxiResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
-        headers
-      );
-      let taxiData = await taxiResponse.json();
+      // //Taxi
+      // let taxiResponse = await fetch(
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
+      //   headers
+      // );
+      // let taxiData = await taxiResponse.json();
 
       //Flight
       let flightResponse = await fetch(
@@ -96,9 +96,9 @@ export default function App() {
         busCarbon: busData.carbonEquivalent.toFixed(2),
         busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
         busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
-        taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
-        taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
+        // taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
+        // taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
+        // taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),

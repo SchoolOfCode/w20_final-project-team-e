@@ -8,6 +8,25 @@ import planeIcon from "../../images/plane-icon.svg";
 import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {
+  
+  // let kettlesBoiledBicycle = props.resultsData.bicycleKettles;
+  let kettlesBoiledCar = props.resultsData.carKettles;
+  let kettlesBoiledBus = props.resultsData.busKettles;
+  let kettlesBoiledTrain = props.resultsData.trainKettles;
+  let kettlesBoiledPlane = props.resultsData.flightKettles;
+
+  // Takes in a 
+  const convertNumber = (transport) => {
+    if(transport < 1000){
+      return transport;
+    }
+    if(transport >= 1000){
+      transport = transport / 1000;
+      transport = transport.toFixed(1);
+      return transport + "K";
+    }
+  }
+    
   return (
     <section className="results-container">
       <div className="results-table">
@@ -27,7 +46,7 @@ export default function ResultsSection(props) {
                 <img src={carIcon} alt="car" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.carKettles}</td>
+              <td>{convertNumber(kettlesBoiledCar)}</td>
               <td>{props.resultsData.carTrees}</td>
             </tr>
             <tr>
@@ -36,7 +55,7 @@ export default function ResultsSection(props) {
                 <img src={busIcon} alt="bus" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.busKettles}</td>
+              <td>{convertNumber(kettlesBoiledBus)}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
             <tr>
@@ -45,7 +64,7 @@ export default function ResultsSection(props) {
                 <img src={trainIcon} alt="train" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.trainKettles}</td>
+              <td>{convertNumber(kettlesBoiledTrain)}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
             <tr>
@@ -54,7 +73,7 @@ export default function ResultsSection(props) {
                 <img src={planeIcon} alt="plane" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.flightKettles}</td>
+              <td>{convertNumber(kettlesBoiledPlane)}</td>
               <td>{props.resultsData.flightTrees}</td>
             </tr>
           </tbody>

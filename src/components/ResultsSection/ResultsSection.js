@@ -5,7 +5,6 @@ import "../ResultsSection/ResultsSection.css";
 import carIcon from "../../images/car-icon.svg";
 import busIcon from "../../images/bus-icon.svg";
 import planeIcon from "../../images/plane-icon.svg";
-import taxiIcon from "../../images/taxi-icon.svg";
 import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {

@@ -24,6 +24,7 @@
 
   .nav-logo {
     transform: scale(0.5);
+    margin-left: -15px;
   }
 
   .container-fluid {

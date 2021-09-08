@@ -38,7 +38,7 @@
   justify-content: center;
   text-align: center;
   padding: 25px;
-  min-width: 30px;
+  min-width: 100px;
   border-radius: 0px 20px 0px 20px;
 } */
 
@@ -54,6 +54,9 @@ td {
   border-bottom: 3px solid #64a7a8;
   border-top: 3px solid #64a7a8;
   padding: 15px;
+  /* padding: 25px;
+  border-collapse: collapse;
+  min-width: 50px; */
 }
 
 /* this needs to be put into a reponsive media query*/

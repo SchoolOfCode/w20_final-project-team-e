@@ -15,13 +15,12 @@ export default function ResultsSection(props) {
   let kettlesBoiledTrain = props.resultsData.trainKettles;
   let kettlesBoiledPlane = props.resultsData.flightKettles;
 
-  // Takes in a 
   const convertNumber = (transport) => {
     if(transport < 1000){
       return transport;
     }
     if(transport >= 1000){
-      transport = transport / 1000;
+      transport = transport.toFixed / 1000;
       transport = transport.toFixed(1);
       return transport + "K";
     }
@@ -40,42 +39,47 @@ export default function ResultsSection(props) {
             </tr>
           </thead>
           <tbody>
+
             <tr>
               {/* Car Data: */}
-              <td scope="row" className="remove-border">
+              <td className="remove-border">
                 <img src={carIcon} alt="car" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{convertNumber(kettlesBoiledCar)}</td>
               <td>{props.resultsData.carTrees}</td>
             </tr>
+
             <tr>
               {/* Bus Data: */}
-              <td scope="row" className="remove-border">
+              <td className="remove-border">
                 <img src={busIcon} alt="bus" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{convertNumber(kettlesBoiledBus)}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
+
             <tr>
               {/* Train Data: */}
-              <td scope="row" className="remove-border">
+              <td className="remove-border">
                 <img src={trainIcon} alt="train" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{convertNumber(kettlesBoiledTrain)}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
+
             <tr>
               {/* Plane Data: */}
-              <td scope="row" className="remove-border">
+              <td className="remove-border">
                 <img src={planeIcon} alt="plane" className="icons"></img>
               </td>
               <td>{props.resultsData.distance}</td>
               <td>{convertNumber(kettlesBoiledPlane)}</td>
               <td>{props.resultsData.flightTrees}</td>
             </tr>
+
           </tbody>
         </table>
       </div>
@@ -90,53 +94,3 @@ export default function ResultsSection(props) {
     </section>
   );
 }
-
-// const StyledResultsSection = styled.section`
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-start;
-
-//   height: 50%
-//   width: 50%;
-
-//   .results-items {
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//   }
-// `;
-
-// const StyledResultsSection = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   width: 500px;
-//   background-color: green;
-//   margin: 0 auto;
-
-//   .results-headings {
-//     display: flex;
-//     flex-direction: row;
-//     width: 100%;
-//     justify-content: flex-end;
-//     background-color: red;
-
-//     // .empty {
-//     //   width: 0px;
-//     //   background-color: blue;
-//     // }
-
-//     .mileage-title {
-//       width: 150px;
-//       background-color: violet;
-//     }
-//     .kettles-title {
-//       width: 150px;
-//       background-color: yellow;
-//     }
-//     .trees-title {
-//       width: 150px;
-//       background-color: cyan;
-//     }
-//   }
-// `;

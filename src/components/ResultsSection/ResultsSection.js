@@ -32,15 +32,6 @@ export default function ResultsSection(props) {
               <td>{props.resultsData.carTrees}</td>
             </tr>
             <tr>
-              {/* Taxi Data: */}
-              <td scope="row" className="remove-border">
-                <img src={taxiIcon} alt="taxi" className="icons"></img>
-              </td>
-              <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.taxiKettles}</td>
-              <td>{props.resultsData.taxiTrees}</td>
-            </tr>
-            <tr>
               {/* Bus Data: */}
               <td scope="row" className="remove-border">
                 <img src={busIcon} alt="bus" className="icons"></img>

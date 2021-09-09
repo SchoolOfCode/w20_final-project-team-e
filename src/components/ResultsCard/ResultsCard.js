@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '1000px',
     maxWidth: '1200px',
-    borderStyle: 'solid',
+    border: 'solid #074445',
+    borderRadius: '15px',
     margin: '50px auto 0 auto',
   },
   componentBody: {
@@ -26,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   transportIcon: {
     width: '125px',
     height: '125px',
+  },
+  primaryItem: {
+    width: '25%',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -39,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   primaryData: {
     fontWeight: 'bold',
-    fontSize: '3.5rem',
+    fontSize: '4rem',
   },
   secondaryData: {
     fontWeight: 'bold',
@@ -53,12 +57,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   buttonPositioning: {
-      marginTop: '35px',
+      marginTop: '15px',
   },
 }));
 
 
-export default function RecipeReviewCard() {
+export default function ResultsCard() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [buttonDescription, setbuttonDescription] = React.useState("More");
@@ -90,32 +94,32 @@ export default function RecipeReviewCard() {
                     image={PlaneIcon}
                     />
                 </Box>
-                <Box>
+                <Box className={classes.primaryItem}>
                     <CardContent>
-                        <Typography paragraph>
+                        <Typography>
                             <span className={classes.primaryData}>10</span>KM
                         </Typography>
-                        <Typography paragraph color='textSecondary'>
+                        <Typography color='textSecondary'>
                             is the distance of this journey                        
                         </Typography>
                     </CardContent>
                 </Box>
-                <Box>
+                <Box className={classes.primaryItem}>
                     <CardContent>
-                        <Typography paragraph>
+                        <Typography>
                             <span className={classes.primaryData}>10</span>KG
                         </Typography>
-                        <Typography paragraph color='textSecondary'>
+                        <Typography color='textSecondary'>
                             of Carbon Emissions could be produced
                         </Typography>
                     </CardContent>
                 </Box>
-                <Box>
+                <Box className={classes.primaryItem}>
                     <CardContent>
-                        <Typography paragraph>
+                        <Typography>
                             <span className={classes.primaryData}>10</span>TREE(s)
                         </Typography>
-                        <Typography paragraph color='textSecondary'>
+                        <Typography color='textSecondary'>
                             would be required to offset this amount of Carbon
                         </Typography>
                     </CardContent>
@@ -132,7 +136,7 @@ export default function RecipeReviewCard() {
                         >
                         <ExpandMoreIcon />
                         </IconButton>
-                        <Typography paragraph>
+                        <Typography>
                             {buttonDescription}
                         </Typography>
                     </CardContent>
@@ -154,40 +158,40 @@ export default function RecipeReviewCard() {
                 >
                     <Box>
                         <CardContent>
-                            <Typography paragraph>
+                            <Typography>
                                 <span className={classes.secondaryData}>10</span>
                             </Typography>
-                            <Typography paragraph color='textSecondary'>
+                            <Typography color='textSecondary'>
                                 Kettles Boiled
                             </Typography>
                         </CardContent>
                     </Box>
                     <Box>
                         <CardContent>
-                            <Typography paragraph>
+                            <Typography>
                                 <span className={classes.secondaryData}>10</span>
                             </Typography>
-                            <Typography paragraph color='textSecondary'>
+                            <Typography color='textSecondary'>
                                 Hours of TV
                             </Typography>
                         </CardContent>
                     </Box>
                     <Box>
                         <CardContent>
-                            <Typography paragraph>
+                            <Typography>
                                 <span className={classes.secondaryData}>10</span>
                             </Typography>
-                            <Typography paragraph color='textSecondary'>
+                            <Typography color='textSecondary'>
                                 Washing Loads
                             </Typography>
                         </CardContent>
                     </Box>
                     <Box>
                         <CardContent>
-                            <Typography paragraph>
+                            <Typography>
                                 <span className={classes.secondaryData}>10</span>
                             </Typography>
-                            <Typography paragraph color='textSecondary'>
+                            <Typography color='textSecondary'>
                                 Hours of Power
                             </Typography>
                         </CardContent>

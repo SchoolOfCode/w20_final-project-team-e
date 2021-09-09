@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '50px auto 0 auto',
   },
   componentBody: {
-      width: '100%',
+    width: '100%',
   },
   transportIcon: {
     width: '100px',
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const[buttonDescription, setbuttonDescription] = React.useState("More");
+    const [buttonDescription, setbuttonDescription] = React.useState("More");
   
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -56,40 +56,40 @@ export default function RecipeReviewCard() {
 
   return (
     <div className={classes.root}>
-        <Card className={classes.componentBody}>
+        <Card>
             <Box 
-                display="flex"
-                flexDirection="row"
-                flexWrap="nowrap" 
-                justifyContent="center"
-                alignItems="center" 
-                p={1} 
-                m={1}
+            className={classes.componentBody}
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap" 
+            justifyContent="flex-end"
+            alignItems="center"
+            p={1} 
+            m={1}
             >
                 <Box>
                     <CardMedia
-                        className={classes.transportIcon}
-                        image={PlaneIcon}
-                        title="Paella dish"
+                    className={classes.transportIcon}
+                    image={PlaneIcon}
                     />
                 </Box>
                 <Box>
                     <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography paragraph>
                         Distance travelled section.
                         </Typography>
                     </CardContent>
                 </Box>
                 <Box>
                     <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography paragraph>
                         Carbon emission section.
                         </Typography>
                     </CardContent>
                 </Box>
                 <Box>
                     <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography paragraph>
                         Trees planted section.
                         </Typography>
                     </CardContent>
@@ -98,7 +98,7 @@ export default function RecipeReviewCard() {
                     <CardContent>
                         <IconButton
                         className={clsx(classes.expand, {
-                            [classes.expandOpen]: expanded,
+                        [classes.expandOpen]: expanded,
                         })}
                         onClick={handleExpandClick}
                         aria-expanded={expanded}
@@ -106,20 +106,54 @@ export default function RecipeReviewCard() {
                         >
                         <ExpandMoreIcon />
                         </IconButton>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography paragraph>
                         {buttonDescription}
                         </Typography>
                     </CardContent>
                 </Box>
             </Box>
-            <CardActions disableSpacing />
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                <Typography paragraph>
-                    The component has been <span>expanded.</span>
-                </Typography>
-                </CardContent>
+                <Box
+                className={classes.componentBody}
+                display="flex"
+                flexDirection="row"
+                flexWrap="nowrap" 
+                justifyContent="center"
+                alignItems="center"
+                p={1} 
+                m={1}
+                >
+                    <Box>
+                        <CardContent>
+                            <Typography paragraph>
+                                The component has been <span>expanded.</span>
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                    <Box>
+                        <CardContent>
+                            <Typography paragraph>
+                                The component has been <span>expanded.</span>
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                    <Box>
+                        <CardContent>
+                            <Typography paragraph>
+                                The component has been <span>expanded.</span>
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                    <Box>
+                        <CardContent>
+                            <Typography paragraph>
+                                The component has been <span>expanded.</span>
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Box>
             </Collapse>
+            <CardActions disableSpacing />
         </Card>
     </div>
   );

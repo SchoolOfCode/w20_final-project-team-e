@@ -71,12 +71,12 @@ export default function App() {
       );
       let busData = await busResponse.json();
 
-      //Taxi
-      let taxiResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
-        headers
-      );
-      let taxiData = await taxiResponse.json();
+      // //Taxi
+      // let taxiResponse = await fetch(
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
+      //   headers
+      // );
+      // let taxiData = await taxiResponse.json();
 
       //Flight
       let flightResponse = await fetch(
@@ -84,6 +84,7 @@ export default function App() {
         headers
       );
       let flightData = await flightResponse.json();
+      
       updateResultsData({
         ...resultsData,
         distance: distance.toFixed(2),
@@ -96,13 +97,12 @@ export default function App() {
         busCarbon: busData.carbonEquivalent.toFixed(2),
         busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
         busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
-        taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
-        taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
+        // taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
+        // taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
+        // taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-        // isInputValid: true, // --- This is to check that the inputs are valid locations
       });
     } catch (err) {
       alert(
@@ -116,10 +116,7 @@ export default function App() {
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
   const handleLoadingComponent = () => {
-    // if (resultsData.isInputValid === true) {
     setLoadingComponent(true);
-    //}
-
     setTimeout(() => {
       setLoadingComponent(false);
     }, 4000);
@@ -133,20 +130,33 @@ export default function App() {
     });
   };
 
+  
+  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
   const [displayResults, setDisplayResults] = useState(false);
+
+  const displayResultsComponent = () => {
+    if (displayResults === true) {
+      setDisplayResults(false);
+    }
+
+    setTimeout(() => {
+      setDisplayResults(true);
+      document
+        .getElementById("results-table")
+        .scrollIntoView({ block: "center" });
+      document.getElementById("homescreen").scrollIntoView();
+    }, 4000);
+  };
 
   const handleSubmit = (e) => {
     handleLoadingComponent();
     e.preventDefault();
     getFootprint();
-    // setTimeout(() => {
-    //   window.location = "#results-section";
-    // }, 4500);
-    setDisplayResults(true);
+    displayResultsComponent();
   };
 
   const [openModal, setOpenModal] = useState(false);
-  if (openModal === true) {
+  if (openModal === true || showLoadingComponent === true) {
     disableBodyScroll(targetElement);
   } else {
     enableBodyScroll(targetElement);
@@ -168,7 +178,6 @@ export default function App() {
       {displayResults ? (
         <ResultsSection formData={formData} resultsData={resultsData} />
       ) : null}
-      {/* button with text to appear as overlay onclick? */}
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
@@ -177,7 +186,6 @@ export default function App() {
       >
         ?
       </button>
-
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
   );

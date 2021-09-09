@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 40px;
 }
 
 .results-disclaimer {
@@ -27,7 +28,7 @@
   padding: 10%;
   border-radius: 0px 20px 0px 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
-  background-color: #64a7a8;
+  background-color: #e9eeee;
 }
 
 /* .results-table {
@@ -77,4 +78,22 @@ td:nth-last-child(1) {
 
 td:nth-child(2) {
   border-left: 3px solid #64a7a8;
+}
+
+@media only screen and (max-width: 700px) {
+  .results-container {
+    margin-top: 20px;
+  }
+
+  .results-table {
+    width: 90vw;
+  }
+
+  th {
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+  }
 }

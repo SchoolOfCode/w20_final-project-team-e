@@ -30,8 +30,7 @@ export default function SearchCard(props) {
                 onChange={props.handleChange}
               ></input>
             </div>
-            {/*         
-onlcick of this button, run loading page for a few seconds, then load results page */}
+            {/*onlcick of this button, run loading page for a few seconds, then load results page */}
             <div className="btn-submit">
               <button
                 type="submit"

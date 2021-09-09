@@ -9,8 +9,8 @@ import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PlaneIcon from '../../images/plane-icon.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -57,8 +57,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   buttonPositioning: {
-      marginTop: '15px',
+    marginTop: '15px',
   },
+  informationLink: {
+    marginTop: '30px',
+  }
 }));
 
 
@@ -75,6 +78,10 @@ export default function ResultsCard() {
             setbuttonDescription(("Less"));
         }
     };
+
+    const doSomething = () => {
+        alert(`Information about our calculations.`)
+    }
 
   return (
     <div className={classes.root}>
@@ -143,7 +150,7 @@ export default function ResultsCard() {
                 </Box>
             </Box>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <Typography className={classes.subheading} paragraph>
+                <Typography className={classes.subheading}>
                     <span className={classes.bold}>10kg of Carbon</span> is equivalent to:
                 </Typography>
                 <Box
@@ -197,6 +204,11 @@ export default function ResultsCard() {
                         </CardContent>
                     </Box>
                 </Box>
+                <Typography className={classes.informationLink} color='textSecondary'>
+                    <Link href='#' onClick={() => doSomething()}>
+                        How did we calculate this information?
+                    </Link>
+                </Typography>
             </Collapse>
             <CardActions disableSpacing />
         </Card>

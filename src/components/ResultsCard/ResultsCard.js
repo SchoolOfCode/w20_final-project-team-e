@@ -52,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
   bold: {
     fontWeight: 'bold',
   },
+  buttonPositioning: {
+      marginTop: '35px',
+  },
 }));
 
 
@@ -103,7 +106,7 @@ export default function RecipeReviewCard() {
                             <span className={classes.primaryData}>10</span>KG
                         </Typography>
                         <Typography paragraph color='textSecondary'>
-                            Distance travelled section.
+                            of Carbon Emissions could be produced
                         </Typography>
                     </CardContent>
                 </Box>
@@ -113,12 +116,12 @@ export default function RecipeReviewCard() {
                             <span className={classes.primaryData}>10</span>TREE(s)
                         </Typography>
                         <Typography paragraph color='textSecondary'>
-                            Distance travelled section.
+                            would be required to offset this amount of Carbon
                         </Typography>
                     </CardContent>
                 </Box>
                 <Box>
-                    <CardContent>
+                    <CardContent className={classes.buttonPositioning}>
                         <IconButton
                         className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded,

@@ -7,7 +7,7 @@ import SearchSection from "../SearchSection/SearchSection";
 import HeroSection from "../HeroSection/HeroSection";
 import LoadingSection from "../LoadingSection/LoadingSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
-// import ResultsCard from "../ResultsCard/ResultsCard";
+import ResultsCard from "../ResultsCard/ResultsCard";
 import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
@@ -178,6 +178,7 @@ export default function App() {
       {displayResults ? (
         <ResultsSection formData={formData} resultsData={resultsData} />
       ) : null}
+      <ResultsCard />
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {

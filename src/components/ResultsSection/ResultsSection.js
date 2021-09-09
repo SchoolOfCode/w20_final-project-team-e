@@ -5,7 +5,7 @@ import treeIcon from "../../images/tree-icon.svg";
 import carIcon from "../../images/car-icon.svg";
 import busIcon from "../../images/bus-icon.svg";
 import planeIcon from "../../images/plane-icon.svg";
-import taxiIcon from "../../images/taxi-icon.svg";
+import bicycleIcon from "../../images/bicycle-icon.svg";
 import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {
@@ -33,25 +33,25 @@ export default function ResultsSection(props) {
               <th scope="row">
                 <img src={carIcon} alt="car" width="100px"></img>
               </th>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.carDistance}</td>
               <td>{props.resultsData.carKettles}</td>
               <td>{props.resultsData.carTrees}</td>
             </tr>
             <tr>
-              {/* Taxi Data: */}
+              {/* Bike Data: */}
               <th scope="row">
-                <img src={taxiIcon} alt="taxi" width="100px"></img>
+                <img src={bicycleIcon} alt="bicycle" width="100px"></img>
               </th>
-              <td>{props.resultsData.distance}</td>
-              <td>{props.resultsData.taxiKettles}</td>
-              <td>{props.resultsData.taxiTrees}</td>
+              <td>{props.resultsData.bikeDistance}</td>
+              <td>{props.resultsData.bikeKettles}</td>
+              <td>{props.resultsData.bikeTrees}</td>
             </tr>
             <tr>
               {/* Bus Data: */}
               <th scope="row">
                 <img src={busIcon} alt="bus" width="100px"></img>
               </th>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.busDistance}</td>
               <td>{props.resultsData.busKettles}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
@@ -60,7 +60,7 @@ export default function ResultsSection(props) {
               <th scope="row">
                 <img src={trainIcon} alt="train" width="100px"></img>
               </th>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.trainDistance}</td>
               <td>{props.resultsData.trainKettles}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
@@ -69,7 +69,7 @@ export default function ResultsSection(props) {
               <th scope="row">
                 <img src={planeIcon} alt="plane" width="100px"></img>
               </th>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.flightDistance}</td>
               <td>{props.resultsData.flightKettles}</td>
               <td>{props.resultsData.flightTrees}</td>
             </tr>

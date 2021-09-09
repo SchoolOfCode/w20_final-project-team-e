@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   transportIcon: {
-    width: '100px',
-    height: '100px',
+    width: '125px',
+    height: '125px',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -36,6 +36,21 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
+  },
+  primaryData: {
+    fontWeight: 'bold',
+    fontSize: '3.5rem',
+  },
+  secondaryData: {
+    fontWeight: 'bold',
+    fontSize: '2.2rem',
+  },
+  subheading: {
+    fontSize: '1.5rem',
+    marginTop: '50px',
+  },
+  bold: {
+    fontWeight: 'bold',
   },
 }));
 
@@ -62,10 +77,9 @@ export default function RecipeReviewCard() {
             display="flex"
             flexDirection="row"
             flexWrap="nowrap" 
-            justifyContent="flex-end"
+            justifyContent="center"
             alignItems="center"
-            p={1} 
-            m={1}
+            p={2}
             >
                 <Box>
                     <CardMedia
@@ -76,21 +90,30 @@ export default function RecipeReviewCard() {
                 <Box>
                     <CardContent>
                         <Typography paragraph>
-                        Distance travelled section.
+                            <span className={classes.primaryData}>10</span>KM
+                        </Typography>
+                        <Typography paragraph color='textSecondary'>
+                            is the distance of this journey                        
                         </Typography>
                     </CardContent>
                 </Box>
                 <Box>
                     <CardContent>
                         <Typography paragraph>
-                        Carbon emission section.
+                            <span className={classes.primaryData}>10</span>KG
+                        </Typography>
+                        <Typography paragraph color='textSecondary'>
+                            Distance travelled section.
                         </Typography>
                     </CardContent>
                 </Box>
                 <Box>
                     <CardContent>
                         <Typography paragraph>
-                        Trees planted section.
+                            <span className={classes.primaryData}>10</span>TREE(s)
+                        </Typography>
+                        <Typography paragraph color='textSecondary'>
+                            Distance travelled section.
                         </Typography>
                     </CardContent>
                 </Box>
@@ -107,12 +130,15 @@ export default function RecipeReviewCard() {
                         <ExpandMoreIcon />
                         </IconButton>
                         <Typography paragraph>
-                        {buttonDescription}
+                            {buttonDescription}
                         </Typography>
                     </CardContent>
                 </Box>
             </Box>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <Typography className={classes.subheading} paragraph>
+                    <span className={classes.bold}>10kg of Carbon</span> is equivalent to:
+                </Typography>
                 <Box
                 className={classes.componentBody}
                 display="flex"
@@ -126,28 +152,40 @@ export default function RecipeReviewCard() {
                     <Box>
                         <CardContent>
                             <Typography paragraph>
-                                The component has been <span>expanded.</span>
+                                <span className={classes.secondaryData}>10</span>
+                            </Typography>
+                            <Typography paragraph color='textSecondary'>
+                                Kettles Boiled
                             </Typography>
                         </CardContent>
                     </Box>
                     <Box>
                         <CardContent>
                             <Typography paragraph>
-                                The component has been <span>expanded.</span>
+                                <span className={classes.secondaryData}>10</span>
+                            </Typography>
+                            <Typography paragraph color='textSecondary'>
+                                Hours of TV
                             </Typography>
                         </CardContent>
                     </Box>
                     <Box>
                         <CardContent>
                             <Typography paragraph>
-                                The component has been <span>expanded.</span>
+                                <span className={classes.secondaryData}>10</span>
+                            </Typography>
+                            <Typography paragraph color='textSecondary'>
+                                Washing Loads
                             </Typography>
                         </CardContent>
                     </Box>
                     <Box>
                         <CardContent>
                             <Typography paragraph>
-                                The component has been <span>expanded.</span>
+                                <span className={classes.secondaryData}>10</span>
+                            </Typography>
+                            <Typography paragraph color='textSecondary'>
+                                Hours of Power
                             </Typography>
                         </CardContent>
                     </Box>

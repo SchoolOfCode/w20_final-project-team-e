@@ -41,13 +41,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+export default function RecipeReviewCard() {
+    const classes = useStyles();
+    const [expanded, setExpanded] = React.useState(false);
+    const[buttonDescription, setbuttonDescription] = React.useState("See more");
+  
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+        if(expanded === true){
+            setbuttonDescription(("More"));
+        } else{
+            setbuttonDescription(("Less"));
+        }
+    };
 
   return (
     <div className={classes.componentBody}>
@@ -69,9 +76,18 @@ export default function RecipeReviewCard() {
             </div>
             <div className={classes.column}>
                 <CardContent>
+                    <IconButton
+                    className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                    })}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                    >
+                    <ExpandMoreIcon />
+                    </IconButton>
                     <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                    {buttonDescription}
                     </Typography>
                 </CardContent>
             </div>

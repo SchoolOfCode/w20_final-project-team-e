@@ -178,7 +178,7 @@ export default function App() {
       {displayResults ? (
         <ResultsSection formData={formData} resultsData={resultsData} />
       ) : null}
-      <ResultsCard />
+      <ResultsCard formData={formData} resultsData={resultsData} />
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {

@@ -11,29 +11,27 @@
 } */
 
 .results-container {
-  /* background-color: darkcyan; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100rem;
-  /* border radius not working atm*/
-  border-radius: 25px;
+  width: 100%;
+  margin-top: 40px;
 }
 
 .results-disclaimer {
-  /* background-color: plum; */
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
-  justify-content: bottom;
   text-align: center;
-  padding: 5%;
   margin-top: 10%;
-  background-color: #64a7a8;
+  padding: 10%;
+  border-radius: 0px 20px 0px 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+  background-color: #e9eeee;
 }
 
-.results-table {
+/* .results-table {
   width: 50%;
   font-size: 30px;
   display: flex;
@@ -41,21 +39,37 @@
   justify-content: center;
   text-align: center;
   padding: 25px;
-}
+  min-width: 100px;
+  border-radius: 0px 20px 0px 20px;
+} */
 
 /* Styling title and icon headers*/
 th {
-  padding: 25px;
-  min-width: 150px;
+  padding: 15px;
+  min-width: 50px;
+  word-wrap: break-word;
 }
 
 td {
   background-color: white;
   border-bottom: 3px solid #64a7a8;
   border-top: 3px solid #64a7a8;
-  padding: 25px;
-  min-width: 150px;
+  padding: 15px;
+  /* padding: 25px;
   border-collapse: collapse;
+  min-width: 50px; */
+}
+
+/* this needs to be put into a reponsive media query*/
+.icons {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+
+.remove-border {
+  border-top: none;
+  border-bottom: none;
 }
 
 td:nth-last-child(1) {
@@ -66,21 +80,20 @@ td:nth-child(2) {
   border-left: 3px solid #64a7a8;
 }
 
-/*
-table tbody tr:first-child td:nth-child(2) {
-  background-color: cyan;
-}
+@media only screen and (max-width: 700px) {
+  .results-container {
+    margin-top: 20px;
+  }
 
-table tbody tr:first-child td:nth-child(4) {
-  background-color: cyan;
-}
+  .results-table {
+    width: 90vw;
+  }
 
-table tbody tr:last-child td:nth-child(2) {
-  background-color: cyan;
-}
+  th {
+    padding: 10px;
+  }
 
-table tbody tr:last-child td:nth-child(4) {
-  background-color: cyan;
-  border-bottom-right-radius: 25px;
+  td {
+    padding: 10px;
+  }
 }
-*/

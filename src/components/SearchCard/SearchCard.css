@@ -10,12 +10,12 @@ input[type="text"]::placeholder {
 .card-body {
   width: 1000px;
   align-self: center;
+  margin: 15px 0 15px 0;
 }
 
 .flex-container {
   display: flex;
   width: 100%;
-  margin: 20px;
 }
 
 .search-input {

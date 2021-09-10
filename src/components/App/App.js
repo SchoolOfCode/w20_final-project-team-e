@@ -7,7 +7,7 @@ import SearchSection from "../SearchSection/SearchSection";
 import HeroSection from "../HeroSection/HeroSection";
 import LoadingSection from "../LoadingSection/LoadingSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
-// import ResultsCard from "../ResultsCard/ResultsCard";
+import ResultsCard from "../ResultsCard/ResultsCard";
 import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
 
@@ -170,7 +170,7 @@ export default function App() {
   const displayResultsComponent = () => {
     if (displayResults === true) {
       setDisplayResults(false);
-    }
+    };
 
     setTimeout(() => {
       setDisplayResults(true);
@@ -189,13 +189,14 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  if (openModal === true || showLoadingComponent === true) {
+  if (openModal === true || showLoadingComponent === true){
     disableBodyScroll(targetElement);
   } else {
     enableBodyScroll(targetElement);
-  }
+  };
 
   return (
+
     <div className="App">
       {/* to be fixed at the top of the page? */}
       <Sticky>
@@ -211,6 +212,9 @@ export default function App() {
       {displayResults ? (
         <ResultsSection formData={formData} resultsData={resultsData} />
       ) : null}
+      <ResultsCard formData={formData} resultsData={resultsData} />
+      <ResultsCard formData={formData} resultsData={resultsData} />
+      <ResultsCard formData={formData} resultsData={resultsData} />
       <button
         className={openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
@@ -221,5 +225,6 @@ export default function App() {
       </button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
+
   );
-}
+};

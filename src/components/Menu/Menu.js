@@ -7,11 +7,10 @@ export default function Menu() {
     <nav className="navbar sticky-top">
       <div className="container-fluid">
         <a className="nav-logo-link" href="#homescreen">
-          <img 
-            className="nav-logo"
-            src={Logo}
-            alt="Emission Impossible logo"
-          />
+          <img className="nav-logo" src={Logo} alt="Emission Impossible logo" />
+        </a>
+        <a className="nav-link" href="#communitypage">
+          Community Page
         </a>
       </div>
     </nav>

@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
     height: '125px',
   },
   comparisonIcon: {
-    width: '100px',
-    height: '100px',
+    width: '75px',
+    height: '75px',
     margin: '0 auto 0 auto'
   },
   primaryItem: {
@@ -188,74 +188,58 @@ export default function ResultsCard() {
                 >
                     <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <div>
                                 <CardMedia
                                 className={classes.comparisonIcon}
                                 image={KettleIcon}
                                 />
-                            </div>
-                            <div>
                                 <Typography>
                                     <span className={classes.secondaryData}>10</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Kettles Boiled
                                 </Typography>
-                            </div>
                         </CardContent>
                     </Box>
                     <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <div>
                                 <CardMedia
                                 className={classes.comparisonIcon}
                                 image={TvIcon}
                                 />
-                            </div>
-                            <div>
                                 <Typography>
                                     <span className={classes.secondaryData}>10</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Hours of TV
                                 </Typography>
-                            </div>
                         </CardContent>
                     </Box>
                     <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <div>
                                 <CardMedia
                                 className={classes.comparisonIcon}
                                 image={WashingIcon}
                                 />
-                            </div>
-                            <div>
                                 <Typography>
                                     <span className={classes.secondaryData}>10</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Washing Loads
                                 </Typography>
-                            </div>
                         </CardContent>
                     </Box>
                     <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <div>
                                 <CardMedia
                                 className={classes.comparisonIcon}
                                 image={HouseIcon}
                                 />
-                            </div>
-                            <div>
                                 <Typography>
                                     <span className={classes.secondaryData}>10</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Hours of Power
                                 </Typography>
-                            </div>
                         </CardContent>
                     </Box>
                 </Box>
@@ -269,4 +253,4 @@ export default function ResultsCard() {
         </Card>
     </div>
   );
-}
+};

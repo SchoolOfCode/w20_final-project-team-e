@@ -71,13 +71,6 @@ export default function App() {
       );
       let busData = await busResponse.json();
 
-      // //Taxi
-      // let taxiResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
-      //   headers
-      // );
-      // let taxiData = await taxiResponse.json();
-
       //Flight
       let flightResponse = await fetch(
         `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight?type=ShortEconomyClassFlight&distance=${distance}`,
@@ -97,9 +90,6 @@ export default function App() {
         busCarbon: busData.carbonEquivalent.toFixed(2),
         busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
         busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        // taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
-        // taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
-        // taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
@@ -137,7 +127,7 @@ export default function App() {
   const displayResultsComponent = () => {
     if (displayResults === true) {
       setDisplayResults(false);
-    }
+    };
 
     setTimeout(() => {
       setDisplayResults(true);
@@ -156,13 +146,14 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  if (openModal === true || showLoadingComponent === true) {
+  if (openModal === true || showLoadingComponent === true){
     disableBodyScroll(targetElement);
   } else {
     enableBodyScroll(targetElement);
-  }
+  };
 
   return (
+
     <div className="App">
       {/* to be fixed at the top of the page? */}
       <Sticky>
@@ -191,5 +182,6 @@ export default function App() {
       </button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
     </div>
+
   );
-}
+};

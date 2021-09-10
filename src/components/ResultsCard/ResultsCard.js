@@ -89,20 +89,32 @@ const useStyles = makeStyles((theme) => ({
 export default function ResultsCard() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const [buttonDescription, setbuttonDescription] = React.useState("More");
+    const [buttonDescription, setButtonDescription] = React.useState("More");
   
     const handleExpandClick = () => {
         setExpanded(!expanded);
         if(expanded === true){
-            setbuttonDescription(("More"));
+            setButtonDescription(("More"));
         } else{
-            setbuttonDescription(("Less"));
+            setButtonDescription(("Less"));
         }
     };
 
     const doSomething = () => {
         alert(`Information about our calculations.`)
     }
+
+      // // Abbreviates numbers that are 4-digits or longer
+  // const abbreviateLargeNumber = (n) => {
+  //   if (n < 1000) {
+  //     return n;
+  //   }
+  //   if (n >= 1000) {
+  //     n = n / 1000;
+  //     n = n.toFixed(1);
+  //     return n + "K";
+  //   }
+  // };
 
   return (
     <div className={classes.root}>

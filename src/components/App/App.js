@@ -116,27 +116,32 @@ export default function App() {
       
       updateResultsData({
         ...resultsData,
-        carDistance: carDistance.toFixed(2),
-        carCarbon: carData.carbonEquivalent.toFixed(2),
-        carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
-        carTrees: Math.ceil(carData.carbonEquivalent / 24),
-        trainDistance: trainDistance.toFixed(2),
-        trainCarbon: trainData.carbonEquivalent.toFixed(2),
-        trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
-        trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
-        busDistance: busDistance.toFixed(2),
-        busCarbon: busData.carbonEquivalent.toFixed(2),
-        busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
-        busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        bikeDistance: bikeDistance.toFixed(2),
-        bikeCarbon: bikeData.carbonEquivalent.toFixed(2),
-        bikeKettles: Math.ceil(bikeData.carbonEquivalent / 0.015),
-        bikeTrees: Math.ceil(bikeData.carbonEquivalent / 24),
-        flightDistance: flightDistance.toFixed(2),
-        flightCarbon: flightData.carbonEquivalent.toFixed(2),
-        flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
-        flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-      });
+        bicycle: {
+          distance: bikeDistance.toFixed(2),
+          carbon: bikeData.carbonEquivalent.toFixed(2),
+          trees: Math.ceil(bikeData.carbonEquivalent / 24),
+        },
+        car: {
+          distance: carDistance.toFixed(2),
+          carbon: carData.carbonEquivalent.toFixed(2),
+          trees: Math.ceil(carData.carbonEquivalent / 24),
+        },
+        bus: {
+          distance: busDistance.toFixed(2),
+          carbon: busData.carbonEquivalent.toFixed(2),
+          trees: Math.ceil(busData.carbonEquivalent / 24),
+        },
+        train: {
+          distance: trainDistance.toFixed(2),
+          carbon: trainData.carbonEquivalent.toFixed(2),
+          trees: Math.ceil(trainData.carbonEquivalent / 24),
+        },
+        flight: {
+          distance: flightDistance.toFixed(2),
+          carbon: flightData.carbonEquivalent.toFixed(2),
+          trees: Math.ceil(flightData.carbonEquivalent / 24),
+        },
+      })
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"

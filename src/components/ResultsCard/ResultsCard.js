@@ -37,7 +37,10 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
-  },
+    '&:focus': { 
+        outline: 'none' ,
+    },
+    },
   expandOpen: {
     transform: 'rotate(180deg)',
   },
@@ -204,7 +207,7 @@ export default function ResultsCard() {
                         </CardContent>
                     </Box>
                 </Box>
-                <Typography className={classes.informationLink} color='textSecondary'>
+                <Typography className={classes.informationLink}>
                     <Link href='#' onClick={() => doSomething()}>
                         How did we calculate this information?
                     </Link>

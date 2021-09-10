@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function ResultsCard() {
+export default function ResultsCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [buttonDescription, setButtonDescription] = React.useState("More");
@@ -100,21 +100,29 @@ export default function ResultsCard() {
         }
     };
 
+    const convertCarbonToKettles = (carbon) => {
+        return Math.ceil(carbon / 0.015);
+    };
+
+    const convertCarbonToTv = (carbon) => {
+        return Math.ceil(carbon / 0.0906);
+    };
+
+    const convertCarbonToWasher = (carbon) => {
+        return Math.ceil(carbon / 0.2727);
+    };
+
+    const convertCarbonToPower = (carbon) => {
+        return Math.ceil(carbon / 0.29372);
+    };
+
     const doSomething = () => {
         alert(`Information about our calculations.`)
-    }
+    };
 
-      // // Abbreviates numbers that are 4-digits or longer
-  // const abbreviateLargeNumber = (n) => {
-  //   if (n < 1000) {
-  //     return n;
-  //   }
-  //   if (n >= 1000) {
-  //     n = n / 1000;
-  //     n = n.toFixed(1);
-  //     return n + "K";
-  //   }
-  // };
+    let vehicleDistance = props.resultsData.vehicle.distance;
+    let vehicleCarbon = props.resultsData.vehicle.carbon;
+    let vehicleTrees = props.resultsData.vehicle.trees;
 
   return (
     <div className={classes.root}>
@@ -137,7 +145,7 @@ export default function ResultsCard() {
                 <Box className={classes.primaryItem}>
                     <CardContent>
                         <Typography>
-                            <span className={classes.primaryData}>10</span>KM
+                            <span className={classes.primaryData}>{props.resultsData.vehicle.distance}</span>KM
                         </Typography>
                         <Typography color='textSecondary'>
                             is the distance of this journey                        
@@ -147,7 +155,7 @@ export default function ResultsCard() {
                 <Box className={classes.primaryItem}>
                     <CardContent>
                         <Typography>
-                            <span className={classes.primaryData}>10</span>KG
+                            <span className={classes.primaryData}>{props.resultsData.vehicle.carbon}</span>KG
                         </Typography>
                         <Typography color='textSecondary'>
                             of Carbon Emissions could be produced
@@ -157,7 +165,7 @@ export default function ResultsCard() {
                 <Box className={classes.primaryItem}>
                     <CardContent>
                         <Typography>
-                            <span className={classes.primaryData}>10</span>TREE(s)
+                            <span className={classes.primaryData}>{props.resultsData.vehicle.trees}</span>TREE(s)
                         </Typography>
                         <Typography color='textSecondary'>
                             would be required to offset this amount of Carbon
@@ -205,7 +213,7 @@ export default function ResultsCard() {
                                 image={KettleIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToKettles(props.resultsData.vehicle.carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Kettles Boiled
@@ -219,7 +227,7 @@ export default function ResultsCard() {
                                 image={TvIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToTv(props.resultsData.vehicle.carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Hours of TV
@@ -233,7 +241,7 @@ export default function ResultsCard() {
                                 image={WashingIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToWasher(props.resultsData.vehicle.carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Washing Loads
@@ -247,7 +255,7 @@ export default function ResultsCard() {
                                 image={HouseIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToPower(props.resultsData.vehicle.carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Hours of Power

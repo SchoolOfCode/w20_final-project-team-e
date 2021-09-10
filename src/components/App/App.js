@@ -44,62 +44,95 @@ export default function App() {
 
   async function getFootprint() {
     try {
-      let distanceResponse = await fetch(
+      //Car
+      let carDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
       );
-      let distanceData = await distanceResponse.json();
-      let distance = distanceData.rows[0].elements[0].distance.value / 1000;
+      let carDistanceData = await carDistanceResponse.json();
+      let carDistance =
+        carDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      //Car
       let carResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${distance}`,
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${carDistance}`,
         headers
       );
       let carData = await carResponse.json();
 
       //Train
+      let trainDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&transit_mode=rail&mode=transit&destinations=${formData.to}&key=${distanceKey}`
+      );
+      let trainDistanceData = await trainDistanceResponse.json();
+      let trainDistance =
+        trainDistanceData.rows[0].elements[0].distance.value / 1000;
+
       let trainResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=NationalTrain&distance=${distance}`,
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
         headers
       );
       let trainData = await trainResponse.json();
 
       //Bus
+      let busDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bus&destinations=${formData.to}&key=${distanceKey}`
+      );
+      let busDistanceData = await busDistanceResponse.json();
+      let busDistance =
+        busDistanceData.rows[0].elements[0].distance.value / 1000;
+
       let busResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=ClassicBus&distance=${distance}`,
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
         headers
       );
       let busData = await busResponse.json();
 
-      // //Taxi
-      // let taxiResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromPublicTransit?type=Taxi&distance=${distance}`,
-      //   headers
-      // );
-      // let taxiData = await taxiResponse.json();
+      //Bike
+      let bikeDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bicycling&destinations=${formData.to}&key=${distanceKey}`
+      );
+      let bikeDistanceData = await bikeDistanceResponse.json();
+      let bikeDistance =
+        bikeDistanceData.rows[0].elements[0].distance.value / 1000;
+
+      let bikeResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
+        headers
+      );
+      let bikeData = await bikeResponse.json();
 
       //Flight
+      let flightDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=air&destinations=${formData.to}&key=${distanceKey}`
+      );
+      let flightDistanceData = await flightDistanceResponse.json();
+      let flightDistance =
+        flightDistanceData.rows[0].elements[0].distance.value / 1000;
+
       let flightResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight?type=ShortEconomyClassFlight&distance=${distance}`,
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
         headers
       );
       let flightData = await flightResponse.json();
       
       updateResultsData({
         ...resultsData,
-        distance: distance.toFixed(2),
+        carDistance: carDistance.toFixed(2),
         carCarbon: carData.carbonEquivalent.toFixed(2),
         carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
         carTrees: Math.ceil(carData.carbonEquivalent / 24),
+        trainDistance: trainDistance.toFixed(2),
         trainCarbon: trainData.carbonEquivalent.toFixed(2),
         trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
         trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
+        busDistance: busDistance.toFixed(2),
         busCarbon: busData.carbonEquivalent.toFixed(2),
         busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
         busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        // taxiCarbon: taxiData.carbonEquivalent.toFixed(2),
-        // taxiKettles: Math.ceil(taxiData.carbonEquivalent / 0.015),
-        // taxiTrees: Math.ceil(taxiData.carbonEquivalent / 24),
+        bikeDistance: bikeDistance.toFixed(2),
+        bikeCarbon: bikeData.carbonEquivalent.toFixed(2),
+        bikeKettles: Math.ceil(bikeData.carbonEquivalent / 0.015),
+        bikeTrees: Math.ceil(bikeData.carbonEquivalent / 24),
+        flightDistance: flightDistance.toFixed(2),
         flightCarbon: flightData.carbonEquivalent.toFixed(2),
         flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
         flightTrees: Math.ceil(flightData.carbonEquivalent / 24),

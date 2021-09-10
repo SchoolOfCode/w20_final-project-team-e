@@ -1,14 +1,13 @@
 import React from "react";
 import "../ResultsSection/ResultsSection.css";
-// import kettleIcon from "../../images/kettle-icon.svg";
-// import treeIcon from "../../images/tree-icon.svg";
 import carIcon from "../../images/car-icon.svg";
 import busIcon from "../../images/bus-icon.svg";
 import planeIcon from "../../images/plane-icon.svg";
+import bicycleIcon from "../../images/bicycle-icon.svg";
 import trainIcon from "../../images/train-icon.svg";
 
 export default function ResultsSection(props) {
-  // let kettlesBoiledBicycle = props.resultsData.bicycleKettles;
+  let kettlesBoiledBicycle = props.resultsData.bikeKettles;
   let kettlesBoiledCar = props.resultsData.carKettles;
   let kettlesBoiledBus = props.resultsData.busKettles;
   let kettlesBoiledTrain = props.resultsData.trainKettles;
@@ -43,16 +42,25 @@ export default function ResultsSection(props) {
               <td className="remove-border">
                 <img src={carIcon} alt="car" className="icons"></img>
               </td>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.carDistance}</td>
               <td>{convertNumber(kettlesBoiledCar)}</td>
               <td>{props.resultsData.carTrees}</td>
+            </tr>
+            <tr>
+              {/* Bike Data: */}
+              <th scope="row">
+                <img src={bicycleIcon} alt="bicycle" width="100px"></img>
+              </th>
+              <td>{props.resultsData.bikeDistance}</td>
+              <td>{convertNumber(kettlesBoiledBicycle)}</td>
+              <td>{props.resultsData.bikeTrees}</td>
             </tr>
             {/* Bus Data: */}
             <tr>
               <td className="remove-border">
                 <img src={busIcon} alt="bus" className="icons"></img>
               </td>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.busDistance}</td>
               <td>{convertNumber(kettlesBoiledBus)}</td>
               <td>{props.resultsData.busTrees}</td>
             </tr>
@@ -61,7 +69,7 @@ export default function ResultsSection(props) {
               <td className="remove-border">
                 <img src={trainIcon} alt="train" className="icons"></img>
               </td>
-              <td>{props.resultsData.distance}</td>
+              <td>{props.resultsData.trainDistance}</td>
               <td>{convertNumber(kettlesBoiledTrain)}</td>
               <td>{props.resultsData.trainTrees}</td>
             </tr>
@@ -69,8 +77,8 @@ export default function ResultsSection(props) {
             <tr>
               <td className="remove-border">
                 <img src={planeIcon} alt="plane" className="icons"></img>
-              </td>
-              <td>{props.resultsData.distance}</td>
+              </th>
+              <td>{props.resultsData.flightDistance}</td>
               <td>{convertNumber(kettlesBoiledPlane)}</td>
               <td>{props.resultsData.flightTrees}</td>
             </tr>

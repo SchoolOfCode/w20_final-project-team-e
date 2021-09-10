@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Library Components
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -11,7 +13,15 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+// Icons
 import PlaneIcon from '../../images/plane-icon.svg';
+import KettleIcon from '../../images/kettle-icon.png';
+import TvIcon from '../../images/tv-icon.png';
+import WashingIcon from '../../images/washer-icon.png';
+import HouseIcon from '../../images/house-icon.png';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,8 +38,16 @@ const useStyles = makeStyles((theme) => ({
     width: '125px',
     height: '125px',
   },
+  comparisonIcon: {
+    width: '100px',
+    height: '100px',
+    margin: '0 auto 0 auto'
+  },
   primaryItem: {
     width: '25%',
+  },
+  secondaryItem: {
+    width: '20%',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -40,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     '&:focus': { 
         outline: 'none' ,
     },
-    },
+  },
   expandOpen: {
     transform: 'rotate(180deg)',
   },
@@ -152,6 +170,8 @@ export default function ResultsCard() {
                     </CardContent>
                 </Box>
             </Box>
+
+            {/* Below is the hidden/expandable part of the component */}
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <Typography className={classes.subheading}>
                     <span className={classes.bold}>10kg of Carbon</span> is equivalent to:
@@ -166,44 +186,76 @@ export default function ResultsCard() {
                 p={1} 
                 m={1}
                 >
-                    <Box>
+                    <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <Typography>
-                                <span className={classes.secondaryData}>10</span>
-                            </Typography>
-                            <Typography color='textSecondary'>
-                                Kettles Boiled
-                            </Typography>
+                            <div>
+                                <CardMedia
+                                className={classes.comparisonIcon}
+                                image={KettleIcon}
+                                />
+                            </div>
+                            <div>
+                                <Typography>
+                                    <span className={classes.secondaryData}>10</span>
+                                </Typography>
+                                <Typography color='textSecondary'>
+                                    Kettles Boiled
+                                </Typography>
+                            </div>
                         </CardContent>
                     </Box>
-                    <Box>
+                    <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <Typography>
-                                <span className={classes.secondaryData}>10</span>
-                            </Typography>
-                            <Typography color='textSecondary'>
-                                Hours of TV
-                            </Typography>
+                            <div>
+                                <CardMedia
+                                className={classes.comparisonIcon}
+                                image={TvIcon}
+                                />
+                            </div>
+                            <div>
+                                <Typography>
+                                    <span className={classes.secondaryData}>10</span>
+                                </Typography>
+                                <Typography color='textSecondary'>
+                                    Hours of TV
+                                </Typography>
+                            </div>
                         </CardContent>
                     </Box>
-                    <Box>
+                    <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <Typography>
-                                <span className={classes.secondaryData}>10</span>
-                            </Typography>
-                            <Typography color='textSecondary'>
-                                Washing Loads
-                            </Typography>
+                            <div>
+                                <CardMedia
+                                className={classes.comparisonIcon}
+                                image={WashingIcon}
+                                />
+                            </div>
+                            <div>
+                                <Typography>
+                                    <span className={classes.secondaryData}>10</span>
+                                </Typography>
+                                <Typography color='textSecondary'>
+                                    Washing Loads
+                                </Typography>
+                            </div>
                         </CardContent>
                     </Box>
-                    <Box>
+                    <Box className={classes.secondaryItem}>
                         <CardContent>
-                            <Typography>
-                                <span className={classes.secondaryData}>10</span>
-                            </Typography>
-                            <Typography color='textSecondary'>
-                                Hours of Power
-                            </Typography>
+                            <div>
+                                <CardMedia
+                                className={classes.comparisonIcon}
+                                image={HouseIcon}
+                                />
+                            </div>
+                            <div>
+                                <Typography>
+                                    <span className={classes.secondaryData}>10</span>
+                                </Typography>
+                                <Typography color='textSecondary'>
+                                    Hours of Power
+                                </Typography>
+                            </div>
                         </CardContent>
                     </Box>
                 </Box>

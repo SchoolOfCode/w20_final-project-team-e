@@ -2,16 +2,8 @@ import { useState } from "react";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Sticky from "react-sticky-el";
 import "./App.css";
 
-import SearchSection from "../SearchSection/SearchSection";
-import HeroSection from "../HeroSection/HeroSection";
-import LoadingSection from "../LoadingSection/LoadingSection";
-import ResultsSection from "../ResultsSection/ResultsSection";
-import ResultsCard from "../ResultsCard/ResultsCard";
-import Menu from "../Menu/Menu";
-import HelpModal from "../HelpModal/HelpModal";
 import Home from "../Home/Home";
 import Blog from "../Blog/Blog";
 
@@ -219,38 +211,19 @@ export default function App() {
             <Blog />
           </Route>
           <Route path="/">
-            <Home />
+            <Home
+              formData={formData}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              showLoadingComponent={showLoadingComponent}
+              displayResults={displayResults}
+              resultsData={resultsData}
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+            />
           </Route>
         </Switch>
       </div>
     </Router>
   );
 }
-// <div className="App">
-//     {/* to be fixed at the top of the page? */}
-//     <Sticky>
-//       <Menu />
-//     </Sticky>
-//     <HeroSection />
-//     <SearchSection
-//       formData={formData}
-//       handleChange={handleChange}
-//       handleSubmit={handleSubmit}
-//     />
-//     {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
-//     {displayResults ? (
-//       <ResultsSection formData={formData} resultsData={resultsData} />
-//     ) : null}
-//     <ResultsCard formData={formData} resultsData={resultsData} />
-//     <ResultsCard formData={formData} resultsData={resultsData} />
-//     <ResultsCard formData={formData} resultsData={resultsData} />
-//     <button
-//       className={openModal ? "closeModalBtn" : "openModalBtn"}
-//       onClick={() => {
-//         setOpenModal(!openModal);
-//       }}
-//     >
-//       ?
-//     </button>
-//     {openModal && <HelpModal closeModal={setOpenModal} />}
-//   </div>

@@ -1,29 +1,48 @@
 import React from "react";
 
 import Menu from "../Menu/Menu";
-import SearchCard from "../SearchCard/SearchCard";
+import Sticky from "react-sticky-el";
 import HeroSection from "../HeroSection/HeroSection";
+import SearchSection from "../SearchSection/SearchSection";
+import LoadingSection from "../LoadingSection/LoadingSection";
+import ResultsCard from "../ResultsCard/ResultsCard";
+import ResultsSection from "../ResultsSection/ResultsSection";
+import HelpModal from "../HelpModal/HelpModal";
 
-export default function SearchSection(props) {
+export default function Home(props) {
   return (
-    <div>
-      <Menu />
-      <h1>Search Section Component</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, autem
-        nesciunt. Esse reiciendis, aperiam, minus sed neque dignissimos natus
-        illo totam iste labore velit, commodi sit est? Quis, illum. Nihil! Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto tenetur
-        ex recusandae autem beatae illum esse fugiat id iure necessitatibus,
-        sunt reprehenderit, excepturi voluptas et amet perspiciatis. Aliquid,
-        earum.
-      </p>
-      <SearchCard
-        state={props.formData}
+    <div className="Home">
+      {/* to be fixed at the top of the page? */}
+      <Sticky>
+        <Menu />
+      </Sticky>
+      <HeroSection />
+      <SearchSection
+        formData={props.formData}
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}
       />
-      <HeroSection />
+      {props.showLoadingComponent ? (
+        <LoadingSection formData={props.formData} />
+      ) : null}
+      {props.displayResults ? (
+        <ResultsSection
+          formData={props.formData}
+          resultsData={props.resultsData}
+        />
+      ) : null}
+      <ResultsCard formData={props.formData} resultsData={props.resultsData} />
+      <ResultsCard formData={props.formData} resultsData={props.resultsData} />
+      <ResultsCard formData={props.formData} resultsData={props.resultsData} />
+      <button
+        className={props.openModal ? "closeModalBtn" : "openModalBtn"}
+        onClick={() => {
+          props.setOpenModal(!props.openModal);
+        }}
+      >
+        ?
+      </button>
+      {props.openModal && <HelpModal closeModal={props.setOpenModal} />}
     </div>
   );
 }

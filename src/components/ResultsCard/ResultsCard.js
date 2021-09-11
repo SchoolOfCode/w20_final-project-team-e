@@ -15,7 +15,6 @@ import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 // Icons
-import PlaneIcon from '../../images/plane-icon.svg';
 import KettleIcon from '../../images/kettle-icon.png';
 import TvIcon from '../../images/tv-icon.png';
 import WashingIcon from '../../images/washer-icon.png';
@@ -86,23 +85,44 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function ResultsCard() {
+export default function ResultsCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const [buttonDescription, setbuttonDescription] = React.useState("More");
-  
+    const [buttonDescription, setButtonDescription] = React.useState("More");
+    const distance = props.distance;
+    const carbon = props.carbon;
+    const trees = props.trees;
+    const icon = props.icon;
+    
     const handleExpandClick = () => {
         setExpanded(!expanded);
         if(expanded === true){
-            setbuttonDescription(("More"));
-        } else{
-            setbuttonDescription(("Less"));
+            setButtonDescription(("More"));
+        } else {
+            setButtonDescription(("Less"));
         }
+    };
+
+    const convertCarbonToKettles = (carbon) => {
+        return Math.ceil(carbon / 0.015);
+    };
+
+    const convertCarbonToTv = (carbon) => {
+        return Math.ceil(carbon / 0.0906);
+    };
+
+    const convertCarbonToWasher = (carbon) => {
+        return Math.ceil(carbon / 0.2727);
+    };
+
+    const convertCarbonToPower = (carbon) => {
+        return Math.ceil(carbon / 0.29372);
     };
 
     const doSomething = () => {
         alert(`Information about our calculations.`)
-    }
+    };
+
 
   return (
     <div className={classes.root}>
@@ -119,23 +139,23 @@ export default function ResultsCard() {
                 <Box>
                     <CardMedia
                     className={classes.transportIcon}
-                    image={PlaneIcon}
+                    image={icon}
                     />
                 </Box>
                 <Box className={classes.primaryItem}>
                     <CardContent>
                         <Typography>
-                            <span className={classes.primaryData}>10</span>KM
+                            <span className={classes.primaryData}>{distance}</span>KM
                         </Typography>
                         <Typography color='textSecondary'>
-                            is the distance of this journey                        
+                            is the distance of this journey
                         </Typography>
                     </CardContent>
                 </Box>
                 <Box className={classes.primaryItem}>
                     <CardContent>
                         <Typography>
-                            <span className={classes.primaryData}>10</span>KG
+                            <span className={classes.primaryData}>{carbon}</span>KG
                         </Typography>
                         <Typography color='textSecondary'>
                             of Carbon Emissions could be produced
@@ -145,7 +165,7 @@ export default function ResultsCard() {
                 <Box className={classes.primaryItem}>
                     <CardContent>
                         <Typography>
-                            <span className={classes.primaryData}>10</span>TREE(s)
+                            <span className={classes.primaryData}>{trees}</span>TREE(s)
                         </Typography>
                         <Typography color='textSecondary'>
                             would be required to offset this amount of Carbon
@@ -174,7 +194,7 @@ export default function ResultsCard() {
             {/* Below is the hidden/expandable part of the component */}
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <Typography className={classes.subheading}>
-                    <span className={classes.bold}>10kg of Carbon</span> is equivalent to:
+                    <span className={classes.bold}>{carbon}kg of Carbon</span> is equivalent to:
                 </Typography>
                 <Box
                 className={classes.componentBody}
@@ -193,7 +213,7 @@ export default function ResultsCard() {
                                 image={KettleIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToKettles(carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Kettles Boiled
@@ -207,7 +227,7 @@ export default function ResultsCard() {
                                 image={TvIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToTv(carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Hours of TV
@@ -221,7 +241,7 @@ export default function ResultsCard() {
                                 image={WashingIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToWasher(carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Washing Loads
@@ -235,7 +255,7 @@ export default function ResultsCard() {
                                 image={HouseIcon}
                                 />
                                 <Typography>
-                                    <span className={classes.secondaryData}>10</span>
+                                    <span className={classes.secondaryData}>{convertCarbonToPower(carbon)}</span>
                                 </Typography>
                                 <Typography color='textSecondary'>
                                     Hours of Power

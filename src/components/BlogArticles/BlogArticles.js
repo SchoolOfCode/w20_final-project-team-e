@@ -14,11 +14,11 @@ import "./BlogArticles.css";
 
 export default function BlogArticles(props) {
   return (
-    <section>
+    <section className="blog-section">
       <div class="article-card">
         <img
           src={EnviroImgArt1}
-          // class="card-img-top"
+          class="card-img-top"
           alt="illustrated landscape with trees"
         ></img>
         <div class="card-body">
@@ -27,7 +27,10 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 1</p>
+            <p class="card-text">
+              Want to understand more about your daily carbon consumption?
+              Calculate your ecological footprint.
+            </p>
           </a>
         </div>
       </div>
@@ -43,7 +46,10 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 2</p>
+            <p class="card-text">
+              {" "}
+              Get to grips with your plastic consumption.{" "}
+            </p>
           </a>
         </div>
       </div>
@@ -59,7 +65,10 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 3</p>
+            <p class="card-text">
+              In a fog about how to tackle your emissions? Carbon offsets
+              explained.
+            </p>
           </a>
         </div>
       </div>
@@ -76,7 +85,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 4</p>
+            <p class="card-text">Your guide to greener air travel.</p>
           </a>
         </div>
       </div>
@@ -92,7 +101,9 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 5</p>
+            <p class="card-text">
+              Exploring greener transport closer to home.{" "}
+            </p>
           </a>
         </div>
       </div>
@@ -108,10 +119,11 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 6</p>
+            <p class="card-text">What is the UK doing to tackle emissions?</p>
           </a>
         </div>
       </div>
+
       <div class="article-card">
         <img src={TipsImgArt1} class="card-img-top" alt="Nula logo"></img>
         <div class="card-body">
@@ -120,7 +132,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 7</p>
+            <p class="card-text">Start carbon offsetting the Nula way.</p>
           </a>
         </div>
       </div>
@@ -136,7 +148,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 8</p>
+            <p class="card-text">Tips for the eco-conscious traveller.</p>
           </a>
         </div>
       </div>
@@ -152,7 +164,9 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">Article 9</p>
+            <p class="card-text">
+              50 ways to green up your life and save the planet.
+            </p>
           </a>
         </div>
       </div>

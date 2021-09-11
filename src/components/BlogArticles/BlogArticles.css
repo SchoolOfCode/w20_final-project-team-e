@@ -1,4 +1,4 @@
-section {
+.blog-section {
   margin: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -8,24 +8,29 @@ section {
 }
 
 .article-card {
-  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  width: 25vw;
-  height: auto;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.2);
+  width: 25vw;
+  height: auto;
 }
 
 .card-img-top {
-  height: 14rem;
-  max-height: 14rem;
+  height: auto;
   width: 25vw;
+  border-radius: 5px 5px 25px 5px;
   object-fit: cover;
 }
 
-.card-text {
+.card-body {
   flex-direction: column;
   width: 25vw;
   max-width: 25vw;
+  height: auto;
+}
+
+.card-text {
+  font-size: 2em;
+  font-weight: 500;
+  color: #2f2e41;
 }

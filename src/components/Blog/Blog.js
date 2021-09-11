@@ -26,7 +26,6 @@ export default function Blog(props) {
         ?
       </button>
       {props.openModal && <HelpModal closeModal={props.setOpenModal} />}
-      <p>LOTS OF LOVELY BLOG STUFF!</p>
     </div>
   );
 }

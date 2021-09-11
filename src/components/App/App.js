@@ -3,9 +3,15 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
-
 import Home from "../Home/Home";
 import Blog from "../Blog/Blog";
+
+//Icons
+import bicycleIcon from '../../images/bicycle-icon.png';
+import carIcon from '../../images/car-icon.png';
+import busIcon from '../../images/bus-icon.png';
+import trainIcon from '../../images/train-icon.png';
+import flightIcon from '../../images/flight-icon.png';
 
 //Set state for the form data
 export default function App() {
@@ -26,7 +32,7 @@ export default function App() {
   //if to/from is not an empty string - results card is visible
 
   //state for results card
-  const [resultsData, updateResultsData] = useState("");
+  const [resultsData, updateResultsData] = useState([]);
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
@@ -89,8 +95,8 @@ export default function App() {
       let bikeDistanceData = await bikeDistanceResponse.json();
       let bikeDistance =
         bikeDistanceData.rows[0].elements[0].distance.value / 1000;
-
       let bikeResponse = await fetch(
+        // The carbon footprint is based on a medium car here
         `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
         headers
       );
@@ -118,29 +124,54 @@ export default function App() {
       );
       let flightData = await flightResponse.json();
 
-      updateResultsData({
+      // // Rough idea of using promise to render component when it is ready
+      // let checkApi = new Promise((resolve, reject) => {
+      //   if(resultsData !== ""){
+      //     resolve('Use function to render components')
+      //   } else if(resultsData === ""){
+      //     reject('Populate the error message for data not being retrieved')
+      //   }
+      // })
+
+      updateResultsData([
         ...resultsData,
-        carDistance: carDistance.toFixed(2),
-        carCarbon: carData.carbonEquivalent.toFixed(2),
-        carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
-        carTrees: Math.ceil(carData.carbonEquivalent / 24),
-        trainDistance: trainDistance.toFixed(2),
-        trainCarbon: trainData.carbonEquivalent.toFixed(2),
-        trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
-        trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
-        busDistance: busDistance.toFixed(2),
-        busCarbon: busData.carbonEquivalent.toFixed(2),
-        busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
-        busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        bikeDistance: bikeDistance.toFixed(2),
-        bikeCarbon: bikeData.carbonEquivalent.toFixed(2),
-        bikeKettles: Math.ceil(bikeData.carbonEquivalent / 0.015),
-        bikeTrees: Math.ceil(bikeData.carbonEquivalent / 24),
-        flightDistance: flightDistance.toFixed(2),
-        flightCarbon: flightData.carbonEquivalent.toFixed(2),
-        flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
-        flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-      });
+        { 
+            vehicle: 'bicycle',
+            icon: bicycleIcon,
+            distance: Math.ceil(bikeDistance),
+            carbon: bikeData.carbonEquivalent.toFixed(1),
+            trees: Math.ceil(bikeData.carbonEquivalent / 24),
+          }
+        ,
+        {
+          vehicle: 'car',
+          icon: carIcon,
+          distance: Math.ceil(carDistance),
+          carbon: carData.carbonEquivalent.toFixed(1),
+          trees: Math.ceil(carData.carbonEquivalent / 24),
+        },
+        {
+          vehicle: 'bus',
+          icon: busIcon,
+          distance: Math.ceil(busDistance),
+          carbon: busData.carbonEquivalent.toFixed(1),
+          trees: Math.ceil(busData.carbonEquivalent / 24),
+        },
+        {
+          vehicle: 'train',
+          icon: trainIcon,
+          distance: Math.ceil(trainDistance),
+          carbon: trainData.carbonEquivalent.toFixed(1),
+          trees: Math.ceil(trainData.carbonEquivalent / 24),
+        },
+        {
+          vehicle: 'flight',
+          icon: flightIcon,
+          distance: Math.ceil(flightDistance),
+          carbon: flightData.carbonEquivalent.toFixed(1),
+          trees: Math.ceil(flightData.carbonEquivalent / 24),
+        },
+      ])
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -156,7 +187,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 4000);
+    }, 10000);
   };
 
   // Search button logic
@@ -181,7 +212,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 4000);
+    }, 10000);
   };
 
   const handleSubmit = (e) => {
@@ -199,6 +230,7 @@ export default function App() {
   }
 
   return (
+    
     <Router>
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -220,5 +252,6 @@ export default function App() {
         </Route>
       </Switch>
     </Router>
+
   );
 }

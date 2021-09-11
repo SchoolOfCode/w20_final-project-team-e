@@ -7,7 +7,7 @@ export default function BlogButtons(props) {
     <Sticky>
       <div className="card text-center" id="homescreen">
         <div className="card-body">
-          <div className="btn-submit">
+          <div className="btn-container">
             <button
               type="submit"
               className="btn btn-primary"
@@ -27,7 +27,7 @@ export default function BlogButtons(props) {
               className="btn btn-primary"
               onClick={props.handleSubmit}
             >
-              "Tips & Advice"
+              Tips & Advice
             </button>
           </div>
         </div>

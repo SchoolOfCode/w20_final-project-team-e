@@ -10,11 +10,11 @@ import ResultsSection from "../ResultsSection/ResultsSection";
 import HelpModal from "../HelpModal/HelpModal";
 
 //Icons
-import bicycleIcon from '../../images/loading-icon.gif';
-import carIcon from '../../images/car-icon.svg';
-import busIcon from '../../images/bus-icon.svg';
-import trainIcon from '../../images/train-icon.svg';
-import flightIcon from '../../images/plane-icon.svg';
+import bicycleIcon from '../../images/bicycle-icon.png';
+import carIcon from '../../images/car-icon.png';
+import busIcon from '../../images/bus-icon.png';
+import trainIcon from '../../images/train-icon.png';
+import flightIcon from '../../images/flight-icon.png';
 
 //Set state for the form data
 export default function App() {

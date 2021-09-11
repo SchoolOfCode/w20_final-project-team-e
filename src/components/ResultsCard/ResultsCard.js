@@ -93,7 +93,6 @@ export default function ResultsCard(props) {
     const carbon = props.carbon;
     const trees = props.trees;
     const icon = props.icon;
-    const vehicle = props.vehicle;
     
     const handleExpandClick = () => {
         setExpanded(!expanded);

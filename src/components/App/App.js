@@ -133,7 +133,7 @@ export default function App() {
       //   }
       // })
 
-      updateResultsData({
+      updateResultsData([
         ...resultsData,
         { 
             vehicle: 'bicycle',

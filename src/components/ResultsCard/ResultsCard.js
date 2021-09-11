@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     border: 'solid #074445',
     borderRadius: '15px',
     margin: '50px auto 0 auto',
+    textAlign: 'center',
   },
   componentBody: {
     width: '100%',
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   comparisonIcon: {
     width: '75px',
     height: '75px',
-    margin: '0 auto 0 auto'
+    margin: '10px auto 10px auto'
   },
   primaryItem: {
     width: '25%',

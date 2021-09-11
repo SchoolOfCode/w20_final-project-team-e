@@ -1,13 +1,13 @@
 import React from "react";
-import EnviroImgArt1 from "../../images/Bower-Collective-Img.jpeg";
-import EnviroImgArt2 from "../../images/ecofootprint.png";
-import EnviroImgArt3 from "../../images/offset-expo.png";
-import TravelImgArt1 from "../../images/environment-plane-travel.png";
-import TravelImgArt2 from "../../images/Greener-transport.png";
-import TravelImgArt3 from "../../images/uk-car-emissions.webp";
-import TipsImgArt1 from "../../images/nula.png";
-import TipsImgArt2 from "../../images/worldnomads.png";
-import TipsImgArt3 from "../../images/guardian.png";
+import EnviroImgArt1 from "../../images/ArticleImages/Bower-Collective-Img.jpeg";
+import EnviroImgArt2 from "../../images/ArticleImages/ecofootprint.PNG";
+import EnviroImgArt3 from "../../images/ArticleImages/offsetting-expo.png";
+import TravelImgArt1 from "../../images/ArticleImages/environment-plane-travel.png";
+import TravelImgArt2 from "../../images/ArticleImages/Greener-transport.png";
+import TravelImgArt3 from "../../images/ArticleImages/uk-car-emissions.webp";
+import TipsImgArt1 from "../../images/ArticleImages/nula.png";
+import TipsImgArt2 from "../../images/ArticleImages/worldnomads.jpg";
+import TipsImgArt3 from "../../images/ArticleImages/guardian.png";
 
 import "./BlogArticles.css";
 import ecofootprint from "../../images/ArticleImages/ecofootprint.PNG";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import EnviroImgArt1 from "../../images/ArticleImages/ecofootprint.PNG";
+import EnviroImgArt1 from "../../images/ArticleImages/ecofootprint.png";
 import EnviroImgArt2 from "../../images/ArticleImages/plastic-calc-site.jpeg";
 import EnviroImgArt3 from "../../images/ArticleImages/offsetting-expo.png";
 import TravelImgArt1 from "../../images/ArticleImages/environment-plane-travel.png";
@@ -27,10 +27,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 1</p>
           </a>
         </div>
       </div>
@@ -46,10 +43,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 2</p>
           </a>
         </div>
       </div>
@@ -65,10 +59,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 3</p>
           </a>
         </div>
       </div>
@@ -85,10 +76,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 4</p>
           </a>
         </div>
       </div>
@@ -104,10 +92,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 5</p>
           </a>
         </div>
       </div>
@@ -115,7 +100,7 @@ export default function BlogArticles(props) {
         <img
           src={TravelImgArt3}
           class="card-img-top"
-          alt="picture of electric car chargring port and back light"
+          alt="electric car chargring port and back light"
         ></img>
         <div class="card-body">
           <a
@@ -123,10 +108,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 6</p>
           </a>
         </div>
       </div>
@@ -138,10 +120,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 7</p>
           </a>
         </div>
       </div>
@@ -157,10 +136,7 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 8</p>
           </a>
         </div>
       </div>
@@ -176,13 +152,9 @@ export default function BlogArticles(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text">Article 9</p>
           </a>
         </div>
-
       </div>
     </section>
   );

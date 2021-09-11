@@ -12,13 +12,20 @@ section {
   border: 1px solid lightgrey;
   border-radius: 5px;
   width: 25vw;
-  height: 20rem;
+  height: auto;
   display: flex;
-
   flex-direction: column;
 }
 
 .card-img-top {
   height: 14rem;
+  max-height: 14rem;
+  width: 25vw;
   object-fit: cover;
+}
+
+.card-text {
+  flex-direction: column;
+  width: 25vw;
+  max-width: 25vw;
 }

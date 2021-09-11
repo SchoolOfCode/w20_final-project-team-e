@@ -11,7 +11,7 @@ import HelpModal from "../HelpModal/HelpModal";
 
 export default function Home(props) {
   return (
-    <div className="Home">
+    <div className="home">
       {/* to be fixed at the top of the page? */}
       <Sticky>
         <Menu />

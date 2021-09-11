@@ -35,9 +35,9 @@ export default function ResultsSection(props) {
           <tbody>
             {/* Bicycle Data: */}
             <tr>
-              <th scope="row">
+              <td className="remove-border">
                 <img src={bicycleIcon} alt="bicycle" width="100px"></img>
-              </th>
+              </td>
               <td>{props.resultsData.bicycle.distance}</td>
               <td>{props.resultsData.bicycle.carbon}</td>
               <td>{props.resultsData.bicycle.trees}</td>

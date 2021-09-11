@@ -10,6 +10,7 @@ import ResultsSection from "../ResultsSection/ResultsSection";
 import ResultsCard from "../ResultsCard/ResultsCard";
 import Menu from "../Menu/Menu";
 import HelpModal from "../HelpModal/HelpModal";
+import CommunityPage from "../CommunityPage/CommunityPage";
 
 //Set state for the form data
 export default function App() {
@@ -102,11 +103,19 @@ export default function App() {
 
       //Flight
       let flightDistanceResponse = await fetch(
-        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=air&destinations=${formData.to}&key=${distanceKey}`
+        `https://distanceto.p.rapidapi.com/get?route=%20%5B%7B%22t%22%3A%22${formData.from}%22%7D%2C%7B%22t%22%3A%22${formData.to}%22%7D%5D&car=false&foot=false`,
+        {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "distanceto.p.rapidapi.com",
+            "x-rapidapi-key":
+              "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
+          },
+        }
       );
       let flightDistanceData = await flightDistanceResponse.json();
       let flightDistance =
-        flightDistanceData.rows[0].elements[0].distance.value / 1000;
+        flightDistanceData.steps[0].distance.flight[0].distance;
 
       let flightResponse = await fetch(
         `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
@@ -224,6 +233,7 @@ export default function App() {
         ?
       </button>
       {openModal && <HelpModal closeModal={setOpenModal} />}
+      <CommunityPage />
     </div>
 
   );

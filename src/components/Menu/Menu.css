@@ -31,3 +31,14 @@
     height: 10vh;
   }
 }
+
+.nav-text {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-right: 50px;
+  color: #2f2e41;
+}
+
+.nav-text:hover {
+  color: #ff7c5b;
+}

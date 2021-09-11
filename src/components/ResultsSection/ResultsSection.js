@@ -77,7 +77,7 @@ export default function ResultsSection(props) {
             <tr>
               <td className="remove-border">
                 <img src={planeIcon} alt="plane" className="icons"></img>
-              </th>
+              </td>
               <td>{props.resultsData.flightDistance}</td>
               <td>{convertNumber(kettlesBoiledPlane)}</td>
               <td>{props.resultsData.flightTrees}</td>

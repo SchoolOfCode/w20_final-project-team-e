@@ -5,9 +5,9 @@ import EnviroImgArt3 from "../../images/ArticleImages/offsetting-expo.png";
 import TravelImgArt1 from "../../images/ArticleImages/environment-plane-travel.png";
 import TravelImgArt2 from "../../images/ArticleImages/greener-transport.png";
 import TravelImgArt3 from "../../images/ArticleImages/uk-car-emissions.webp";
-// import TipsImgArt1 from "../../images/ArticleImages/nula.png";
-// import TipsImgArt2 from "../../images/ArticleImages/eco-travel-tips.png";
-// import TipsImgArt3 from "../../images/ArticleImages/guardian.png";
+import TipsImgArt1 from "../../images/ArticleImages/nula.png";
+import TipsImgArt2 from "../../images/ArticleImages/eco-travel-tips.jpeg";
+import TipsImgArt3 from "../../images/ArticleImages/guardian.png";
 
 import "./BlogArticles.css";
 
@@ -119,6 +119,59 @@ export default function BlogArticles(props) {
         <div class="card-body">
           <a
             href="https://www.environmental-protection.org.uk/policy-areas/air-quality/air-pollution-and-transport/car-pollution/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src={TipsImgArt1} class="card-img-top" alt="Nula logo"></img>
+        <div class="card-body">
+          <a
+            href="https://www.nulacarbon.com/about"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img
+          src={TipsImgArt2}
+          class="card-img-top"
+          alt="2 people at a colourful fruit and market stall"
+        ></img>
+        <div class="card-body">
+          <a
+            href="https://www.worldnomads.com/responsible-travel/make-a-difference/planet/top-10-tips-for-environmentally-friendly-travel"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img
+          src={TipsImgArt3}
+          class="card-img-top"
+          alt="Tree made from recyled materials on yellow background"
+        ></img>
+        <div class="card-body">
+          <a
+            href="https://www.theguardian.com/environment/2020/feb/29/50-ways-to-green-up-your-life-save-the-planet"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,0 +1,24 @@
+section {
+  margin: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-flow: row wrap;
+  row-gap: 50px;
+}
+
+.article-card {
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  width: 25vw;
+  height: 20rem;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.card-img-top {
+  height: 14rem;
+  object-fit: cover;
+}

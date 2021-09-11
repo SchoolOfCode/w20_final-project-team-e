@@ -10,6 +10,7 @@ input[type="text"]::placeholder {
 .card-body {
   width: 1000px;
   align-self: center;
+  justify-content: space-around;
   margin: 15px 0 15px 0;
 }
 
@@ -18,29 +19,30 @@ input[type="text"]::placeholder {
   width: 100%;
 }
 
-.search-input {
+.btn-container {
   display: flex;
-  flex-direction: column;
+  flex-basis: 100%;
+  justify-content: space-around;
+  /* flex: 2 0 0%; */
+  margin: 0 20px 0 20px;
+  width: 100%;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   flex-basis: 100%;
   flex: 2 0 0%;
-  margin: 0 10px 0 10px;
+  margin: 0 20px 0 20px;
   width: 100%;
 }
 
-.btn-submit {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1 0 0%;
-  margin: 0 10px 0 10px;
-  width: 100%;
-}
-
-.form-control {
+/* .form-control {
   border-radius: 25px;
   border: none;
   height: 45px;
-}
+} */
 
 .btn-primary {
   background-color: #ff7c5b;

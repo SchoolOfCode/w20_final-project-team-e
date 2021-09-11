@@ -1,17 +1,16 @@
 import React from "react";
 import "./Menu.css";
 import Logo from "../../images/nav_logo_mobile.png";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   return (
     <nav className="navbar sticky-top">
       <div className="container-fluid">
-        <a className="nav-logo-link" href="#homescreen">
+        <Link to="/">
           <img className="nav-logo" src={Logo} alt="Emission Impossible logo" />
-        </a>
-        <a className="nav-link" href="#communitypage">
-          Community Page
-        </a>
+        </Link>
+        <Link to="/blog">Blog</Link>
       </div>
     </nav>
   );

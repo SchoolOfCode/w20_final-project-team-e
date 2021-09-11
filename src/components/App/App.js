@@ -1,16 +1,11 @@
 import { useState } from "react";
 import React from "react";
-import Sticky from "react-sticky-el";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
 
-import SearchSection from "../SearchSection/SearchSection";
-import HeroSection from "../HeroSection/HeroSection";
-import LoadingSection from "../LoadingSection/LoadingSection";
-import ResultsSection from "../ResultsSection/ResultsSection";
-import ResultsCard from "../ResultsCard/ResultsCard";
-import Menu from "../Menu/Menu";
-import HelpModal from "../HelpModal/HelpModal";
-import CommunityPage from "../CommunityPage/CommunityPage";
+import Home from "../Home/Home";
+import Blog from "../Blog/Blog";
 
 //Set state for the form data
 export default function App() {
@@ -122,7 +117,7 @@ export default function App() {
         headers
       );
       let flightData = await flightResponse.json();
-      
+
       updateResultsData({
         ...resultsData,
         carDistance: carDistance.toFixed(2),
@@ -172,14 +167,13 @@ export default function App() {
     });
   };
 
-  
   // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
   const [displayResults, setDisplayResults] = useState(false);
 
   const displayResultsComponent = () => {
     if (displayResults === true) {
       setDisplayResults(false);
-    };
+    }
 
     setTimeout(() => {
       setDisplayResults(true);
@@ -198,43 +192,33 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  if (openModal === true || showLoadingComponent === true){
+  if (openModal === true || showLoadingComponent === true) {
     disableBodyScroll(targetElement);
   } else {
     enableBodyScroll(targetElement);
-  };
+  }
 
   return (
-
-    <div className="App">
-      {/* to be fixed at the top of the page? */}
-      <Sticky>
-        <Menu />
-      </Sticky>
-      <HeroSection />
-      <SearchSection
-        formData={formData}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-      {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
-      {displayResults ? (
-        <ResultsSection formData={formData} resultsData={resultsData} />
-      ) : null}
-      <ResultsCard formData={formData} resultsData={resultsData} />
-      <ResultsCard formData={formData} resultsData={resultsData} />
-      <ResultsCard formData={formData} resultsData={resultsData} />
-      <button
-        className={openModal ? "closeModalBtn" : "openModalBtn"}
-        onClick={() => {
-          setOpenModal(!openModal);
-        }}
-      >
-        ?
-      </button>
-      {openModal && <HelpModal closeModal={setOpenModal} />}
-      <CommunityPage />
-    </div>
-
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/blog">
+          <Blog openModal={openModal} setOpenModal={setOpenModal} />
+        </Route>
+        <Route path="/">
+          <Home
+            formData={formData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            showLoadingComponent={showLoadingComponent}
+            displayResults={displayResults}
+            resultsData={resultsData}
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
-};
+}

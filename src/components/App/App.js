@@ -1,13 +1,10 @@
 import { useState } from "react";
 import React from "react";
-import Sticky from "react-sticky-el";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
-import Menu from "../Menu/Menu";
-import SearchSection from "../SearchSection/SearchSection";
-import HeroSection from "../HeroSection/HeroSection";
-import LoadingSection from "../LoadingSection/LoadingSection";
-import ResultsSection from "../ResultsSection/ResultsSection";
-import HelpModal from "../HelpModal/HelpModal";
+import Home from "../Home/Home";
+import Blog from "../Blog/Blog";
 
 //Icons
 import bicycleIcon from '../../images/bicycle-icon.png';
@@ -107,11 +104,19 @@ export default function App() {
 
       //Flight
       let flightDistanceResponse = await fetch(
-        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=air&destinations=${formData.to}&key=${distanceKey}`
+        `https://distanceto.p.rapidapi.com/get?route=%20%5B%7B%22t%22%3A%22${formData.from}%22%7D%2C%7B%22t%22%3A%22${formData.to}%22%7D%5D&car=false&foot=false`,
+        {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "distanceto.p.rapidapi.com",
+            "x-rapidapi-key":
+              "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
+          },
+        }
       );
       let flightDistanceData = await flightDistanceResponse.json();
       let flightDistance =
-        flightDistanceData.rows[0].elements[0].distance.value / 1000;
+        flightDistanceData.steps[0].distance.flight[0].distance;
 
       let flightResponse = await fetch(
         `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
@@ -127,8 +132,8 @@ export default function App() {
       //     reject('Populate the error message for data not being retrieved')
       //   }
       // })
-      
-      updateResultsData([
+
+      updateResultsData({
         ...resultsData,
         { 
             vehicle: 'bicycle',
@@ -193,14 +198,13 @@ export default function App() {
     });
   };
 
-  
   // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
   const [displayResults, setDisplayResults] = useState(false);
 
   const displayResultsComponent = () => {
     if (displayResults === true) {
       setDisplayResults(false);
-    };
+    }
 
     setTimeout(() => {
       setDisplayResults(true);
@@ -219,39 +223,35 @@ export default function App() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  if (openModal === true || showLoadingComponent === true){
+  if (openModal === true || showLoadingComponent === true) {
     disableBodyScroll(targetElement);
   } else {
     enableBodyScroll(targetElement);
-  };
+  }
 
   return (
-
-    <div className="App">
-      {/* to be fixed at the top of the page? */}
-      <Sticky>
-        <Menu />
-      </Sticky>
-      <HeroSection />
-      <SearchSection
-        formData={formData}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-      {showLoadingComponent ? <LoadingSection formData={formData} /> : null}
-      {displayResults ? <ResultsSection formData={formData} resultsData={resultsData} /> : null}
-
-      
-      <button
-        className={openModal ? "closeModalBtn" : "openModalBtn"}
-        onClick={() => {
-          setOpenModal(!openModal);
-        }}
-      >
-        ?
-      </button>
-      {openModal && <HelpModal closeModal={setOpenModal} />}
-    </div>
+    
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/blog">
+          <Blog openModal={openModal} setOpenModal={setOpenModal} />
+        </Route>
+        <Route path="/">
+          <Home
+            formData={formData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            showLoadingComponent={showLoadingComponent}
+            displayResults={displayResults}
+            resultsData={resultsData}
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+          />
+        </Route>
+      </Switch>
+    </Router>
 
   );
-};
+}

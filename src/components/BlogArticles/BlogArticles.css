@@ -16,7 +16,7 @@
 }
 
 .card-img-top {
-  height: auto;
+  height: 40vh;
   width: 25vw;
   border-radius: 5px 5px 25px 5px;
   object-fit: cover;

@@ -34,3 +34,8 @@
   font-weight: 500;
   color: #2f2e41;
 }
+
+.card-text:hover {
+  color: #ff7c5b;
+  text-decoration: underline #ff7c5b;
+}

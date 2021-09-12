@@ -97,11 +97,13 @@
     flex-direction: column;
     width: 85vw;
     height: 95vh;
-    padding: 18px;
+    padding: 15px;
   }
 
   .modalText {
     flex-direction: column;
+    height: 130vh;
+    padding: 10;
   }
 
   .modalText h2 {
@@ -114,7 +116,7 @@
     padding: 5px;
   }
 
-  .modalImage {
+  .modalImage::after {
     width: 7.5rem;
   }
 }

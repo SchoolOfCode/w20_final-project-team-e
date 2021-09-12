@@ -47,20 +47,6 @@
   align-self: flex-end;
 }
 
-/* need to insert mdia query to handle modal button
-need to insert scroll
-need to move button up z index 
-need to  arrange notes and images in columns*/
-
-/* .modalContainer body {
-  flex: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
-  text-align: center;
-} */
-
 @media only screen and (max-width: 1200px) {
   .modalContainer {
     flex-direction: column;

@@ -35,9 +35,11 @@
 .modalText h2 {
   font-size: 1.5rem;
   font-weight: bold;
+  padding: 15px;
 }
 .modalText p {
   font-size: 1.2rem;
+  padding: 15px;
 }
 
 .modalImage {
@@ -97,10 +99,12 @@
 
   .modalText h2 {
     font-size: 1.2em;
+    padding: 5px;
   }
 
   .modalText p {
     font-size: 1rem;
+    padding: 5px;
   }
 
   .modalImage {

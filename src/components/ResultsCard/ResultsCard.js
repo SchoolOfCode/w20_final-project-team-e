@@ -47,13 +47,14 @@ const useStyles = makeStyles((theme) => ({
     height: '75px',
     margin: '10px auto 10px auto',
     [theme.breakpoints.down('sm')]: {
-
+        width: '60px',
+        height: '60px',
     },
   },
   primaryItem: {
     width: '25%',
     [theme.breakpoints.down('sm')]: {
-        width: '50%',
+        width: '100%',
     },
   },
   primaryItemImage: {
@@ -69,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
   secondaryItem: {
     width: '20%',
     [theme.breakpoints.down('sm')]: {
-
+        width: '50%',  
     },
   },
   expand: {
@@ -84,29 +85,28 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
-    [theme.breakpoints.down('sm')]: {
-
-    },
   },
   primaryData: {
     fontWeight: 'bold',
     fontSize: '3.5rem',
     [theme.breakpoints.down('sm')]: {
-
+        fontSize: '2.7rem',
     },
   },
   secondaryData: {
     fontWeight: 'bold',
     fontSize: '2.2rem',
     [theme.breakpoints.down('sm')]: {
-
+        fontSize: '1.8rem',
     },
   },
   subheading: {
     fontSize: '1.5rem',
     marginTop: '50px',
+    padding: '0 30px 0 30px',
     [theme.breakpoints.down('sm')]: {
-
+        fontSize: '1.3rem',
+        marginTop: '0',  
     },
   },
   bold: {
@@ -115,13 +115,13 @@ const useStyles = makeStyles((theme) => ({
   buttonPositioning: {
     marginTop: '15px',
     [theme.breakpoints.down('sm')]: {
-
+        marginTop: '0',
     },
   },
   informationLink: {
     marginTop: '30px',
     [theme.breakpoints.down('sm')]: {
-
+        margin: '10px 0 10px 0',
     },
   }
 }));
@@ -200,7 +200,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{carbon}</span>KG
                         </Typography>
                         <Typography color='textSecondary'>
-                            of Carbon emissions could be produced
+                            of Carbon emissions could be produced on this journey <span className={classes.bold}>*</span>
                         </Typography>
                     </CardContent>
                 </Box>
@@ -210,7 +210,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{trees}</span>TREE(s)
                         </Typography>
                         <Typography color='textSecondary'>
-                            would be required to offset this Carbon
+                            would be required to offset this amount of Carbon
                         </Typography>
                     </CardContent>
                 </Box>
@@ -242,7 +242,7 @@ export default function ResultsCard(props) {
                 className={classes.componentBody}
                 display="flex"
                 flexDirection="row"
-                flexWrap="nowrap" 
+                flexWrap="wrap" 
                 justifyContent="center"
                 alignItems="center"
                 p={1} 

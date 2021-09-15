@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '15px',
     margin: '50px auto 0 auto',
     textAlign: 'center',
+    padding: '0',
     [theme.breakpoints.down('sm')]: {
         width: '340px',
     },
@@ -131,6 +132,7 @@ export default function ResultsCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [buttonDescription, setButtonDescription] = React.useState("More");
+    const vehicle = props.vehicle;
     const distance = props.distance;
     const carbon = props.carbon;
     const trees = props.trees;
@@ -190,7 +192,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{distance}</span>KM
                         </Typography>
                         <Typography color='textSecondary'>
-                            is the distance of this journey
+                            is the distance of this journey by {vehicle}
                         </Typography>
                     </CardContent>
                 </Box>
@@ -200,7 +202,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{carbon}</span>KG
                         </Typography>
                         <Typography color='textSecondary'>
-                            of Carbon emissions could be produced on this journey <span className={classes.bold}>*</span>
+                            of Carbon emissions could be produced <span className={classes.bold}>*</span>
                         </Typography>
                     </CardContent>
                 </Box>

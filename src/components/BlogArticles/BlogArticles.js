@@ -1,5 +1,4 @@
 import React from "react";
-
 import EnviroImgArt1 from "../../images/ArticleImages/ecofootprint.png";
 import EnviroImgArt2 from "../../images/ArticleImages/plastic-calc-site.jpeg";
 import EnviroImgArt3 from "../../images/ArticleImages/offsetting-expo.png";

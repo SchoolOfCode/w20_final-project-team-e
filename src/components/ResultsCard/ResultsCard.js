@@ -1,8 +1,6 @@
-import React from "react";
-
+import React from 'react';
 
 // Material-UI Library
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -16,12 +14,13 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-
 // Icons
-import KettleIcon from "../../images/kettle-icon.png";
-import TvIcon from "../../images/tv-icon.png";
-import WashingIcon from "../../images/washer-icon.png";
-import HouseIcon from "../../images/house-icon.png";
+import KettleIcon from '../../images/kettle-icon.png';
+import TvIcon from '../../images/tv-icon.png';
+import WashingIcon from '../../images/washer-icon.png';
+import HouseIcon from '../../images/house-icon.png';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,11 +40,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   componentBody: {
-    width: "100%",
+    width: '100%',
   },
 
   transportIcon: {
-
     width: '125px',
     height: '125px',
     margin: '0 auto 0 auto',
@@ -62,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   primaryItem: {
-
     width: '25%',
     [theme.breakpoints.down('sm')]: {
         width: '100%',
@@ -79,7 +76,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
         width: '100%',
     },
-
   },
 
   secondaryItem: {
@@ -87,22 +83,21 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
         width: '50%',  
     },
-
   },
 
   expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
-    "&:focus": {
-      outline: "none",
+    '&:focus': { 
+        outline: 'none' ,
     },
   },
 
   expandOpen: {
-    transform: "rotate(180deg)",
+    transform: 'rotate(180deg)',
   },
 
   primaryData: {
@@ -135,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   bold: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 
   buttonPositioning: {
@@ -151,7 +146,9 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px 0 10px 0',
     },
   }
+  
 }));
+
 
 export default function ResultsCard(props) {
     const classes = useStyles();
@@ -172,34 +169,25 @@ export default function ResultsCard(props) {
         }
     };
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-    if (expanded === true) {
-      setButtonDescription("More");
-    } else {
-      setButtonDescription("Less");
-    }
-  };
+    const convertCarbonToKettles = (carbon) => {
+        return Math.ceil(carbon / 0.015);
+    };
 
-  const convertCarbonToKettles = (carbon) => {
-    return Math.ceil(carbon / 0.015);
-  };
+    const convertCarbonToTv = (carbon) => {
+        return Math.ceil(carbon / 0.0906);
+    };
 
-  const convertCarbonToTv = (carbon) => {
-    return Math.ceil(carbon / 0.0906);
-  };
+    const convertCarbonToWasher = (carbon) => {
+        return Math.ceil(carbon / 0.2727);
+    };
 
-  const convertCarbonToWasher = (carbon) => {
-    return Math.ceil(carbon / 0.2727);
-  };
+    const convertCarbonToPower = (carbon) => {
+        return Math.ceil(carbon / 0.29372);
+    };
 
-  const convertCarbonToPower = (carbon) => {
-    return Math.ceil(carbon / 0.29372);
-  };
-
-  const doSomething = () => {
-    alert(`Information about our calculations.`);
-  };
+    const doSomething = () => {
+        alert(`Information about our calculations.`)
+    };
 
   return (
     <div className={classes.root}>
@@ -266,15 +254,12 @@ export default function ResultsCard(props) {
                         </Typography>
                     </CardContent>
                 </Box>
-
             </Box>
-            <Box className={classes.secondaryItem}>
-              <CardContent>
-                <CardMedia className={classes.comparisonIcon} image={TvIcon} />
-                <Typography>
-                  <span className={classes.secondaryData}>
-                    {convertCarbonToTv(carbon)}
-                  </span>
+
+            {/* Below is the hidden/expandable part of the component */}
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <Typography className={classes.subheading}>
+                    <span className={classes.bold}>{carbon}kg of Carbon</span> is equivalent to:
                 </Typography>
                 <Box
                 className={classes.componentBody}
@@ -348,32 +333,9 @@ export default function ResultsCard(props) {
                         How did we calculate this information?
                     </Link>
                 </Typography>
-                <Typography color="textSecondary">Washing Loads</Typography>
-              </CardContent>
-            </Box>
-            <Box className={classes.secondaryItem}>
-              <CardContent>
-                <CardMedia
-                  className={classes.comparisonIcon}
-                  image={HouseIcon}
-                />
-                <Typography>
-                  <span className={classes.secondaryData}>
-                    {convertCarbonToPower(carbon)}
-                  </span>
-                </Typography>
-                <Typography color="textSecondary">Hours of Power</Typography>
-              </CardContent>
-            </Box>
-          </Box>
-          <Typography className={classes.informationLink}>
-            <Link href="#" onClick={() => doSomething()}>
-              How did we calculate this information?
-            </Link>
-          </Typography>
-        </Collapse>
-        <CardActions disableSpacing />
-      </Card>
+            </Collapse>
+            <CardActions disableSpacing />
+        </Card>
     </div>
   );
-}
+};

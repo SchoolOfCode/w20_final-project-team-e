@@ -39,7 +39,7 @@
 }
 .modalText p {
   font-size: 1.2rem;
-  padding: 15px;
+  padding: 10px;
 }
 
 .modalImage {
@@ -53,7 +53,7 @@
   .modalContainer {
     flex-direction: column;
     justify-content: flex-start;
-    height: 85vh;
+    height: 95vh;
     padding: 25px;
     overflow-y: scroll;
   }
@@ -65,6 +65,7 @@
 
   .modalText h2 {
     font-size: 1.6rem;
+    padding: 10px;
   }
 
   .modalImage {
@@ -75,11 +76,17 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .modalContainer {
+    height: 100vh;
+    padding: 20px;
+  }
+
   .modalText h2 {
     font-size: 1.6em;
+    padding: 5px;
   }
   .modalImage {
-    width: 20em;
+    width: 15em;
     height: auto;
     align-self: center;
   }
@@ -90,11 +97,13 @@
     flex-direction: column;
     width: 85vw;
     height: 95vh;
-    padding: 18px;
+    padding: 15px;
   }
 
   .modalText {
     flex-direction: column;
+    height: 130vh;
+    padding: 10;
   }
 
   .modalText h2 {
@@ -107,7 +116,7 @@
     padding: 5px;
   }
 
-  .modalImage {
-    width: 10rem;
+  .modalImage::after {
+    width: 7.5rem;
   }
 }

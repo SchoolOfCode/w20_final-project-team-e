@@ -33,19 +33,23 @@ const useStyles = makeStyles((theme) => ({
         width: '340px',
     },
   },
+
   resultsCard: {
     border: 'solid #d5d5d9',  
     borderRadius: '15px',
     boxShadow: 'none',
   },
+
   componentBody: {
     width: '100%',
   },
+
   transportIcon: {
     width: '125px',
     height: '125px',
     margin: '0 auto 0 auto',
   },
+
   comparisonIcon: {
     width: '75px',
     height: '75px',
@@ -55,28 +59,33 @@ const useStyles = makeStyles((theme) => ({
         height: '60px',
     },
   },
+
   primaryItem: {
     width: '25%',
     [theme.breakpoints.down('sm')]: {
         width: '100%',
     },
   },
+
   primaryItemImage: {
     [theme.breakpoints.down('sm')]: {
         width: '100%',
     },
   },
+
   primaryItemExpand: {
     [theme.breakpoints.down('sm')]: {
         width: '100%',
     },
   },
+
   secondaryItem: {
     width: '20%',
     [theme.breakpoints.down('sm')]: {
         width: '50%',  
     },
   },
+
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -87,9 +96,11 @@ const useStyles = makeStyles((theme) => ({
         outline: 'none' ,
     },
   },
+
   expandOpen: {
     transform: 'rotate(180deg)',
   },
+
   primaryData: {
     fontWeight: 'bold',
     fontSize: '3.5rem',
@@ -98,6 +109,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2.7rem',
     },
   },
+
   secondaryData: {
     fontWeight: 'bold',
     fontSize: '2.2rem',
@@ -106,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.8rem',
     },
   },
+
   subheading: {
     fontSize: '1.5rem',
     marginTop: '50px',
@@ -116,21 +129,25 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0',  
     },
   },
+
   bold: {
     fontWeight: 'bold',
   },
+
   buttonPositioning: {
     marginTop: '15px',
     [theme.breakpoints.down('sm')]: {
         marginTop: '0',
     },
   },
+
   informationLink: {
     marginTop: '30px',
     [theme.breakpoints.down('sm')]: {
         margin: '10px 0 10px 0',
     },
   }
+  
 }));
 
 
@@ -232,7 +249,7 @@ export default function ResultsCard(props) {
                         aria-expanded={expanded}
                         aria-label="show more"
                         >
-                        <ExpandMoreIcon />
+                        <ExpandMoreIcon className={classes.expandButton}/>
                         </IconButton>
                         <Typography>
                             {buttonDescription}

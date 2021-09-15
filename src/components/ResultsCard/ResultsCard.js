@@ -26,14 +26,17 @@ import HouseIcon from '../../images/house-icon.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '1000px',
-    border: 'solid #074445',
-    borderRadius: '15px',
     margin: '50px auto 0 auto',
     textAlign: 'center',
     padding: '0',
     [theme.breakpoints.down('sm')]: {
         width: '340px',
     },
+  },
+  resultsCard: {
+    border: 'solid #d5d5d9',  
+    borderRadius: '15px',
+    boxShadow: 'none',
   },
   componentBody: {
     width: '100%',
@@ -90,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
   primaryData: {
     fontWeight: 'bold',
     fontSize: '3.5rem',
+    color: '#2f2e41',
     [theme.breakpoints.down('sm')]: {
         fontSize: '2.7rem',
     },
@@ -97,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
   secondaryData: {
     fontWeight: 'bold',
     fontSize: '2.2rem',
+    color: '#2f2e41',
     [theme.breakpoints.down('sm')]: {
         fontSize: '1.8rem',
     },
@@ -105,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.5rem',
     marginTop: '50px',
     padding: '0 30px 0 30px',
+    color: '#2f2e41',
     [theme.breakpoints.down('sm')]: {
         fontSize: '1.3rem',
         marginTop: '0',  
@@ -170,7 +176,7 @@ export default function ResultsCard(props) {
 
   return (
     <div className={classes.root}>
-        <Card>
+        <Card className={classes.resultsCard}>
             <Box 
             className={classes.componentBody}
             display="flex"

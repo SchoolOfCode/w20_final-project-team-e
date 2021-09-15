@@ -16,15 +16,12 @@ export default function ResultsSection(props) {
   //   }
   // };
 
-  console.log(props);
-  console.log("^ This is from the ResultsSection component.")
-
   return (
     <section className="results-container">
       <div className="results-table" id="results-table">
         <ResultsCard 
           formData={props.formData} 
-          vehicle={props.resultsData[0].vehicle}
+          // vehicle={props.resultsData[0].vehicle}
           distance={props.resultsData[0].distance}
           carbon={props.resultsData[0].carbon}
           trees={props.resultsData[0].trees}
@@ -32,7 +29,7 @@ export default function ResultsSection(props) {
         />
         <ResultsCard 
           formData={props.formData}
-          vehicle={props.resultsData[1].vehicle} 
+          // vehicle={props.resultsData[1].vehicle} 
           distance={props.resultsData[1].distance}
           carbon={props.resultsData[1].carbon}
           trees={props.resultsData[1].trees}
@@ -40,7 +37,7 @@ export default function ResultsSection(props) {
         />
         <ResultsCard 
           formData={props.formData}
-          vehicle={props.resultsData[2].vehicle} 
+          // vehicle={props.resultsData[2].vehicle} 
           distance={props.resultsData[2].distance}
           carbon={props.resultsData[2].carbon}
           trees={props.resultsData[2].trees}
@@ -48,7 +45,7 @@ export default function ResultsSection(props) {
         />
         <ResultsCard 
           formData={props.formData}
-          vehicle={props.resultsData[3].vehicle} 
+          // vehicle={props.resultsData[3].vehicle} 
           distance={props.resultsData[3].distance}
           carbon={props.resultsData[3].carbon}
           trees={props.resultsData[3].trees}
@@ -56,7 +53,7 @@ export default function ResultsSection(props) {
         />
         <ResultsCard 
           formData={props.formData}
-          vehicle={props.resultsData[4].vehicle} 
+          // vehicle={props.resultsData[4].vehicle} 
           distance={props.resultsData[4].distance}
           carbon={props.resultsData[4].carbon}
           trees={props.resultsData[4].trees}

@@ -7,11 +7,11 @@ import Home from "../Home/Home";
 import Blog from "../Blog/Blog";
 
 //Icons
-import bicycleIcon from '../../images/bicycle-icon.png';
-import carIcon from '../../images/car-icon.png';
-import busIcon from '../../images/bus-icon.png';
-import trainIcon from '../../images/train-icon.png';
-import flightIcon from '../../images/flight-icon.png';
+import bicycleIcon from "../../images/bicycle-icon.png";
+import carIcon from "../../images/car-icon.png";
+import busIcon from "../../images/bus-icon.png";
+import trainIcon from "../../images/train-icon.png";
+import flightIcon from "../../images/flight-icon.png";
 
 //Set state for the form data
 export default function App() {
@@ -36,13 +36,13 @@ export default function App() {
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
-  const headers = {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-      "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-    },
-  };
+  // const headers = {
+  //   method: "GET",
+  //   headers: {
+  //     "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
+  //     "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
+  //   },
+  // };
 
   async function getFootprint() {
     try {
@@ -54,11 +54,11 @@ export default function App() {
       let carDistance =
         carDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      let carResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${carDistance}`,
-        headers
-      );
-      let carData = await carResponse.json();
+      // let carResponse = await fetch(
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${carDistance}`,
+      //   headers
+      // );
+      // let carData = await carResponse.json();
 
       //Train
       let trainDistanceResponse = await fetch(
@@ -68,11 +68,11 @@ export default function App() {
       let trainDistance =
         trainDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      let trainResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
-        headers
-      );
-      let trainData = await trainResponse.json();
+      // let trainResponse = await fetch(
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
+      //   headers
+      // );
+      // let trainData = await trainResponse.json();
 
       //Bus
       let busDistanceResponse = await fetch(
@@ -82,11 +82,11 @@ export default function App() {
       let busDistance =
         busDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      let busResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
-        headers
-      );
-      let busData = await busResponse.json();
+      // let busResponse = await fetch(
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
+      //   headers
+      // );
+      // let busData = await busResponse.json();
 
       //Bike
       let bikeDistanceResponse = await fetch(
@@ -95,12 +95,12 @@ export default function App() {
       let bikeDistanceData = await bikeDistanceResponse.json();
       let bikeDistance =
         bikeDistanceData.rows[0].elements[0].distance.value / 1000;
-      let bikeResponse = await fetch(
-        // The carbon footprint is based on a medium car here
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
-        headers
-      );
-      let bikeData = await bikeResponse.json();
+      // let bikeResponse = await fetch(
+      //   // The carbon footprint is based on a medium car here
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
+      //   headers
+      // );
+      // let bikeData = await bikeResponse.json();
 
       //Flight
       let flightDistanceResponse = await fetch(
@@ -118,11 +118,11 @@ export default function App() {
       let flightDistance =
         flightDistanceData.steps[0].distance.flight[0].distance;
 
-      let flightResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
-        headers
-      );
-      let flightData = await flightResponse.json();
+      // let flightResponse = await fetch(
+      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
+      //   headers
+      // );
+      // let flightData = await flightResponse.json();
 
       // // Rough idea of using promise to render component when it is ready
       // let checkApi = new Promise((resolve, reject) => {
@@ -135,43 +135,42 @@ export default function App() {
 
       updateResultsData([
         ...resultsData,
-        { 
-            vehicle: 'bicycle',
-            icon: bicycleIcon,
-            distance: Math.ceil(bikeDistance),
-            carbon: bikeData.carbonEquivalent.toFixed(1),
-            trees: Math.ceil(bikeData.carbonEquivalent / 24),
-          }
-        ,
         {
-          vehicle: 'car',
+          vehicle: "bicycle",
+          icon: bicycleIcon,
+          distance: Math.ceil(bikeDistance),
+          carbon: Math.ceil(bikeDistance * 0.021),
+          trees: Math.ceil((bikeDistance * 0.021) / 24),
+        },
+        {
+          vehicle: "car",
           icon: carIcon,
           distance: Math.ceil(carDistance),
-          carbon: carData.carbonEquivalent.toFixed(1),
-          trees: Math.ceil(carData.carbonEquivalent / 24),
+          carbon: Math.ceil(carDistance * 0.18659),
+          trees: Math.ceil((carDistance * 0.18659) / 24),
         },
         {
-          vehicle: 'bus',
+          vehicle: "bus",
           icon: busIcon,
           distance: Math.ceil(busDistance),
-          carbon: busData.carbonEquivalent.toFixed(1),
-          trees: Math.ceil(busData.carbonEquivalent / 24),
+          carbon: Math.ceil(busDistance * 0.089),
+          trees: Math.ceil((busDistance * 0.089) / 24),
         },
         {
-          vehicle: 'train',
+          vehicle: "train",
           icon: trainIcon,
           distance: Math.ceil(trainDistance),
-          carbon: trainData.carbonEquivalent.toFixed(1),
-          trees: Math.ceil(trainData.carbonEquivalent / 24),
+          carbon: Math.ceil(trainDistance * 0.06),
+          trees: Math.ceil((trainDistance * 0.06) / 24),
         },
         {
-          vehicle: 'flight',
+          vehicle: "flight",
           icon: flightIcon,
           distance: Math.ceil(flightDistance),
-          carbon: flightData.carbonEquivalent.toFixed(1),
-          trees: Math.ceil(flightData.carbonEquivalent / 24),
+          carbon: Math.ceil(flightDistance * 0.1753),
+          trees: Math.ceil((flightDistance * 0.1753) / 24),
         },
-      ])
+      ]);
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -187,7 +186,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 10000);
+    }, 6000);
   };
 
   // Search button logic
@@ -212,7 +211,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 10000);
+    }, 6000);
   };
 
   const handleSubmit = (e) => {
@@ -230,7 +229,6 @@ export default function App() {
   }
 
   return (
-    
     <Router>
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -252,6 +250,5 @@ export default function App() {
         </Route>
       </Switch>
     </Router>
-
   );
 }

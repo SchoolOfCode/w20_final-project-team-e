@@ -26,11 +26,13 @@ import HouseIcon from '../../images/house-icon.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '1000px',
-    maxWidth: '1200px',
     border: 'solid #074445',
     borderRadius: '15px',
     margin: '50px auto 0 auto',
     textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+        width: '340px',
+    },
   },
   componentBody: {
     width: '100%',
@@ -38,17 +40,37 @@ const useStyles = makeStyles((theme) => ({
   transportIcon: {
     width: '125px',
     height: '125px',
+    margin: '0 auto 0 auto',
   },
   comparisonIcon: {
     width: '75px',
     height: '75px',
-    margin: '10px auto 10px auto'
+    margin: '10px auto 10px auto',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   primaryItem: {
     width: '25%',
+    [theme.breakpoints.down('sm')]: {
+        width: '50%',
+    },
+  },
+  primaryItemImage: {
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    },
+  },
+  primaryItemExpand: {
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    },
   },
   secondaryItem: {
     width: '20%',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -62,27 +84,45 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   primaryData: {
     fontWeight: 'bold',
     fontSize: '3.5rem',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   secondaryData: {
     fontWeight: 'bold',
     fontSize: '2.2rem',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   subheading: {
     fontSize: '1.5rem',
     marginTop: '50px',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   bold: {
     fontWeight: 'bold',
   },
   buttonPositioning: {
     marginTop: '15px',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   },
   informationLink: {
     marginTop: '30px',
+    [theme.breakpoints.down('sm')]: {
+
+    },
   }
 }));
 
@@ -133,12 +173,12 @@ export default function ResultsCard(props) {
             className={classes.componentBody}
             display="flex"
             flexDirection="row"
-            flexWrap="nowrap" 
+            flexWrap="wrap" 
             justifyContent="center"
             alignItems="center"
             p={2}
             >
-                <Box>
+                <Box className={classes.primaryItemImage}>
                     <CardMedia
                     className={classes.transportIcon}
                     image={icon}
@@ -160,7 +200,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{carbon}</span>KG
                         </Typography>
                         <Typography color='textSecondary'>
-                            of Carbon Emissions could be produced
+                            of Carbon emissions could be produced
                         </Typography>
                     </CardContent>
                 </Box>
@@ -170,11 +210,11 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{trees}</span>TREE(s)
                         </Typography>
                         <Typography color='textSecondary'>
-                            would be required to offset this amount of Carbon
+                            would be required to offset this Carbon
                         </Typography>
                     </CardContent>
                 </Box>
-                <Box>
+                <Box className={classes.primaryItemExpand}>
                     <CardContent className={classes.buttonPositioning}>
                         <IconButton
                         className={clsx(classes.expand, {

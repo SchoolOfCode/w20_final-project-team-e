@@ -22,20 +22,19 @@
   object-fit: cover;
 }
 
-.card-body {
+.art-card-body {
   flex-direction: column;
   width: 25vw;
-  /* max-width: 25vw; */
   height: auto;
 }
 
-.card-text {
+.art-card-text {
   font-size: 2em;
   font-weight: 500;
   color: #2f2e41;
 }
 
-.card-text:hover {
+.art-card-text:hover {
   color: #ff7c5b;
   text-decoration: underline #ff7c5b;
 }
@@ -48,13 +47,13 @@
     margin: 10px;
     row-gap: 25px;
   }
-  .article-card {
+  .art-article-card {
     display: flex;
     width: 75vw;
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 75vw;
     height: auto;
@@ -64,13 +63,13 @@
     width: 75vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1em;
     font-weight: 500;
     color: #2f2e41;
   }
 
-  .card-text:hover {
+  .art-card-text:hover {
     color: #ff7c5b;
     text-decoration: underline #ff7c5b;
   }
@@ -90,7 +89,7 @@
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 40vw;
     height: auto;
@@ -101,7 +100,7 @@
     width: 40vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1.5em;
   }
 }
@@ -121,7 +120,7 @@
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 40vw;
     height: auto;
@@ -132,7 +131,7 @@
     width: 40vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1.7em;
   }
 }
@@ -150,7 +149,7 @@
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 40vw;
     height: auto;
@@ -161,7 +160,7 @@
     width: 40vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1.7em;
   }
 }
@@ -192,7 +191,7 @@
     object-fit: cover;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 25vw;
     height: auto;

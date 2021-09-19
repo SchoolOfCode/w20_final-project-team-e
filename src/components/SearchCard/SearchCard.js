@@ -13,11 +13,27 @@ export default function SearchCard(props) {
             <div className="search-input">
               <GooglePlacesAutocomplete
                 selectProps={{
+                  className: "form-control",
                   onChange: props.handleFrom,
+                  placeholder: "Where are you coming from?",
+                  styles: {
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.isFocused && "#ff7c5b",
+                      color: state.isFocused && "white",
+                    }),
+                    control: (provided, state) => ({
+                      ...provided,
+                      border: state.isFocused ? 0 : 0,
+                      // This line disable the blue border
+                      boxShadow: state.isFocused ? 0 : 0,
+                      "&:hover": {
+                        border: state.isFocused ? 0 : 0,
+                      },
+                    }),
+                  },
                 }}
                 type="text"
-                className="form-control"
-                placeholder="Where are you coming from?"
                 name="from"
                 aria-describedby="from"
                 required
@@ -26,11 +42,27 @@ export default function SearchCard(props) {
             <div className="search-input">
               <GooglePlacesAutocomplete
                 selectProps={{
+                  className: "form-control",
                   onChange: props.handleTo,
+                  placeholder: "Where are you going to?",
+                  styles: {
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.isFocused && "#ff7c5b",
+                      color: state.isFocused && "white",
+                    }),
+                    control: (provided, state) => ({
+                      ...provided,
+                      border: state.isFocused ? 0 : 0,
+                      // This line disable the blue border
+                      boxShadow: state.isFocused ? 0 : 0,
+                      "&:hover": {
+                        border: state.isFocused ? 0 : 0,
+                      },
+                    }),
+                  },
                 }}
                 type="text"
-                className="form-control"
-                placeholder="Where are you going to?"
                 name="to"
                 required
                 onChange={props.handleChange}

@@ -1,4 +1,5 @@
 .blog-section {
+  margin-top: 50px;
   margin: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -37,7 +38,7 @@
   font-size: 2em;
   font-weight: 500;
   color: #2f2e41;
-  margin: 15px 20px 15px 20px;
+  margin: 20px 20px 20px 20px;
 }
 
 .art-card-text:hover {
@@ -50,7 +51,7 @@
   .blog-section {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 40px;
     row-gap: 25px;
   }
   .article-card {

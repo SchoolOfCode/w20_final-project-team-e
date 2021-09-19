@@ -3,8 +3,8 @@ import React from "react";
 import Menu from "../Menu/Menu";
 import Sticky from "react-sticky-el";
 import HelpModal from "../HelpModal/HelpModal";
-import HeroSection from "../HeroSection/HeroSection";
-import BlogButtons from "../BlogButtons/BlogButtons";
+// import HeroSection from "../HeroSection/HeroSection";
+// import BlogButtons from "../BlogButtons/BlogButtons";
 import BlogArticles from "../BlogArticles/BlogArticles";
 
 export default function Blog(props) {
@@ -14,8 +14,8 @@ export default function Blog(props) {
       <Sticky>
         <Menu />
       </Sticky>
-      <HeroSection />
-      <BlogButtons />
+      {/* <HeroSection />
+      <BlogButtons /> */}
       <BlogArticles />
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}

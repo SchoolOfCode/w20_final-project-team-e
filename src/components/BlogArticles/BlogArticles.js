@@ -14,6 +14,13 @@ import "./BlogArticles.css";
 export default function BlogArticles(props) {
   return (
     <section className="blog-section">
+      {/* <div class="blog-headers">
+        <h1>Environment</h1>
+        <p>
+          These short reads and quizzes help to break down the wider
+          environmental issues.
+        </p>
+      </div> */}
       <div class="article-card">
         <img
           src={EnviroImgArt1}
@@ -46,8 +53,7 @@ export default function BlogArticles(props) {
             rel="noreferrer"
           >
             <p class="art-card-text">
-              {" "}
-              Get to grips with your plastic consumption.{" "}
+              Get to grips with your plastic consumption.
             </p>
           </a>
         </div>
@@ -72,6 +78,13 @@ export default function BlogArticles(props) {
         </div>
       </div>
 
+      {/* <div class="blog-headers">
+        <h1>Travel</h1>
+        <p>
+          Whether you're jetting off into the sunset or round the corner for
+          tea, find out how you can make it sustainably.{" "}
+        </p>
+      </div> */}
       <div class="article-card">
         <img
           src={TravelImgArt1}
@@ -101,7 +114,7 @@ export default function BlogArticles(props) {
             rel="noreferrer"
           >
             <p class="art-card-text">
-              Exploring greener transport closer to home.{" "}
+              Exploring greener transport closer to home.
             </p>
           </a>
         </div>
@@ -125,6 +138,13 @@ export default function BlogArticles(props) {
         </div>
       </div>
 
+      {/* <div class="blog-headers">
+        <h1>Tips & Advice</h1>
+        <p>
+          A quick flick through some of the smaller changes that collectively
+          make a big impact.
+        </p>
+      </div> */}
       <div class="article-card">
         <img src={TipsImgArt1} class="card-img-top" alt="Nula logo"></img>
         <div class="art-card-body">

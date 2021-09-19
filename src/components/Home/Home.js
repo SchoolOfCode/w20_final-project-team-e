@@ -31,7 +31,6 @@ export default function Home(props) {
           resultsData={props.resultsData}
         />
       ) : null}
-      <Footer />
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
@@ -41,6 +40,7 @@ export default function Home(props) {
         ?
       </button>
       {props.openModal && <HelpModal closeModal={props.setOpenModal} />}
+      <Footer />
     </div>
   );
 }

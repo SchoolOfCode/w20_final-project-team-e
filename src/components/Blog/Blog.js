@@ -18,7 +18,6 @@ export default function Blog(props) {
       <HeroSection />
       <BlogButtons />
       <BlogArticles />
-      <Footer />
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
@@ -28,6 +27,7 @@ export default function Blog(props) {
         ?
       </button>
       {props.openModal && <HelpModal closeModal={props.setOpenModal} />}
+      <Footer />
     </div>
   );
 }

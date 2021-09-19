@@ -10,7 +10,6 @@ input[type="text"]::placeholder {
 .card-body {
   width: 1000px;
   align-self: center;
-  justify-content: space-around;
   margin: 15px 0 15px 0;
 }
 
@@ -21,6 +20,7 @@ input[type="text"]::placeholder {
 
 .btn-container {
   display: flex;
+  flex-direction: row;
   flex-basis: 100%;
   justify-content: space-around;
   flex: 2 0 0%;
@@ -28,12 +28,13 @@ input[type="text"]::placeholder {
   width: 100%;
 }
 
-.btn {
-  /* display: flex; */
+.blog-btn {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   flex-basis: 100%;
-  flex: 2 0 0%;
+  flex: 1 0 0%;
   margin: 0 20px 0 20px;
   width: 100%;
 }
@@ -78,7 +79,7 @@ input[type="text"]::placeholder {
 
   .card-body {
     width: 100%;
-    margin: 10px auto 10px auto;
+    /* margin: 10px auto 10px auto; */
     padding: 0 10px;
   }
 
@@ -89,17 +90,18 @@ input[type="text"]::placeholder {
     margin: 0;
   }
 
-  /* .search-input {
+  .btn-container {
     display: flex;
-    flex-direction: row;
-    flex: 2 0 0%;
-    margin: 10px 0 10px 0;
+    flex-direction: column;
     width: 100%;
-  } */
+    /* flex: 2 0 0%;
+    margin: 10px 0 10px 0;
+    width: 100%;  */
+  }
 
-  /* .btn-submit {
+  /* .blog-btn {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 2 0 0%;
     margin: 10px 0 10px 0;
     width: 100%;

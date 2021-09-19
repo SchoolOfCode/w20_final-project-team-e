@@ -7,6 +7,7 @@ import SearchSection from "../SearchSection/SearchSection";
 import LoadingSection from "../LoadingSection/LoadingSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
 import HelpModal from "../HelpModal/HelpModal";
+import Footer from "../Footer/Footer";
 
 export default function Home(props) {
   return (
@@ -30,6 +31,7 @@ export default function Home(props) {
           resultsData={props.resultsData}
         />
       ) : null}
+      <Footer />
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {

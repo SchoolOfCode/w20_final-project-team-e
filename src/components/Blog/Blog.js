@@ -6,6 +6,7 @@ import HelpModal from "../HelpModal/HelpModal";
 import HeroSection from "../HeroSection/HeroSection";
 import BlogButtons from "../BlogButtons/BlogButtons";
 import BlogArticles from "../BlogArticles/BlogArticles";
+import Footer from "../Footer/Footer";
 
 export default function Blog(props) {
   return (
@@ -17,6 +18,7 @@ export default function Blog(props) {
       <HeroSection />
       <BlogButtons />
       <BlogArticles />
+      <Footer />
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {

@@ -26,6 +26,16 @@ export default function App() {
     to: "",
   };
   const [formData, updateFormData] = useState(initialFormData);
+
+  //Processes the form inputs, removing spaces and capitalising the first character
+  function formatInput(string){
+    string = string.toLowerCase().trim().split('');
+    string[0] = string[0].toUpperCase();
+    let formattedString = string.join('');
+    return formattedString;
+  }
+
+
   //const [showResults, changeShowResults] = useState(false)
 
   //if to/from is an empty string - results card is hidden
@@ -193,7 +203,7 @@ export default function App() {
   const handleChange = (e) => {
     updateFormData({
       ...formData,
-      [e.target.name]: e.target.value.trim(),
+      [e.target.name]: formatInput(e.target.value),
     });
   };
 

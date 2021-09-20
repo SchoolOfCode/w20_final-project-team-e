@@ -3,9 +3,10 @@ import React from "react";
 import Menu from "../Menu/Menu";
 import Sticky from "react-sticky-el";
 import HelpModal from "../HelpModal/HelpModal";
-import HeroSection from "../HeroSection/HeroSection";
-import BlogButtons from "../BlogButtons/BlogButtons";
+// import HeroSection from "../HeroSection/HeroSection";
+// import BlogButtons from "../BlogButtons/BlogButtons";
 import BlogArticles from "../BlogArticles/BlogArticles";
+import Footer from "../Footer/Footer";
 
 export default function Blog(props) {
   return (
@@ -14,8 +15,8 @@ export default function Blog(props) {
       <Sticky>
         <Menu />
       </Sticky>
-      <HeroSection />
-      <BlogButtons />
+      {/* <HeroSection />
+      <BlogButtons /> */}
       <BlogArticles />
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
@@ -26,6 +27,7 @@ export default function Blog(props) {
         ?
       </button>
       {props.openModal && <HelpModal closeModal={props.setOpenModal} />}
+      <Footer />
     </div>
   );
 }

@@ -4,18 +4,6 @@ import ResultsCard from '../ResultsCard/ResultsCard';
 
 export default function ResultsSection(props) {
 
-  // // Abbreviates numbers that are 4-digits or longer
-  // const abbreviateLargeNumber = (n) => {
-  //   if (n < 1000) {
-  //     return n;
-  //   }
-  //   if (n >= 1000) {
-  //     n = n / 1000;
-  //     n = n.toFixed(1);
-  //     return n + "K";
-  //   }
-  // };
-
   return (
     <section className="results-container">
       <div className="results-table" id="results-table">

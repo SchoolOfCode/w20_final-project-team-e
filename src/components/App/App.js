@@ -196,7 +196,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 6000);
+    }, 9000);
   };
 
   // Search button logic
@@ -221,7 +221,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 6000);
+    }, 9000);
   };
 
   const handleSubmit = (e) => {

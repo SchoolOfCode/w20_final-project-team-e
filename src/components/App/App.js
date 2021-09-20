@@ -36,23 +36,11 @@ export default function App() {
   }
 
 
-  //const [showResults, changeShowResults] = useState(false)
-
-  //if to/from is an empty string - results card is hidden
-  //if to/from is not an empty string - results card is visible
-
   //state for results card
   const [resultsData, updateResultsData] = useState([]);
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
-  // const headers = {
-  //   method: "GET",
-  //   headers: {
-  //     "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-  //     "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-  //   },
-  // };
 
   async function getFootprint() {
     try {
@@ -64,12 +52,6 @@ export default function App() {
       let carDistance =
         carDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      // let carResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${carDistance}`,
-      //   headers
-      // );
-      // let carData = await carResponse.json();
-
       //Train
       let trainDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&transit_mode=rail&mode=transit&destinations=${formData.to}&key=${distanceKey}`
@@ -77,12 +59,6 @@ export default function App() {
       let trainDistanceData = await trainDistanceResponse.json();
       let trainDistance =
         trainDistanceData.rows[0].elements[0].distance.value / 1000;
-
-      // let trainResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
-      //   headers
-      // );
-      // let trainData = await trainResponse.json();
 
       //Bus
       let busDistanceResponse = await fetch(
@@ -92,12 +68,6 @@ export default function App() {
       let busDistance =
         busDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      // let busResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
-      //   headers
-      // );
-      // let busData = await busResponse.json();
-
       //Bike
       let bikeDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bicycling&destinations=${formData.to}&key=${distanceKey}`
@@ -105,12 +75,6 @@ export default function App() {
       let bikeDistanceData = await bikeDistanceResponse.json();
       let bikeDistance =
         bikeDistanceData.rows[0].elements[0].distance.value / 1000;
-      // let bikeResponse = await fetch(
-      //   // The carbon footprint is based on a medium car here
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
-      //   headers
-      // );
-      // let bikeData = await bikeResponse.json();
 
       //Flight
       let flightDistanceResponse = await fetch(
@@ -127,21 +91,6 @@ export default function App() {
       let flightDistanceData = await flightDistanceResponse.json();
       let flightDistance =
         flightDistanceData.steps[0].distance.flight[0].distance;
-
-      // let flightResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
-      //   headers
-      // );
-      // let flightData = await flightResponse.json();
-
-      // // Rough idea of using promise to render component when it is ready
-      // let checkApi = new Promise((resolve, reject) => {
-      //   if(resultsData !== ""){
-      //     resolve('Use function to render components')
-      //   } else if(resultsData === ""){
-      //     reject('Populate the error message for data not being retrieved')
-      //   }
-      // })
 
       updateResultsData([
         ...resultsData,

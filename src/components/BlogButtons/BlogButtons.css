@@ -23,13 +23,13 @@ input[type="text"]::placeholder {
   display: flex;
   flex-basis: 100%;
   justify-content: space-around;
-  /* flex: 2 0 0%; */
+  flex: 2 0 0%;
   margin: 0 20px 0 20px;
   width: 100%;
 }
 
 .btn {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   justify-content: space-around;
   flex-basis: 100%;
@@ -38,17 +38,12 @@ input[type="text"]::placeholder {
   width: 100%;
 }
 
-/* .form-control {
-  border-radius: 25px;
-  border: none;
-  height: 45px;
-} */
-
 .btn-primary {
   background-color: #ff7c5b;
   border: none;
   border-radius: 25px;
   font-weight: bold;
+  font-size: 22px;
   height: 45px;
 }
 
@@ -94,25 +89,25 @@ input[type="text"]::placeholder {
     margin: 0;
   }
 
-  .search-input {
+  /* .search-input {
     display: flex;
     flex-direction: row;
     flex: 2 0 0%;
     margin: 10px 0 10px 0;
     width: 100%;
-  }
+  } */
 
-  .btn-submit {
+  /* .btn-submit {
     display: flex;
     flex-direction: row;
     flex: 2 0 0%;
     margin: 10px 0 10px 0;
     width: 100%;
-  }
+  } */
 
-  .form-control {
+  /* .form-control {
     height: 45px;
-  }
+  } */
 
   .btn-primary {
     /* margin: 0 auto 0 auto; */

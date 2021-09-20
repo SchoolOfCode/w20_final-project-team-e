@@ -6,10 +6,10 @@ import { useLocation } from "react-router-dom";
 
 export default function Menu() {
   
-  //assigning location variable
+  //Assigning location variable
   const location = useLocation();
 
-  //destructuring pathname from location
+  //Destructuring pathname from location
   const { pathname } = location;
   
   //Javascript split method to get the name of the path in array
@@ -24,7 +24,7 @@ export default function Menu() {
         <div className="nav-menu">
           <div className="nav-menu-item">
             <Link to="/" className="nav-text">
-              {/* Checking the current path name using javascript ternary operator and if true adding active classname to it */}
+              {/* Checking the current path name using javascript ternary operator and if true, assigning nav-button-active className to it */}
               <button className={splitLocation[1] === "" ? "nav-button-active" : "nav-button"}>Home</button>
             </Link>
           </div>

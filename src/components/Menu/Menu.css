@@ -27,7 +27,7 @@
 
 .nav-button {
   width: 100px;
-  height: 12vh;
+  height: 11vh;
   font-size: 1.3rem;
   background-color: white;
   border: none;
@@ -36,7 +36,7 @@
 
 .nav-button:hover {
   color: #1f5657;
-  font-weight: 500;
+  border-bottom: solid 5px #1f5657;
   text-decoration: none;
 }
 
@@ -46,8 +46,9 @@
 
 .nav-button-active {
   width: 100px;
-  height: 12vh;
+  height: 11vh;
   font-size: 1.3rem;
+  font-weight: 500;
   background-color: white;
   border: none;
   border-bottom: solid 5px #1f5657;
@@ -80,6 +81,11 @@
   }
 
   .nav-button {
+    width: 80px;
+    height: 8vh;
+  }
+
+  .nav-button-active {
     width: 80px;
     height: 8vh;
   }

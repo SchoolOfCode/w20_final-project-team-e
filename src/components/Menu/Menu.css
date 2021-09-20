@@ -37,11 +37,24 @@
 .nav-button:hover {
   color: #1f5657;
   font-weight: 500;
-  border-bottom: solid 5px #1f5657;
   text-decoration: none;
 }
 
 .nav-button:focus {
+  outline: none;
+}
+
+.nav-button-active {
+  width: 100px;
+  height: 12vh;
+  font-size: 1.3rem;
+  background-color: white;
+  border: none;
+  border-bottom: solid 5px #1f5657;
+  text-decoration: none;
+}
+
+.nav-button-active:focus {
   outline: none;
 }
 

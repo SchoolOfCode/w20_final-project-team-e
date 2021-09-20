@@ -2,9 +2,19 @@ import React from "react";
 import "./Menu.css";
 import Logo from "../../images/nav_logo_mobile.png";
 import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { useLocation } from "react-router-dom";
 
 export default function Menu() {
+  
+  //assigning location variable
+  const location = useLocation();
+
+  //destructuring pathname from location
+  const { pathname } = location;
+  
+  //Javascript split method to get the name of the path in array
+  const splitLocation = pathname.split("/");
+  
   return (
     <nav className="navbar sticky-top">
       <div className="container-fluid">
@@ -14,12 +24,13 @@ export default function Menu() {
         <div className="nav-menu">
           <div className="nav-menu-item">
             <Link to="/" className="nav-text">
-              <button className="nav-button">Home</button>
+              {/* Checking the current path name using javascript ternary operator and if true adding active classname to it */}
+              <button className={splitLocation[1] === "" ? "nav-button-active" : "nav-button"}>Home</button>
             </Link>
           </div>
           <div className="nav-menu-item">
             <Link to="/blog" className="nav-text">
-              <button className="nav-button">Blog</button>
+              <button className={splitLocation[1] === "blog" ? "nav-button-active" : "nav-button"}>Blog</button>
             </Link>
           </div>
         </div>

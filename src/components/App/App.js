@@ -23,7 +23,6 @@ export default function App() {
   //State - to/from
   const [from, updateFrom] = useState("");
   const [to, updateTo] = useState("");
-  //const [showResults, changeShowResults] = useState(false)
 
   //if to/from is an empty string - results card is hidden
   //if to/from is not an empty string - results card is visible

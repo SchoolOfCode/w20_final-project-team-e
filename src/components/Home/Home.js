@@ -20,8 +20,8 @@ export default function Home(props) {
       <SearchSection
         from={props.from}
         to={props.to}
-        handleFrom={props.from}
-        handleTo={props.to}
+        handleFrom={props.handleFrom}
+        handleTo={props.handleTo}
         handleSubmit={props.handleSubmit}
       />
       {props.showLoadingComponent ? (

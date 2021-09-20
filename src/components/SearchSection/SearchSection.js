@@ -6,7 +6,8 @@ export default function SearchSection(props) {
     <div>
       <SearchCard
         state={props.formData}
-        handleChange={props.handleChange}
+        handleFrom={props.handleFrom}
+        handleTo={props.handleTo}
         handleSubmit={props.handleSubmit}
       />
     </div>

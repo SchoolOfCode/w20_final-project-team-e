@@ -13,8 +13,11 @@
     "emotion-theming": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-places-autocomplete": "^3.3.2",
     "react-icons": "^4.2.0",
-    "react-router-dom": "^5.3.0",
+
+    "react-places-autocomplete": "^7.3.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-sticky-el": "^2.0.9",
     "rebass": "^4.0.7",

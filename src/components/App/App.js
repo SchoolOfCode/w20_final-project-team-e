@@ -1,15 +1,17 @@
 import { useState } from "react";
 import React from "react";
-import Sticky from "react-sticky-el";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import SearchSection from "../SearchSection/SearchSection";
-import HeroSection from "../HeroSection/HeroSection";
-import LoadingSection from "../LoadingSection/LoadingSection";
-import ResultsSection from "../ResultsSection/ResultsSection";
-import ResultsCard from "../ResultsCard/ResultsCard";
-import Menu from "../Menu/Menu";
-import HelpModal from "../HelpModal/HelpModal";
+import "./App.css";
+import Home from "../Home/Home";
+import Blog from "../Blog/Blog";
+
+//Icons
+import bicycleIcon from "../../images/bicycle-icon.png";
+import carIcon from "../../images/car-icon.png";
+import busIcon from "../../images/bus-icon.png";
+import trainIcon from "../../images/train-icon.png";
+import flightIcon from "../../images/flight-icon.png";
 
 //Set state for the form data
 export default function App() {
@@ -27,17 +29,17 @@ export default function App() {
   //if to/from is not an empty string - results card is visible
 
   //state for results card
-  const [resultsData, updateResultsData] = useState("");
+  const [resultsData, updateResultsData] = useState([]);
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
-  const headers = {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-      "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-    },
-  };
+  // const headers = {
+  //   method: "GET",
+  //   headers: {
+  //     "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
+  //     "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
+  //   },
+  // };
 
   async function getFootprint() {
     try {
@@ -56,84 +58,100 @@ export default function App() {
       let carData = await carResponse.json();
 
       //Train
-      // let trainDistanceResponse = await fetch(
-      //   `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&transit_mode=rail&mode=transit&destinations=${formData.to}&key=${distanceKey}`
-      // );
-      // let trainDistanceData = await trainDistanceResponse.json();
-      // let trainDistance =
-      //   trainDistanceData.rows[0].elements[0].distance.value / 1000;
+       let trainDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&transit_mode=rail&mode=transit&destinations=${to}&key=${distanceKey}`
+       );
+       let trainDistanceData = await trainDistanceResponse.json();
+       let trainDistance =
+         trainDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      // let trainResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
-      //   headers
-      // );
-      // let trainData = await trainResponse.json();
+      let trainResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
+        headers
+      );
+      let trainData = await trainResponse.json();
 
-      // //Bus
-      // let busDistanceResponse = await fetch(
-      //   `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bus&destinations=${formData.to}&key=${distanceKey}`
-      // );
-      // let busDistanceData = await busDistanceResponse.json();
-      // let busDistance =
-      //   busDistanceData.rows[0].elements[0].distance.value / 1000;
+      //Bus
+      let busDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bus&destinations=${to}&key=${distanceKey}`
+      );
+      let busDistanceData = await busDistanceResponse.json();
+      let busDistance =
+        busDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      // let busResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
-      //   headers
-      // );
-      // let busData = await busResponse.json();
+      let busResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
+        headers
+      );
+      let busData = await busResponse.json();
 
-      // //Bike
-      // let bikeDistanceResponse = await fetch(
-      //   `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bicycling&destinations=${formData.to}&key=${distanceKey}`
-      // );
-      // let bikeDistanceData = await bikeDistanceResponse.json();
-      // let bikeDistance =
-      //   bikeDistanceData.rows[0].elements[0].distance.value / 1000;
+      //Bike
+      let bikeDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bicycling&destinations=${to}&key=${distanceKey}`
+      );
+      let bikeDistanceData = await bikeDistanceResponse.json();
+      let bikeDistance =
+        bikeDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      // let bikeResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
-      //   headers
-      // );
-      // let bikeData = await bikeResponse.json();
+      let bikeResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
+        headers
+      );
+      let bikeData = await bikeResponse.json();
 
-      // //Flight
-      // let flightDistanceResponse = await fetch(
-      //   `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=air&destinations=${formData.to}&key=${distanceKey}`
-      // );
-      // let flightDistanceData = await flightDistanceResponse.json();
-      // let flightDistance =
-      //   flightDistanceData.rows[0].elements[0].distance.value / 1000;
+      //Flight
+      let flightDistanceResponse = await fetch(
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=air&destinations=${to}&key=${distanceKey}`
+      );
+      let flightDistanceData = await flightDistanceResponse.json();
+      let flightDistance =
+        flightDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      // let flightResponse = await fetch(
-      //   `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
-      //   headers
-      // );
-      // let flightData = await flightResponse.json();
+      let flightResponse = await fetch(
+        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
+        headers
+      );
+      let flightData = await flightResponse.json();
 
-      updateResultsData({
+      updateResultsData([
         ...resultsData,
-        carDistance: carDistance.toFixed(2),
-        carCarbon: carData.carbonEquivalent.toFixed(2),
-        carKettles: Math.ceil(carData.carbonEquivalent / 0.015),
-        carTrees: Math.ceil(carData.carbonEquivalent / 24),
-        // trainDistance: trainDistance.toFixed(2),
-        // trainCarbon: trainData.carbonEquivalent.toFixed(2),
-        // trainKettles: Math.ceil(trainData.carbonEquivalent / 0.015),
-        // trainTrees: Math.ceil(trainData.carbonEquivalent / 24),
-        // busDistance: busDistance.toFixed(2),
-        // busCarbon: busData.carbonEquivalent.toFixed(2),
-        // busKettles: Math.ceil(busData.carbonEquivalent / 0.015),
-        // busTrees: Math.ceil(busData.carbonEquivalent / 24),
-        // bikeDistance: bikeDistance.toFixed(2),
-        // bikeCarbon: bikeData.carbonEquivalent.toFixed(2),
-        // bikeKettles: Math.ceil(bikeData.carbonEquivalent / 0.015),
-        // bikeTrees: Math.ceil(bikeData.carbonEquivalent / 24),
-        // flightDistance: flightDistance.toFixed(2),
-        // flightCarbon: flightData.carbonEquivalent.toFixed(2),
-        // flightKettles: Math.ceil(flightData.carbonEquivalent / 0.015),
-        // flightTrees: Math.ceil(flightData.carbonEquivalent / 24),
-      });
+        {
+          vehicle: "bicycle",
+          icon: bicycleIcon,
+          distance: Math.ceil(bikeDistance),
+          carbon: Math.ceil(bikeDistance * 0.021),
+          trees: Math.ceil((bikeDistance * 0.021) / 24),
+        },
+        {
+          vehicle: "car",
+          icon: carIcon,
+          distance: Math.ceil(carDistance),
+          carbon: Math.ceil(carDistance * 0.18659),
+          trees: Math.ceil((carDistance * 0.18659) / 24),
+        },
+        {
+          vehicle: "bus",
+          icon: busIcon,
+          distance: Math.ceil(busDistance),
+          carbon: Math.ceil(busDistance * 0.089),
+          trees: Math.ceil((busDistance * 0.089) / 24),
+        },
+        {
+          vehicle: "train",
+          icon: trainIcon,
+          distance: Math.ceil(trainDistance),
+          carbon: Math.ceil(trainDistance * 0.06),
+          trees: Math.ceil((trainDistance * 0.06) / 24),
+        },
+        {
+          vehicle: "flight",
+          icon: flightIcon,
+          distance: Math.ceil(flightDistance),
+          carbon: Math.ceil(flightDistance * 0.1753),
+          trees: Math.ceil((flightDistance * 0.1753) / 24),
+        },
+      ]);
+
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -149,7 +167,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 4000);
+    }, 10000);
   };
 
   // Search button logic
@@ -175,7 +193,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 4000);
+    }, 10000);
   };
 
   const handleSubmit = (e) => {
@@ -193,35 +211,28 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      {/* to be fixed at the top of the page? */}
-      <Sticky>
-        <Menu />
-      </Sticky>
-      <HeroSection />
-      <SearchSection
-        from={from}
-        to={to}
-        handleFrom={handleFrom}
-        handleTo={handleTo}
-        handleSubmit={handleSubmit}
-      />
-      {showLoadingComponent ? <LoadingSection from={from} to={to} /> : null}
-      {displayResults ? (
-        <ResultsSection from={from} to={to} resultsData={resultsData} />
-      ) : null}
-      <ResultsCard from={from} to={to} resultsData={resultsData} />
-      <ResultsCard from={from} to={to} resultsData={resultsData} />
-      <ResultsCard from={from} to={to} resultsData={resultsData} />
-      <button
-        className={openModal ? "closeModalBtn" : "openModalBtn"}
-        onClick={() => {
-          setOpenModal(!openModal);
-        }}
-      >
-        ?
-      </button>
-      {openModal && <HelpModal closeModal={setOpenModal} />}
-    </div>
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/blog">
+          <Blog openModal={openModal} setOpenModal={setOpenModal} />
+        </Route>
+        <Route path="/">
+          <Home
+            from={from}
+            to={to}
+            handleFrom={handleFrom}
+            handleTo={handleTo}
+            handleSubmit={handleSubmit}
+            showLoadingComponent={showLoadingComponent}
+            displayResults={displayResults}
+            resultsData={resultsData}
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 }

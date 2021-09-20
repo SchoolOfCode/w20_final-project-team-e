@@ -18,22 +18,20 @@ export default function HelpModal(props) {
             impossible. We’ll help you get better informed about your journey’s
             environmental impact, routes and modes of transport that can help
             cut down on emissions or ways to offset your carbon quota. Pop in
-            where you want to go and we’ll help you plan a greener route!{" "}
+            where you want to go and we’ll help you plan a greener route.
           </p>
-          <h2>Creating an account</h2>
+          {/* <h2>Creating an account</h2>
           <p>
             Creating an account helps you track your routes and get better
             informed about the shoe size of carbon footprint over time.{" "}
-          </p>
-          <h2>Connect with others</h2>
+          </p> */}
+          <h2>Blog</h2>
           <p>
-            Tackling the dilemmas around the environment can often feel like a
-            solo slog. Connect with our community of eco journey planners,
-            asking questions, finding solutions and plotting a greener route for
-            the future.{" "}
+            Tackling the dilemmas around the environment can often "where do I
+            start?". Flick through our blog for some easy tips and advice to get
+            started on your journey to zero emissions.
           </p>
         </div>
-
         <img
           className="modalImage"
           src={helpModalImage}

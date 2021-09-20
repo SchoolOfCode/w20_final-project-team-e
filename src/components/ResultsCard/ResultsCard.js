@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import ReferenceModal from './../ReferencesModal/ReferencesModal'
 
 // Material-UI Library
@@ -186,9 +187,8 @@ export default function ResultsCard(props) {
         return Math.ceil(carbon / 0.29372);
     };
 
-    const showReferenceModal = () => {
-        <ReferenceModal />
-    };
+    // Logic for handling modal which shows user how the information was calculated
+    const [referenceModalVisible, setReferenceModalVisible] = useState(false);
 
   return (
     <div className={classes.root}>
@@ -330,7 +330,7 @@ export default function ResultsCard(props) {
                     </Box>
                 </Box>
                 <Typography className={classes.informationLink}>
-                    <Link href='#' onClick={() => showReferenceModal()}>
+                    <Link href='#' onClick={() => setReferenceModalVisible(true)}>
                         How did we calculate this information?
                     </Link>
                 </Typography>

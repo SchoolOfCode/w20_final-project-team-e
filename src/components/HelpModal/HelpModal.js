@@ -20,11 +20,6 @@ export default function HelpModal(props) {
             cut down on emissions or ways to offset your carbon quota. Pop in
             where you want to go and we’ll help you plan a greener route.
           </p>
-          {/* <h2>Creating an account</h2>
-          <p>
-            Creating an account helps you track your routes and get better
-            informed about the shoe size of carbon footprint over time.{" "}
-          </p> */}
           <h2>Blog</h2>
           <p>
             Tackling the dilemmas around the environment can often "where do I
@@ -39,5 +34,5 @@ export default function HelpModal(props) {
         ></img>
       </div>
     </div>
-  );
+  )
 }

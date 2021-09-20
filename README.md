@@ -1,70 +1,104 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EMISSION IMPOSSIBLE
 
-## Available Scripts
+Emission Impossible is an eco journey planner. We calculate the users mileage for their chosen journey, and estimate their carbon emissions for 5 different modes of transport.
+The user can compare and contrast each journey and view estimated tangible metrics necessary for carbon replacement. 
 
-In the project directory, you can run:
+Our app offers users a clear breakdown of their travel choices on the environment, provide choice pathways to investgate or make changes to their travel habits.
 
-### `npm start`
+A small blog section helps users further their research and frames it in a solution oriented way. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Authors
 
-### `npm test`
+- [Catherine Butler](https://github.com/catherine-butler)
+- [Jamie Hannah](https://github.com/JHannah30)
+- [Natalie Pinnock](https://github.com/natpinnock)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
+## Features
 
-### `npm run build`
+- Help modal
+- Blog section
+- Google search autocomplete
+- Validated location search
+- Distance calculator
+- Carbon emssions/offset calculator
+- Responsive for mobile and desktop
+- Cross platform
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
+## Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Insert gif or link to demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  
+## Tech Stack
 
-### `npm run eject`
+React
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Bootstrap
+MaterialUI
+body-scroll-lock
+react-select-sticky
+react-google-places-autocomplete
+react-router
+  
+## API Reference
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### DistanceMatrix (https://distancematrix.ai/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Distance Matrix API is used to calculate the distance between 2 locations for cars, bicycles, buses and trains
 
-## Learn More
+#### Distance.to (https://www.distance.to/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Distance.to API is used to calculate the distance between 2 locations for flights
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Google Places (https://developers.google.com/maps/documentation/places/web-service/overview)
 
-### Code Splitting
+Google Places API is used to provide the user with location options when completing the search
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Colour Reference
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Dark Green  	| ![#074445](https://www.color-hex.com/color/074445) #074445|
+| Orange 	| ![#FF7C5B](https://www.color-hex.com/color/ff7c5b) #FF7C5B|
+| Orange Hover 	| ![#E85E3B](https://www.color-hex.com/color/e85e3b) #E85E3B|
+| Modal Grey	| ![#C8C8C8](https://www.color-hex.com/color/c8c8c8) #C8C8C8|
+| Black		| ![#000000](https://www.color-hex.com/color/000000) #000000|
+| White		| ![#FFFFFF](https://www.color-hex.com/color/ffffff) #FFFFFF|
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Deployment
 
-### Making a Progressive Web App
+To deploy this project run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+  npm start
+```
 
-### Advanced Configuration
+  
+## Feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If you have any feedback, please reach out to us at catbutler039@gmail.com
 
-### Deployment
+  
+## Appendix
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This app was built as part of a final project for School of Code's bootcamp-6 cohort. School of Code is about opening the opportunity of tech up to everyone.
 
-### `npm run build` fails to minify
+For more information about School of Code, visit their website [here](https://www.schoolofcode.co.uk/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you to [Pluto Travel](https://pluto.travel/) for inspiring the theme for the project. 
+
+  
+## Acknowledgements
+
+ #### Blog Articles Used
+ - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+
+  	

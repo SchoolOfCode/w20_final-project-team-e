@@ -21,11 +21,8 @@ export default function App() {
   const targetElement = document.querySelector("html");
 
   //State - to/from
-  const initialFormData = {
-    from: "",
-    to: "",
-  };
-  const [formData, updateFormData] = useState(initialFormData);
+  const [from, updateFrom] = useState("");
+  const [to, updateTo] = useState("");
 
   //Processes the form inputs, removing spaces and capitalising the first character
   function formatInput(string){
@@ -46,7 +43,7 @@ export default function App() {
     try {
       //Car
       let carDistanceResponse = await fetch(
-        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&destinations=${formData.to}&key=${distanceKey}`
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&destinations=${to}&key=${distanceKey}`
       );
       let carDistanceData = await carDistanceResponse.json();
       let carDistance =
@@ -54,7 +51,7 @@ export default function App() {
 
       //Train
       let trainDistanceResponse = await fetch(
-        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&transit_mode=rail&mode=transit&destinations=${formData.to}&key=${distanceKey}`
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&transit_mode=rail&mode=transit&destinations=${to}&key=${distanceKey}`
       );
       let trainDistanceData = await trainDistanceResponse.json();
       let trainDistance =
@@ -62,7 +59,7 @@ export default function App() {
 
       //Bus
       let busDistanceResponse = await fetch(
-        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bus&destinations=${formData.to}&key=${distanceKey}`
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bus&destinations=${to}&key=${distanceKey}`
       );
       let busDistanceData = await busDistanceResponse.json();
       let busDistance =
@@ -70,7 +67,7 @@ export default function App() {
 
       //Bike
       let bikeDistanceResponse = await fetch(
-        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${formData.from}&mode=bicycling&destinations=${formData.to}&key=${distanceKey}`
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bicycling&destinations=${to}&key=${distanceKey}`
       );
       let bikeDistanceData = await bikeDistanceResponse.json();
       let bikeDistance =
@@ -78,19 +75,11 @@ export default function App() {
 
       //Flight
       let flightDistanceResponse = await fetch(
-        `https://distanceto.p.rapidapi.com/get?route=%20%5B%7B%22t%22%3A%22${formData.from}%22%7D%2C%7B%22t%22%3A%22${formData.to}%22%7D%5D&car=false&foot=false`,
-        {
-          method: "GET",
-          headers: {
-            "x-rapidapi-host": "distanceto.p.rapidapi.com",
-            "x-rapidapi-key":
-              "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-          },
-        }
+        `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=air&destinations=${to}&key=${distanceKey}`
       );
       let flightDistanceData = await flightDistanceResponse.json();
       let flightDistance =
-        flightDistanceData.steps[0].distance.flight[0].distance;
+        flightDistanceData.rows[0].elements[0].distance.value / 1000;
 
       updateResultsData([
         ...resultsData,
@@ -145,15 +134,16 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 9000);
+    }, 12000);
   };
 
   // Search button logic
-  const handleChange = (e) => {
-    updateFormData({
-      ...formData,
-      [e.target.name]: formatInput(e.target.value),
-    });
+  const handleFrom = (selectedOption) => {
+    updateFrom(selectedOption.label);
+  };
+
+  const handleTo = (selectedOption) => {
+    updateTo(selectedOption.label);
   };
 
   // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
@@ -170,7 +160,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 9000);
+    }, 12000);
   };
 
   const handleSubmit = (e) => {
@@ -197,8 +187,10 @@ export default function App() {
         </Route> */}
         <Route path="/">
           <Home
-            formData={formData}
-            handleChange={handleChange}
+            from={from}
+            to={to}
+            handleFrom={handleFrom}
+            handleTo={handleTo}
             handleSubmit={handleSubmit}
             showLoadingComponent={showLoadingComponent}
             displayResults={displayResults}

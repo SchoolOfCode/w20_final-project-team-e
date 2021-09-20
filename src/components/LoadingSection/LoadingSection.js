@@ -3,8 +3,8 @@ import carAnimation from "../../images/loading-animation.gif";
 
 export default function LoadingSection(props) {
   // To and From inputs, grabbed from user's search
-  let fromLocation = props.formData.from;
-  let toLocation = props.formData.to;
+  let fromLocation = props.from;
+  let toLocation = props.to;
 
   return (
     <div id="loading-section">

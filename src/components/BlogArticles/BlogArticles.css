@@ -1,5 +1,5 @@
 .blog-section {
-  margin: 50px;
+  margin: 40px;
   display: flex;
   justify-content: space-evenly;
   align-content: center;
@@ -7,11 +7,31 @@
   row-gap: 50px;
 }
 
+.blog-header-containter {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 0px 80px 0px 80px;
+}
+
+.blog-sub-header-txt {
+  display: flex;
+  justify-content: center;
+  font-size: 1.75em;
+  font-weight: 450;
+  padding: 25px 80px 25px 80px;
+}
+
 .article-card {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 6px rgb(0 0 0 / 0.2);
-  width: 25vw;
+  width: 40vw;
   height: auto;
 }
 
@@ -22,20 +42,20 @@
   object-fit: cover;
 }
 
-.card-body {
+.art-card-body {
   flex-direction: column;
   width: 25vw;
-  /* max-width: 25vw; */
   height: auto;
 }
 
-.card-text {
-  font-size: 2em;
-  font-weight: 500;
+.art-card-text {
+  font-size: 1.5em;
+  font-weight: 400;
   color: #2f2e41;
+  margin: 20px 20px 20px 20px;
 }
 
-.card-text:hover {
+.art-card-text:hover {
   color: #ff7c5b;
   text-decoration: underline #ff7c5b;
 }
@@ -43,18 +63,32 @@
 /* Small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .blog-section {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+    margin: 5px;
     row-gap: 25px;
   }
+
+  .blog-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .blog-sub-header-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 25px 70px 25px 70px;
+  }
+
   .article-card {
     display: flex;
     width: 75vw;
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 75vw;
     height: auto;
@@ -64,13 +98,13 @@
     width: 75vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1em;
     font-weight: 500;
     color: #2f2e41;
   }
 
-  .card-text:hover {
+  .art-card-text:hover {
     color: #ff7c5b;
     text-decoration: underline #ff7c5b;
   }
@@ -84,13 +118,28 @@
     margin: 30px;
     row-gap: 30px;
   }
+  /* 
+  .blog-headers {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 25px 0px 0px 50px;
+  }
+
+  .blog-sub-header-txt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-right: 50px;
+  } */
+
   .article-card {
     display: flex;
     width: 40vw;
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 40vw;
     height: auto;
@@ -101,7 +150,7 @@
     width: 40vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1.5em;
   }
 }
@@ -115,13 +164,28 @@
     margin: 30px;
     row-gap: 30px;
   }
+
+  /* .blog-headers {
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    margin: 100px 0px 0px 80px;
+  }
+
+  .blog-sub-header-txt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px; 
+  }
+  */
+
   .article-card {
     display: flex;
     width: 40vw;
     height: auto;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 40vw;
     height: auto;
@@ -132,7 +196,7 @@
     width: 40vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1.7em;
   }
 }
@@ -150,7 +214,20 @@
     height: auto;
   }
 
-  .card-body {
+  /* .blog-headers {
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    margin: 100px 0px 0px 90px;
+  }
+
+  .blog-sub-header-txt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  } */
+
+  .art-card-body {
     flex-direction: column;
     width: 40vw;
     height: auto;
@@ -161,7 +238,7 @@
     width: 40vw;
   }
 
-  .card-text {
+  .art-card-text {
     font-size: 1.7em;
   }
 }
@@ -176,6 +253,18 @@
     flex-flow: row wrap;
     row-gap: 50px;
   }
+
+  /* .blog-headers {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0px 0px 145px;
+  }
+
+  .blog-sub-header-txt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  } */
 
   .article-card {
     display: flex;
@@ -192,7 +281,7 @@
     object-fit: cover;
   }
 
-  .card-body {
+  .art-card-body {
     flex-direction: column;
     width: 25vw;
     height: auto;

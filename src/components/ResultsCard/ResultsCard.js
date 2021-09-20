@@ -1,4 +1,5 @@
 import React from 'react';
+import ReferenceModal from './../ReferencesModal/ReferencesModal'
 
 // Material-UI Library
 import { makeStyles } from '@material-ui/core/styles';
@@ -185,8 +186,8 @@ export default function ResultsCard(props) {
         return Math.ceil(carbon / 0.29372);
     };
 
-    const doSomething = () => {
-        alert(`Information about our calculations.`)
+    const showReferenceModal = () => {
+        <ReferenceModal />
     };
 
   return (
@@ -329,7 +330,7 @@ export default function ResultsCard(props) {
                     </Box>
                 </Box>
                 <Typography className={classes.informationLink}>
-                    <Link href='#' onClick={() => doSomething()}>
+                    <Link href='#' onClick={() => showReferenceModal()}>
                         How did we calculate this information?
                     </Link>
                 </Typography>

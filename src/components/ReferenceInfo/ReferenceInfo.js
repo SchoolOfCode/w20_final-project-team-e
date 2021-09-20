@@ -37,12 +37,12 @@ export default function ReferenceModal(){
                         id="panel1a-header"
                         >
                             <Typography className={classes.question}>
-                                How did we calculate the mileage for each mode of transport?
+                                How did we calculate the distance for each mode of transport?
                             </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography color='textSecondary'>
-                                The mileage being displayed 
+                                We've calculated the distance based on the journey that each mode of transport will most likely take from the start and finish destinations.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -58,7 +58,7 @@ export default function ReferenceModal(){
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography color='textSecondary'>
-                                Emission data being shown is per person, using the average number of passengers for the respective mode of transport.
+                                Emission data being shown is per person, based on the average number of passengers for the respective mode of transport.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -74,8 +74,7 @@ export default function ReferenceModal(){
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography color='textSecondary'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                This is how many trees would need to be planted to offset the carbon emissions produced for that journey. 
                             </Typography>
                         </AccordionDetails>
                     </Accordion>

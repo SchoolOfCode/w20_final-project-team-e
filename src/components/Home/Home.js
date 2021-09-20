@@ -18,16 +18,19 @@ export default function Home(props) {
       </Sticky>
       <HeroSection />
       <SearchSection
-        formData={props.formData}
-        handleChange={props.handleChange}
+        from={props.from}
+        to={props.to}
+        handleFrom={props.from}
+        handleTo={props.to}
         handleSubmit={props.handleSubmit}
       />
       {props.showLoadingComponent ? (
-        <LoadingSection formData={props.formData} />
+        <LoadingSection from={props.from} to={props.to} />
       ) : null}
       {props.displayResults ? (
         <ResultsSection
-          formData={props.formData}
+          from={props.from}
+          to={props.to}
           resultsData={props.resultsData}
         />
       ) : null}

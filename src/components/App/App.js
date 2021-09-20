@@ -33,13 +33,6 @@ export default function App() {
 
   //Distance API
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
-  // const headers = {
-  //   method: "GET",
-  //   headers: {
-  //     "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-  //     "x-rapidapi-key": "2fa1c0dcdfmshfb82fa2cc944c9ep14832ajsn98e082fa387d",
-  //   },
-  // };
 
   async function getFootprint() {
     try {
@@ -51,25 +44,13 @@ export default function App() {
       let carDistance =
         carDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      let carResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${carDistance}`,
-        headers
-      );
-      let carData = await carResponse.json();
-
       //Train
-       let trainDistanceResponse = await fetch(
+      let trainDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&transit_mode=rail&mode=transit&destinations=${to}&key=${distanceKey}`
-       );
-       let trainDistanceData = await trainDistanceResponse.json();
-       let trainDistance =
-         trainDistanceData.rows[0].elements[0].distance.value / 1000;
-
-      let trainResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${trainDistance}`,
-        headers
       );
-      let trainData = await trainResponse.json();
+      let trainDistanceData = await trainDistanceResponse.json();
+      let trainDistance =
+        trainDistanceData.rows[0].elements[0].distance.value / 1000;
 
       //Bus
       let busDistanceResponse = await fetch(
@@ -79,12 +60,6 @@ export default function App() {
       let busDistance =
         busDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      let busResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${busDistance}`,
-        headers
-      );
-      let busData = await busResponse.json();
-
       //Bike
       let bikeDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bicycling&destinations=${to}&key=${distanceKey}`
@@ -93,12 +68,6 @@ export default function App() {
       let bikeDistance =
         bikeDistanceData.rows[0].elements[0].distance.value / 1000;
 
-      let bikeResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${bikeDistance}`,
-        headers
-      );
-      let bikeData = await bikeResponse.json();
-
       //Flight
       let flightDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=air&destinations=${to}&key=${distanceKey}`
@@ -106,12 +75,6 @@ export default function App() {
       let flightDistanceData = await flightDistanceResponse.json();
       let flightDistance =
         flightDistanceData.rows[0].elements[0].distance.value / 1000;
-
-      let flightResponse = await fetch(
-        `https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel?vehicle=MediumPetrolCar&distance=${flightDistance}`,
-        headers
-      );
-      let flightData = await flightResponse.json();
 
       updateResultsData([
         ...resultsData,
@@ -151,7 +114,6 @@ export default function App() {
           trees: Math.ceil((flightDistance * 0.1753) / 24),
         },
       ]);
-
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
@@ -167,7 +129,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 10000);
+    }, 12000);
   };
 
   // Search button logic
@@ -193,7 +155,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 10000);
+    }, 12000);
   };
 
   const handleSubmit = (e) => {

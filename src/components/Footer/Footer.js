@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import helpModalImage from "../../images/help_modal_illustration.png";
 
 export default function Footer(props) {
   return (

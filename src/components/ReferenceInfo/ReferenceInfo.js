@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
     referenceInfoBody: {
-        width: '90%',
         margin: '40px auto 0 auto',
     }
 }));
@@ -37,12 +36,13 @@ export default function ReferenceModal(){
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                         >
-                            <Typography className={classes.question}>How did we calculate the mileage for each mode of transport?</Typography>
+                            <Typography className={classes.question}>
+                                How did we calculate the mileage for each mode of transport?
+                            </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography color='textSecondary'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                The mileage being displayed 
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -58,8 +58,7 @@ export default function ReferenceModal(){
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography color='textSecondary'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Emission data being shown is per person, using the average number of passengers for the respective mode of transport.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>

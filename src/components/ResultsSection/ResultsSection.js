@@ -56,10 +56,10 @@ export default function ResultsSection(props) {
           className="more-info-button"
           onClick={() => setReferenceInfoVisible(!referenceInfoVisible)}
         >
-        How did we calculate this information?
+          How did we calculate this information?
         </button>
         {referenceInfoVisible === true ? <ReferenceInfo /> : "" }
       </div>
     </section>
-  );
+  )
 }

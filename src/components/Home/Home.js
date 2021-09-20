@@ -5,9 +5,9 @@ import Sticky from "react-sticky-el";
 import HeroSection from "../HeroSection/HeroSection";
 import SearchSection from "../SearchSection/SearchSection";
 import LoadingSection from "../LoadingSection/LoadingSection";
-// import ResultsCard from "../ResultsCard/ResultsCard";
 import ResultsSection from "../ResultsSection/ResultsSection";
 import HelpModal from "../HelpModal/HelpModal";
+import Footer from "../Footer/Footer";
 
 export default function Home(props) {
   return (
@@ -18,22 +18,22 @@ export default function Home(props) {
       </Sticky>
       <HeroSection />
       <SearchSection
-        formData={props.formData}
-        handleChange={props.handleChange}
+        from={props.from}
+        to={props.to}
+        handleFrom={props.handleFrom}
+        handleTo={props.handleTo}
         handleSubmit={props.handleSubmit}
       />
       {props.showLoadingComponent ? (
-        <LoadingSection formData={props.formData} />
+        <LoadingSection from={props.from} to={props.to} />
       ) : null}
       {props.displayResults ? (
         <ResultsSection
-          formData={props.formData}
+          from={props.from}
+          to={props.to}
           resultsData={props.resultsData}
         />
       ) : null}
-      {/* <ResultsCard formData={props.formData} resultsData={props.resultsData} />
-      <ResultsCard formData={props.formData} resultsData={props.resultsData} />
-      <ResultsCard formData={props.formData} resultsData={props.resultsData} /> */}
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {
@@ -43,6 +43,7 @@ export default function Home(props) {
         ?
       </button>
       {props.openModal && <HelpModal closeModal={props.setOpenModal} />}
+      <Footer />
     </div>
   );
 }

@@ -10,7 +10,9 @@ export default function Menu() {
         <Link to="/">
           <img className="nav-logo" src={Logo} alt="Emission Impossible logo" />
         </Link>
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog" className="nav-text">
+          Blog
+        </Link>
       </div>
     </nav>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Library Components
+// Material-UI Library
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -25,29 +25,66 @@ import HouseIcon from '../../images/house-icon.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '1000px',
-    maxWidth: '1200px',
-    border: 'solid #074445',
-    borderRadius: '15px',
     margin: '50px auto 0 auto',
+    textAlign: 'center',
+    padding: '0',
+    [theme.breakpoints.down('sm')]: {
+        width: '340px',
+    },
   },
+
+  resultsCard: {
+    border: 'solid #d5d5d9',  
+    borderRadius: '15px',
+    boxShadow: 'none',
+  },
+
   componentBody: {
     width: '100%',
   },
+
   transportIcon: {
     width: '125px',
     height: '125px',
+    margin: '0 auto 0 auto',
   },
+
   comparisonIcon: {
     width: '75px',
     height: '75px',
-    margin: '0 auto 0 auto'
+    margin: '10px auto 10px auto',
+    [theme.breakpoints.down('sm')]: {
+        width: '60px',
+        height: '60px',
+    },
   },
+
   primaryItem: {
     width: '25%',
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    },
   },
+
+  primaryItemImage: {
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    },
+  },
+
+  primaryItemExpand: {
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+    },
+  },
+
   secondaryItem: {
     width: '20%',
+    [theme.breakpoints.down('sm')]: {
+        width: '50%',  
+    },
   },
+
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -58,30 +95,58 @@ const useStyles = makeStyles((theme) => ({
         outline: 'none' ,
     },
   },
+
   expandOpen: {
     transform: 'rotate(180deg)',
   },
+
   primaryData: {
     fontWeight: 'bold',
-    fontSize: '4rem',
+    fontSize: '3.5rem',
+    color: '#2f2e41',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '2.7rem',
+    },
   },
+
   secondaryData: {
     fontWeight: 'bold',
     fontSize: '2.2rem',
+    color: '#2f2e41',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '1.8rem',
+    },
   },
+
   subheading: {
     fontSize: '1.5rem',
     marginTop: '50px',
+    padding: '0 30px 0 30px',
+    color: '#2f2e41',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '1.3rem',
+        marginTop: '0',  
+    },
   },
+
   bold: {
     fontWeight: 'bold',
   },
+
   buttonPositioning: {
     marginTop: '15px',
+    [theme.breakpoints.down('sm')]: {
+        marginTop: '0',
+    },
   },
+
   informationLink: {
     marginTop: '30px',
+    [theme.breakpoints.down('sm')]: {
+        margin: '10px 0 10px 0',
+    },
   }
+  
 }));
 
 
@@ -89,6 +154,7 @@ export default function ResultsCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [buttonDescription, setButtonDescription] = React.useState("More");
+    const vehicle = props.vehicle;
     const distance = props.distance;
     const carbon = props.carbon;
     const trees = props.trees;
@@ -123,20 +189,19 @@ export default function ResultsCard(props) {
         alert(`Information about our calculations.`)
     };
 
-
   return (
     <div className={classes.root}>
-        <Card>
+        <Card className={classes.resultsCard}>
             <Box 
             className={classes.componentBody}
             display="flex"
             flexDirection="row"
-            flexWrap="nowrap" 
+            flexWrap="wrap" 
             justifyContent="center"
             alignItems="center"
             p={2}
             >
-                <Box>
+                <Box className={classes.primaryItemImage}>
                     <CardMedia
                     className={classes.transportIcon}
                     image={icon}
@@ -148,7 +213,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{distance}</span>KM
                         </Typography>
                         <Typography color='textSecondary'>
-                            is the distance of this journey
+                            is the distance of this journey by {vehicle}
                         </Typography>
                     </CardContent>
                 </Box>
@@ -158,7 +223,7 @@ export default function ResultsCard(props) {
                             <span className={classes.primaryData}>{carbon}</span>KG
                         </Typography>
                         <Typography color='textSecondary'>
-                            of Carbon Emissions could be produced
+                            of Carbon emissions could be produced <span className={classes.bold}>*</span>
                         </Typography>
                     </CardContent>
                 </Box>
@@ -172,7 +237,7 @@ export default function ResultsCard(props) {
                         </Typography>
                     </CardContent>
                 </Box>
-                <Box>
+                <Box className={classes.primaryItemExpand}>
                     <CardContent className={classes.buttonPositioning}>
                         <IconButton
                         className={clsx(classes.expand, {
@@ -182,7 +247,7 @@ export default function ResultsCard(props) {
                         aria-expanded={expanded}
                         aria-label="show more"
                         >
-                        <ExpandMoreIcon />
+                        <ExpandMoreIcon className={classes.expandButton}/>
                         </IconButton>
                         <Typography>
                             {buttonDescription}
@@ -200,7 +265,7 @@ export default function ResultsCard(props) {
                 className={classes.componentBody}
                 display="flex"
                 flexDirection="row"
-                flexWrap="nowrap" 
+                flexWrap="wrap" 
                 justifyContent="center"
                 alignItems="center"
                 p={1} 

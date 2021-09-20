@@ -10,21 +10,21 @@ export default function BlogButtons(props) {
           <div className="btn-container">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="blog-btn btn-primary"
               onClick={props.handleSubmit}
             >
               Travel
             </button>
             <button
               type="submit"
-              className="btn btn-primary"
+              className="blog-btn btn-primary"
               onClick={props.handleSubmit}
             >
               Environment
             </button>
             <button
               type="submit"
-              className="btn btn-primary"
+              className="blog-btn btn-primary"
               onClick={props.handleSubmit}
             >
               Tips & Advice

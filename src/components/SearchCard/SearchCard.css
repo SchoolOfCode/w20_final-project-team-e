@@ -39,15 +39,16 @@ input[type="text"]::placeholder {
 .form-control {
   border-radius: 25px;
   border: none;
-  height: 45px;
+  height: 50px;
 }
 
 .btn-primary {
   background-color: #ff7c5b;
   border: none;
   border-radius: 25px;
+  font-size: 20px;
   font-weight: bold;
-  height: 45px;
+  height: 50px;
 }
 
 .btn-primary:hover {
@@ -109,12 +110,12 @@ input[type="text"]::placeholder {
   }
 
   .form-control {
-    height: 45px;
+    height: 50px;
   }
 
   .btn-primary {
     /* margin: 0 auto 0 auto; */
     width: 50%;
-    height: 45px;
+    height: 50px;
   }
 }

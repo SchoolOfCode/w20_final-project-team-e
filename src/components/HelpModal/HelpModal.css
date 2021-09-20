@@ -35,9 +35,11 @@
 .modalText h2 {
   font-size: 1.5rem;
   font-weight: bold;
+  padding: 15px;
 }
 .modalText p {
   font-size: 1.2rem;
+  padding: 10px;
 }
 
 .modalImage {
@@ -47,25 +49,11 @@
   align-self: flex-end;
 }
 
-/* need to insert mdia query to handle modal button
-need to insert scroll
-need to move button up z index 
-need to  arrange notes and images in columns*/
-
-/* .modalContainer body {
-  flex: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
-  text-align: center;
-} */
-
 @media only screen and (max-width: 1200px) {
   .modalContainer {
     flex-direction: column;
     justify-content: flex-start;
-    height: 85vh;
+    height: 95vh;
     padding: 25px;
     overflow-y: scroll;
   }
@@ -77,6 +65,7 @@ need to  arrange notes and images in columns*/
 
   .modalText h2 {
     font-size: 1.6rem;
+    padding: 10px;
   }
 
   .modalImage {
@@ -87,11 +76,17 @@ need to  arrange notes and images in columns*/
 }
 
 @media only screen and (max-width: 800px) {
+  .modalContainer {
+    height: 100vh;
+    padding: 20px;
+  }
+
   .modalText h2 {
     font-size: 1.6em;
+    padding: 5px;
   }
   .modalImage {
-    width: 20em;
+    width: 15em;
     height: auto;
     align-self: center;
   }
@@ -102,22 +97,26 @@ need to  arrange notes and images in columns*/
     flex-direction: column;
     width: 85vw;
     height: 95vh;
-    padding: 18px;
+    padding: 15px;
   }
 
   .modalText {
     flex-direction: column;
+    height: 130vh;
+    padding: 10;
   }
 
   .modalText h2 {
     font-size: 1.2em;
+    padding: 5px;
   }
 
   .modalText p {
     font-size: 1rem;
+    padding: 5px;
   }
 
-  .modalImage {
-    width: 10rem;
+  .modalImage::after {
+    width: 7.5rem;
   }
 }

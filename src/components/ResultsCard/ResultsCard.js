@@ -11,7 +11,6 @@ import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 // Icons
@@ -139,13 +138,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0',
     },
   },
-
-  informationLink: {
-    marginTop: '30px',
-    [theme.breakpoints.down('sm')]: {
-        margin: '10px 0 10px 0',
-    },
-  }
   
 }));
 
@@ -183,10 +175,6 @@ export default function ResultsCard(props) {
 
     const convertCarbonToPower = (carbon) => {
         return Math.ceil(carbon / 0.29372);
-    };
-
-    const doSomething = () => {
-        alert(`Information about our calculations.`)
     };
 
   return (
@@ -328,11 +316,6 @@ export default function ResultsCard(props) {
                         </CardContent>
                     </Box>
                 </Box>
-                <Typography className={classes.informationLink}>
-                    <Link href='#' onClick={() => doSomething()}>
-                        How did we calculate this information?
-                    </Link>
-                </Typography>
             </Collapse>
             <CardActions disableSpacing />
         </Card>

@@ -1,20 +1,13 @@
 import React from "react";
+import { useState } from 'react';
 import "../ResultsSection/ResultsSection.css";
 import ResultsCard from '../ResultsCard/ResultsCard';
+import ReferenceInfo from '../ReferenceInfo/ReferenceInfo';
 
 export default function ResultsSection(props) {
 
-  // // Abbreviates numbers that are 4-digits or longer
-  // const abbreviateLargeNumber = (n) => {
-  //   if (n < 1000) {
-  //     return n;
-  //   }
-  //   if (n >= 1000) {
-  //     n = n / 1000;
-  //     n = n.toFixed(1);
-  //     return n + "K";
-  //   }
-  // };
+    // Logic for handling modal which shows user how the information was calculated
+    const [referenceInfoVisible, setReferenceInfoVisible] = useState(false);
 
   return (
     <section className="results-container">
@@ -65,7 +58,14 @@ export default function ResultsSection(props) {
           trees={props.resultsData[4].trees}
           icon={props.resultsData[4].icon}
         />
+        <button
+          className="more-info-button"
+          onClick={() => setReferenceInfoVisible(!referenceInfoVisible)}
+        >
+          How did we calculate this information?
+        </button>
+        {referenceInfoVisible === true ? <ReferenceInfo /> : "" }
       </div>
     </section>
-  );
+  )
 }

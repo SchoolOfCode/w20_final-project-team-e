@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import Home from "../Home/Home";
-import Blog from "../Blog/Blog";
+// import Blog from "../Blog/Blog";
 
 //Icons
 import bicycleIcon from "../../images/bicycle-icon.png";
@@ -24,8 +24,14 @@ export default function App() {
   const [from, updateFrom] = useState("");
   const [to, updateTo] = useState("");
 
-  //if to/from is an empty string - results card is hidden
-  //if to/from is not an empty string - results card is visible
+  //Processes the form inputs, removing spaces and capitalising the first character
+  function formatInput(string){
+    string = string.toLowerCase().trim().split('');
+    string[0] = string[0].toUpperCase();
+    let formattedString = string.join('');
+    return formattedString;
+  }
+
 
   //state for results card
   const [resultsData, updateResultsData] = useState([]);
@@ -50,7 +56,7 @@ export default function App() {
       let trainDistanceData = await trainDistanceResponse.json();
       let trainDistance =
         trainDistanceData.rows[0].elements[0].distance.value / 1000;
-      
+
       //Bus
       let busDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bus&destinations=${to}&key=${distanceKey}`
@@ -176,9 +182,9 @@ export default function App() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
-        <Route path="/blog">
+        {/* <Route path="/blog">
           <Blog openModal={openModal} setOpenModal={setOpenModal} />
-        </Route>
+        </Route> */}
         <Route path="/">
           <Home
             from={from}

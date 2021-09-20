@@ -7,6 +7,23 @@
   margin-top: 40px;
 }
 
+.more-info-button {
+  width: 100%;
+  margin-top: 80px;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: white;
+  border: none;
+}
+
+.more-info-button:hover {
+  color: #ff7c5b;
+}
+
+.more-info-button:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 700px) {
   .results-container {
     margin-top: 20px;

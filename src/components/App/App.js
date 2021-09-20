@@ -50,7 +50,7 @@ export default function App() {
       let trainDistanceData = await trainDistanceResponse.json();
       let trainDistance =
         trainDistanceData.rows[0].elements[0].distance.value / 1000;
-
+      
       //Bus
       let busDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&mode=bus&destinations=${to}&key=${distanceKey}`

@@ -24,9 +24,6 @@ export default function App() {
   const [from, updateFrom] = useState("");
   const [to, updateTo] = useState("");
 
-  // // State to decide whether or not to trigger loading component function 
-  // const [handleResults, updateHandleResults] = useState("")
-
   //state for results card
   const [resultsData, updateResultsData] = useState([]);
 
@@ -113,12 +110,11 @@ export default function App() {
           trees: Math.ceil((flightDistance * 0.1753) / 24),
         },
       ]);
-      // updateHandleResults(true);
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
       );
-      // updateHandleResults(false);
+      setDisplayResults(false);
       setLoadingComponent(false);
     }
   }
@@ -130,7 +126,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 10000);
+    }, 8000);
   };
 
   // Search button logic
@@ -142,24 +138,30 @@ export default function App() {
     updateTo(selectedOption.label);
   };
 
-  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
+  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 'x' seconds
   const [displayResults, setDisplayResults] = useState(false);
 
   const displayResultsComponent = () => {
+    // Hides results component if already visible on the page.
     if (displayResults === true) {
       setDisplayResults(false);
     }
 
     setTimeout(() => {
-      setDisplayResults(true);
-      document
-        .getElementById("results-table")
-        .scrollIntoView({ block: "center" });
-      document.getElementById("homescreen").scrollIntoView();
-    }, 10000);
+      // Checks to see if resultsData state is not empty. If it is, component will not render.
+      if(resultsData !== []){
+        setDisplayResults(true);
+        document
+          .getElementById("results-table").scrollIntoView({ block: "center" });
+        document.getElementById("homescreen").scrollIntoView();
+      }
+    }, 8000);
   };
 
   const handleSubmit = (e) => {
+    // Resets the results data after each new search.
+    updateResultsData([]);
+
     handleLoadingComponent();
     e.preventDefault();
     getFootprint();

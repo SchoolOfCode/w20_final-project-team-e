@@ -12,6 +12,9 @@ export default function SearchCard(props) {
           <form className="flex-container">
             <div className="search-input">
               <GooglePlacesAutocomplete
+                // autocompletionRequest={{
+                //   types: ["(regions)"],
+                // }}
                 selectProps={{
                   className: "form-control",
                   onChange: props.handleFrom,
@@ -41,6 +44,9 @@ export default function SearchCard(props) {
             </div>
             <div className="search-input">
               <GooglePlacesAutocomplete
+                // autocompletionRequest={{
+                //   types: ["(regions)"],
+                // }}
                 selectProps={{
                   className: "form-control",
                   onChange: props.handleTo,

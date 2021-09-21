@@ -123,6 +123,7 @@ export default function App() {
         "Oh no! We couldn't match your search to any locations, please try again!"
       );
       setLoadingComponent(false);
+      window.location = "/";
     }
   }
 

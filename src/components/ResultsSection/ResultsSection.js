@@ -1,13 +1,9 @@
 import React from "react";
-import { useState } from 'react';
 import "../ResultsSection/ResultsSection.css";
 import ResultsCard from '../ResultsCard/ResultsCard';
 import ReferenceInfo from '../ReferenceInfo/ReferenceInfo';
 
 export default function ResultsSection(props) {
-
-    // Logic for handling modal which shows user how the information was calculated
-    const [referenceInfoVisible, setReferenceInfoVisible] = useState(false);
 
   return (
     <section className="results-container">
@@ -58,13 +54,10 @@ export default function ResultsSection(props) {
           trees={props.resultsData[4].trees}
           icon={props.resultsData[4].icon}
         />
-        <button
-          className="more-info-button"
-          onClick={() => setReferenceInfoVisible(!referenceInfoVisible)}
-        >
-          How did we calculate this information?
-        </button>
-        {referenceInfoVisible === true ? <ReferenceInfo /> : "" }
+        <div className="reference-section">
+          <h3 className="reference-section-title">How did we calculate this information?</h3>
+          <ReferenceInfo />
+        </div>
       </div>
     </section>
   )

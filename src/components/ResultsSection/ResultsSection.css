@@ -24,8 +24,21 @@
   outline: none;
 }
 
+.reference-section {
+  margin: 0 105px;
+}
+
+.reference-section-title {
+  margin-top: 100px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 700px) {
   .results-container {
     margin-top: 20px;
+  }
+
+  .reference-section {
+    margin: 0 10px;
   }
 }

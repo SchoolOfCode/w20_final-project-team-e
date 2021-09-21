@@ -24,13 +24,8 @@ export default function App() {
   const [from, updateFrom] = useState("");
   const [to, updateTo] = useState("");
 
-  //Processes the form inputs, removing spaces and capitalising the first character
-  // function formatInput(string){
-  //   string = string.toLowerCase().trim().split('');
-  //   string[0] = string[0].toUpperCase();
-  //   let formattedString = string.join('');
-  //   return formattedString;
-  // }
+  // // State to decide whether or not to trigger loading component function 
+  // const [handleResults, updateHandleResults] = useState("")
 
   //state for results card
   const [resultsData, updateResultsData] = useState([]);
@@ -118,22 +113,24 @@ export default function App() {
           trees: Math.ceil((flightDistance * 0.1753) / 24),
         },
       ]);
+      // updateHandleResults(true);
     } catch (err) {
       alert(
         "Oh no! We couldn't match your search to any locations, please try again!"
       );
+      // updateHandleResults(false);
       setLoadingComponent(false);
     }
   }
 
-  // Loading component to display for 4.5 seconds when the search button is pressed.
+  // Loading component to display for 'x' seconds when the search button is pressed.
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
   const handleLoadingComponent = () => {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 12000);
+    }, 10000);
   };
 
   // Search button logic
@@ -159,7 +156,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 12000);
+    }, 10000);
   };
 
   const handleSubmit = (e) => {

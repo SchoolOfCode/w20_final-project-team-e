@@ -20,7 +20,7 @@ export default function HelpModal(props) {
             cut down on emissions or ways to offset your carbon quota. Pop in
             where you want to go and we’ll help you plan a greener route.
           </p>
-          <h2>Blog</h2>
+          <h2>Want to learn more?</h2>
           <p>
             Tackling the dilemmas around the environment can often "where do I
             start?". Flick through our blog for some easy tips and advice to get
@@ -34,5 +34,5 @@ export default function HelpModal(props) {
         ></img>
       </div>
     </div>
-  )
+  );
 }

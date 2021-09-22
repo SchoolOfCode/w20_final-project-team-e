@@ -128,7 +128,7 @@ export default function App() {
       ]);
     } catch (err) {
       alert(
-        "Oh no! We couldn't match your search to any locations, please try again!"
+        "Oh no! We couldn't match your search to any locations, please try again! HINT: Entering a street or postcode location will help to give you the most accurate results!"
       );
       setLoadingComponent(false);
       window.location = "/";
@@ -142,7 +142,7 @@ export default function App() {
     setLoadingComponent(true);
     setTimeout(() => {
       setLoadingComponent(false);
-    }, 15000);
+    }, 10000);
   };
 
   // Search button logic
@@ -168,7 +168,7 @@ export default function App() {
         .getElementById("results-table")
         .scrollIntoView({ block: "center" });
       document.getElementById("homescreen").scrollIntoView();
-    }, 15000);
+    }, 10000);
   };
 
   const handleSubmit = (e) => {

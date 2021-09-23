@@ -8,14 +8,12 @@ export default function SearchCard(props) {
     <Sticky>
       <div className="card text-center" id="homescreen">
         <div className="card-body">
-          {/* <h2 className="card-title">Calculate Your Journey</h2> */}
           <form className="flex-container">
             <div className="search-input">
+              {/* Logic for search autocomplete - takes in react-select props */}
               <GooglePlacesAutocomplete
-                // autocompletionRequest={{
-                //   types: ["(regions)"],
-                // }}
                 selectProps={{
+                  menuPlacement: "auto",
                   className: "form-control",
                   onChange: props.handleFrom,
                   placeholder: "Where are you coming from?",
@@ -28,7 +26,7 @@ export default function SearchCard(props) {
                     control: (provided, state) => ({
                       ...provided,
                       border: state.isFocused ? 0 : 0,
-                      // This line disable the blue border
+                      // This line disables the blue border
                       boxShadow: state.isFocused ? 0 : 0,
                       "&:hover": {
                         border: state.isFocused ? 0 : 0,
@@ -44,10 +42,8 @@ export default function SearchCard(props) {
             </div>
             <div className="search-input">
               <GooglePlacesAutocomplete
-                // autocompletionRequest={{
-                //   types: ["(regions)"],
-                // }}
                 selectProps={{
+                  menuPlacement: "auto",
                   className: "form-control",
                   onChange: props.handleTo,
                   placeholder: "Where are you going to?",
@@ -60,7 +56,7 @@ export default function SearchCard(props) {
                     control: (provided, state) => ({
                       ...provided,
                       border: state.isFocused ? 0 : 0,
-                      // This line disable the blue border
+                      // This line disables the blue border
                       boxShadow: state.isFocused ? 0 : 0,
                       "&:hover": {
                         border: state.isFocused ? 0 : 0,

@@ -3,7 +3,7 @@ import React from "react";
 import Menu from "../Menu/Menu";
 import Sticky from "react-sticky-el";
 import HeroSection from "../HeroSection/HeroSection";
-import SearchSection from "../SearchSection/SearchSection";
+import SearchCard from "../SearchCard/SearchCard";
 import LoadingSection from "../LoadingSection/LoadingSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
 import HelpModal from "../HelpModal/HelpModal";
@@ -12,12 +12,12 @@ import Footer from "../Footer/Footer";
 export default function Home(props) {
   return (
     <div className="home">
-      {/* to be fixed at the top of the page? */}
+      {/* sticks menu at the top of the page */}
       <Sticky>
         <Menu />
       </Sticky>
       <HeroSection />
-      <SearchSection
+      <SearchCard
         from={props.from}
         to={props.to}
         handleFrom={props.handleFrom}

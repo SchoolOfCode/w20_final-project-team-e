@@ -5,6 +5,7 @@ import helpModalImage from "../../images/help_modal_illustration.png";
 export default function HelpModal(props) {
   return (
     <div
+      //close help modal on click of background
       className="modalBackground"
       onClick={() => {
         props.closeModal(false);

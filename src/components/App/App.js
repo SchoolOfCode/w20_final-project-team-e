@@ -13,8 +13,8 @@ import busIcon from "../../images/bus-icon.png";
 import trainIcon from "../../images/train-icon.png";
 import flightIcon from "../../images/flight-icon.png";
 
-//Set state for the form data
 export default function App() {
+  //stop background scrolling when modal is open
   const bodyScrollLock = require("body-scroll-lock");
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;
   const enableBodyScroll = bodyScrollLock.enableBodyScroll;
@@ -35,11 +35,12 @@ export default function App() {
   //state for results card
   const [resultsData, updateResultsData] = useState([]);
 
-  //Distance API
+  //Distance API key
   const distanceKey = "2Ms4naKG2GfSDZTrwZCG35OhUu0pI";
 
   async function getFootprint() {
     try {
+      //Fetch requests to find the distance between 2 locations for different modes of transport
       //Car
       let carDistanceResponse = await fetch(
         `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${from}&destinations=${to}&key=${distanceKey}`
@@ -88,6 +89,7 @@ export default function App() {
       let flightDistance =
         flightDistanceData.steps[0].distance.flight[0].distance;
 
+      //Calculations to convert distance into carbon emissions.
       updateResultsData([
         ...resultsData,
         {
@@ -135,7 +137,7 @@ export default function App() {
     }
   }
 
-  // Loading component to display for 4.5 seconds when the search button is pressed.
+  // Loading component to display for a set time when the search button is pressed.
   const [showLoadingComponent, setLoadingComponent] = useState(false);
 
   const handleLoadingComponent = () => {
@@ -145,7 +147,7 @@ export default function App() {
     }, 10000);
   };
 
-  // Search button logic
+  // Search button logic - changes selected option to from/to state
   const handleFrom = (selectedOption) => {
     updateFrom(selectedOption.label);
   };
@@ -154,7 +156,7 @@ export default function App() {
     updateTo(selectedOption.label);
   };
 
-  // When search button is clicked -> If display section is visible, immediately hide and then reappear after 4 seconds
+  // When search button is clicked -> If display section is visible, immediately hide and then reappear after a set time
   const [displayResults, setDisplayResults] = useState(false);
 
   const displayResultsComponent = () => {
@@ -187,8 +189,6 @@ export default function App() {
 
   return (
     <Router>
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/blog">
           <Blog openModal={openModal} setOpenModal={setOpenModal} />

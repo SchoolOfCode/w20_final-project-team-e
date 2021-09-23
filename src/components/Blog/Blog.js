@@ -11,6 +11,7 @@ export default function Blog(props) {
         <Menu />
       </Sticky>
       <BlogArticles />
+      {/* Help modal Button logic*/}
       <button
         className={props.openModal ? "closeModalBtn" : "openModalBtn"}
         onClick={() => {

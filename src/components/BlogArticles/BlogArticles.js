@@ -1,13 +1,13 @@
 import React from "react";
 import EnviroImgArt1 from "../../images/ecofootprint.png";
-import EnviroImgArt2 from "../../images/ArticleImages/plastic-calc-site.jpeg";
-import EnviroImgArt3 from "../../images/ArticleImages/offsetting-expo.png";
-import TravelImgArt1 from "../../images/ArticleImages/environment-plane-travel.png";
-import TravelImgArt2 from "../../images/ArticleImages/greener-transport.png";
-import TravelImgArt3 from "../../images/ArticleImages/uk-car-emissions.webp";
-import TipsImgArt1 from "../../images/ArticleImages/nula.png";
-import TipsImgArt2 from "../../images/ArticleImages/eco-travel-tips.jpeg";
-import TipsImgArt3 from "../../images/ArticleImages/guardian.png";
+import EnviroImgArt2 from "../../images/plastic-calc-site.jpeg";
+import EnviroImgArt3 from "../../images/offsetting-expo.png";
+import TravelImgArt1 from "../../images/environment-plane-travel.png";
+import TravelImgArt2 from "../../images/greener-transport.png";
+import TravelImgArt3 from "../../images/uk-car-emissions.webp";
+import TipsImgArt1 from "../../images/nula.png";
+import TipsImgArt2 from "../../images/eco-travel-tips.jpeg";
+import TipsImgArt3 from "../../images/guardian.png";
 
 import "./BlogArticles.css";
 

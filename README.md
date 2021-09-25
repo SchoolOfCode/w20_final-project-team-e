@@ -30,7 +30,7 @@ A small blog section helps users further their research and frames it in a solut
   
 ## Demo
 
-<video src='https://youtu.be/417C-d4kePY' width=180/>
+
 
   
 ## Tech Stack

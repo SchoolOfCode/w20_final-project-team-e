@@ -30,12 +30,15 @@ A small blog section helps users further their research and frames it in a solut
   
 ## Demo
 
-Insert gif or link to demo
+https://emissionimpossible.netlify.app/
 
   
 ## Tech Stack
 
-React
+React (including Material-UI)
+Javascript
+CSS (including Bootstrap)
+Html
 
 ## Dependencies
 

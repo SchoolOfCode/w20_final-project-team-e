@@ -66,12 +66,12 @@ Google Places API is used to provide the user with location options when complet
 ## Colour Reference
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Dark Green  	| ![#074445](https://www.color-hex.com/color/074445) #074445|
-| Orange 	| ![#FF7C5B](https://www.color-hex.com/color/ff7c5b) #FF7C5B|
-| Orange Hover 	| ![#E85E3B](https://www.color-hex.com/color/e85e3b) #E85E3B|
-| Modal Grey	| ![#C8C8C8](https://www.color-hex.com/color/c8c8c8) #C8C8C8|
-| Black		| ![#000000](https://www.color-hex.com/color/000000) #000000|
-| White		| ![#FFFFFF](https://www.color-hex.com/color/ffffff) #FFFFFF|
+| Dark Green  	| ![#074445](https://via.placeholder.com/10/074445?text=+) #074445|
+| Orange 	| ![#FF7C5B](https://via.placeholder.com/10/FF7C5B?text=+) #FF7C5B|
+| Orange Hover 	| ![#E85E3B](https://via.placeholder.com/10/E85E3B?text=+) #E85E3B|
+| Modal Grey	| ![#C8C8C8](https://via.placeholder.com/10/C8C8C8?text=+) #C8C8C8|
+| Black		| ![#000000](https://via.placeholder.com/10/000000?text=+) #000000|
+| White		| ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #|
 
 
 ## Deployment

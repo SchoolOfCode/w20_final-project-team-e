@@ -71,7 +71,7 @@ Google Places API is used to provide the user with location options when complet
 | Orange Hover 	| ![#E85E3B](https://via.placeholder.com/10/E85E3B?text=+) #E85E3B|
 | Modal Grey	| ![#C8C8C8](https://via.placeholder.com/10/C8C8C8?text=+) #C8C8C8|
 | Black		| ![#000000](https://via.placeholder.com/10/000000?text=+) #000000|
-| White		| ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #|
+| White		| ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #FFFFFF|
 
 
 ## Deployment
